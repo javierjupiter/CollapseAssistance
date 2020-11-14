@@ -27,7 +27,7 @@ CREATE TABLE Horarios(
     Inserto_Usuario CHAR(10),
     Fecha_Insercion DATE,
     Modifico_Usuario CHAR(10),
-         DATE
+    Fecha_Modificacion DATE
 );
 
 --Tabla DDETHOR
