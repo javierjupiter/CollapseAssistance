@@ -7,8 +7,10 @@ public class Validaciones {
     private Pattern patronC = Pattern.compile(regexC);
 
     //private String regexF = "(0[1-2]|1[0 9]|2[0-9]|3[0-1])" + "(-)" + "[0-9] {1} [0-9] {1}" + "(-)" + "[0-9] {1} [0-9] {1}$";
-
-    private String regexF = "(19|20)" + "[0-9]{1}[0-9]{1}" + "(-)" + "[0-1][1-9]";
+    //private String regexF = "(19|20)" + "[0-9]{1}[0-9]{1}" + "(-)" + "[0-1][1-9]";
+    //private String regexF = "((19|20)\\d\\d)-(0[1-9]|1[012])-([012][0-9]|3[012])$";
+    //private String regexF = "(((\\d\\d)(0[48]|[2468][048]|[13579][26])|([02468][048]|[13579][26])(00))(02)([012]\\d))|(\\d\\d([02468][1235679]|[13579][01345789])(02)([01]\\d|2[012345678]))|(\\d\\d\\d\\d((0[13578]|1[02])([012]\\d|3[01])|((0[46]|11)([012]\\d|30))))";
+    private String regexF = "[1, 2][0-9]{3}";
     private Pattern patronF = Pattern.compile(regexF);
 
 
@@ -23,7 +25,8 @@ public class Validaciones {
     }
 
     public boolean validarFecha(String fecha){
-        if (!patronF.matcher(fecha).matches() && fecha.length() == 10){
+        System.out.println("Fecha : '" + fecha + "'\tLargo: " + fecha.length());
+        if (!patronF.matcher(fecha).matches() && fecha.length() == 4){
             return true;
         } else{
             System.out.println("Fecha invalida, ingrese nuevamente");
