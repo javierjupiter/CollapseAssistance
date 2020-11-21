@@ -1,7 +1,6 @@
 import java.util.Scanner;
 
 public class FormularioPrincipal {
-    public static void main(String[] args) {
         int opcion;
         boolean continuar = true;
 
