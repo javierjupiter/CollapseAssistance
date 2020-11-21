@@ -3,18 +3,12 @@ import java.util.regex.Pattern;
 public class Validaciones {
 
     private String regexC =
-                    "[A-Z]{1}[AEIOU]{1}[A-Z]{2}[0-9]{2}" +
-                    "(0[1-9]|1[0-2])(0[1-9]|1[0-9]|2[0-9]|3[0-1])" +
-                    "[HM]{1}" +
-                    "(AS|BC|BS|CC|CS|CH|CL|CM|DF|DG|GT|GR|HG|JC|MC|MN|MS|NT|NL|OC|PL|QT|QR|SP|SL|SR|TC|TS|TL|VZ|YN|ZS|NE)" +
-                    "[B-DF-HJ" +
-                            "-NP-TV-Z]{3}" +
-                    "[0-9A-Z]{1}[0-9]{1}$";
+                    "[A-Z]{1}[AEIOU]{1}[A-Z]{22}[0-9]{2}" + "(0[1-9]|1[0-2])(0[1-9]|1[0-9]|2[0-9]|3[0-1])" + "[HM]{1}" + "(AS|BC|BS|CC|CS|CH|CL|CM|DF|DG|GT|GR|HG|JC|MC|MN|MS|NT|NL|OC|PL|QT|QR|SP|SL|SR|TC|TS|TL|VZ|YN|ZS|NE)" + "[B-DF-HJ" + "-NP-TV-Z]{3}" + "[0-9A-Z]{1}[0-9]{1}$";
     private Pattern patronC = Pattern.compile(regexC);
 
-    private String regexF = "[0-9] {1} [0-9] {1} [0-9] {1} [0-9] {1}" + "(-)" +
-                            "[0-9] {1} [0-9] {1}" + "(-)" +
-                            "[0-9] {1} [0-9] {1}$";
+    //private String regexF = "(0[1-2]|1[0 9]|2[0-9]|3[0-1])" + "(-)" + "[0-9] {1} [0-9] {1}" + "(-)" + "[0-9] {1} [0-9] {1}$";
+
+    private String regexF = "(19|20)" + "[0-9]{1}[0-9]{1}" + "(-)" + "[0-12]";
     private Pattern patronF = Pattern.compile(regexF);
 
 
