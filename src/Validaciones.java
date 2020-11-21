@@ -8,7 +8,7 @@ public class Validaciones {
 
     //private String regexF = "(0[1-2]|1[0 9]|2[0-9]|3[0-1])" + "(-)" + "[0-9] {1} [0-9] {1}" + "(-)" + "[0-9] {1} [0-9] {1}$";
 
-    private String regexF = "(19|20)" + "[0-9]{1}[0-9]{1}" + "(-)" + "[0-12]";
+    private String regexF = "(19|20)" + "[0-9]{1}[0-9]{1}" + "(-)" + "[0-1][1-9]";
     private Pattern patronF = Pattern.compile(regexF);
 
 
