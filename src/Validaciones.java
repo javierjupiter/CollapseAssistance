@@ -19,10 +19,11 @@ public class Validaciones {
     private final String regexFecha = "^(" + anyiobiciesto + "-(" + mesLargo + "|" + mesCorto + "|" + febreroLargo + "))|(" + anyoNormal + "-(" + mesLargo + "|" + mesCorto + "|" + febreroCorto + "))$";
     private final Pattern patronFecha = Pattern.compile(regexFecha);
 
-    private final String regexNombre = "^(([A-ZÁÉÍÓÚÑ][a-záéíóúñ]*+)[ ]*)+$"; //Acepta solo con la primera letra de cada palabra con mayusculas, las siguientes deben ser minusculas
+    private final String regexNombre = "^(([A-ZÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖŌÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ\\\\-][a-zàáâäãåąčćęèéêëėįìíîïłńòóōôöõøùúûüųūÿýżźñçčšžð\\\\-]*)|de la|de|del|y)(( [A-ZÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖŌÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ\\\\-][a-zàáâäãåąčćęèéêëėįìíîïłńòóōôöõøùúûüųūÿýżźñçčšžð\\\\-]*)| de la| de| del| y|-[A-ZÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔŌÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ\\\\-][a-zàáâäãåąčćęèéêëėįìíîïłńòóōôöõøùúûüųūÿýżźñçčšžð\\\\-]*|´|'[A-ZÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔŌÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ\\\\-]?[a-zàáâäãåąčćęèéêëėįìíîïłńòóôōöõøùúûüųūÿýżźñçčšžð\\\\-]*)*" +
+            "$"; //Acepta solo con la primera letra de cada palabra con mayusculas, las siguientes deben ser minusculas
     private final Pattern patronNombre = Pattern.compile(regexNombre);
 
-    private final String regexCadenas = "^[a-zA-z0-9\\(\\) ]+$";
+    private final String regexCadenas = "^[A-ZÁÉÍÓÚÑ][a-zA-z0-9\\(\\) ]*$";
     private final Pattern patronCadenas = Pattern.compile(regexCadenas);
 
     private final String regexClave = "^[0-9]{6}$";
@@ -34,10 +35,10 @@ public class Validaciones {
     private final String regexCP = "^[0-9]{5}$";
     private final Pattern patronCP = Pattern.compile(regexCP);
 
-    private final String regexIDEstado = "^[0-9]{2}$";
+    private final String regexIDEstado = "^([0-2][1-9]|3[0-2])$";
     private final Pattern patronIDEstado = Pattern.compile(regexIDEstado);
 
-    private final String regexIDMunicipio = "^[0-9]{4}$";
+    private final String regexIDMunicipio = "^((000[1-9])|(00[0-9]{2})|([01][0-9]{3})|(2[0-4][0-5][0-8]))$";
     private final Pattern patronIDMunicipio = Pattern.compile(regexIDMunicipio);
 
     public boolean validarCURP(String curpDato){
