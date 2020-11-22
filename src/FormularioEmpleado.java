@@ -52,7 +52,7 @@ public class FormularioEmpleado {
         do {
             System.out.println("¿Cuál es la calle?");
             cadena = leer.nextLine();
-        } while (!validaciones.validarCadenas(cadena));
+        } while (validaciones.validarCadena(cadena));
 
         do {
             System.out.println("¿Cuál es el número exterior?");
@@ -72,7 +72,7 @@ public class FormularioEmpleado {
         do {
             System.out.println("¿Cuál es la colonia?");
             cadena = leer.nextLine();
-        } while (!validaciones.validarCadenas(cadena));
+        } while (validaciones.validarCadena(cadena));
 
         do {
             System.out.println("¿Cuál es el ID del estado?");
