@@ -23,16 +23,16 @@ public class FormularioEmpleado {
         } while (!validaciones.validarFecha(cadena));
 
         do {
-            System.out.println("¿Cual es el nombre");
+            System.out.println("¿Cual es el nombre?");
             cadena = leer.nextLine();
         } while (!validaciones.validarNombre(cadena));
 
         do {
-            System.out.println("¿Cual es el apellido paterno");
+            System.out.println("¿Cual es el apellido paterno?");
             cadena = leer.nextLine();
         } while (!validaciones.validarNombre(cadena));
 
-        System.out.println("¿Cual es el apellido materno");
+        System.out.println("¿Cual es el apellido materno?");
         cadena = leer.nextLine();
 
     }
