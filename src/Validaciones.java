@@ -17,8 +17,11 @@ public class Validaciones {
                             "02-(0[1-9]|[12][0-9]))$"; //Febrero
     private Pattern patronFecha = Pattern.compile(regexFecha);
 
-    private String regexCadena = "^(([A-ZÁÉÍÓÚÑ][a-záéíóúñ]*)[ ]*)+$"; //Acepta solo con la primera letra de cada palabra con mayusculas, las siguientes deben ser minusculas
-    private Pattern patronCadena = Pattern.compile(regexCadena);
+    private String regexNombre = "^(([A-ZÁÉÍÓÚÑ][a-záéíóúñ]*)[ ]*)+$"; //Acepta solo con la primera letra de cada palabra con mayusculas, las siguientes deben ser minusculas
+    private Pattern patronNombre = Pattern.compile(regexNombre);
+
+    private String regexCadenas = "^(([A-ZÁÉÍÓÚÑ][a-záéíóúñ]*)[ \\.,¿?-_\\*\\+/]*)+$";
+    private Pattern patronCadenas = Pattern.compile(regexCadenas);
 
 
     public boolean validarCURP(String curpDato){
@@ -40,11 +43,20 @@ public class Validaciones {
     }
 
     public boolean validarNombre(String cadena){
-        if (patronCadena.matcher(cadena).matches()){
+        if (patronNombre.matcher(cadena).matches()){
             return true;
         } else {
             System.out.println("Cadena invalida, ingrese nuevamente");
             return false;
         }
+    }
+
+    public boolean validarCadenas(String cadena){
+        if (patronCadenas.matcher(cadena).matches()){
+            return true;
+        } else {
+            return false;
+        }
+
     }
 }
