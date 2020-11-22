@@ -19,8 +19,8 @@ public class Validaciones {
     private final String regexFecha = "^(" + anyiobiciesto + "-(" + mesLargo + "|" + mesCorto + "|" + febreroLargo + "))|(" + anyoNormal + "-(" + mesLargo + "|" + mesCorto + "|" + febreroCorto + "))$";
     private final Pattern patronFecha = Pattern.compile(regexFecha);
 
-    private final String regexNombre = "^(([A-ZÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖŌÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ\\\\-][a-zàáâäãåąčćęèéêëėįìíîïłńòóōôöõøùúûüųūÿýżźñçčšžð\\\\-]*)|de la|de|del|y)(( [A-ZÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖŌÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ\\\\-][a-zàáâäãåąčćęèéêëėįìíîïłńòóōôöõøùúûüųūÿýżźñçčšžð\\\\-]*)| de la| de| del| y|-[A-ZÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔŌÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ\\\\-][a-zàáâäãåąčćęèéêëėįìíîïłńòóōôöõøùúûüųūÿýżźñçčšžð\\\\-]*|´|'[A-ZÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔŌÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ\\\\-]?[a-zàáâäãåąčćęèéêëėįìíîïłńòóôōöõøùúûüųūÿýżźñçčšžð\\\\-]*)*" +
-            "$"; //Acepta solo con la primera letra de cada palabra con mayusculas, las siguientes deben ser minusculas
+    //Acepta solo con la primera letra de cada palabra con mayusculas, las siguientes deben ser minusculas
+    private final String regexNombre = "^(([A-ZÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖŌÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ\\\\-][a-zàáâäãåąčćęèéêëėįìíîïłńòóōôöõøùúûüųūÿýżźñçčšžð\\\\-]*)|de la|de|del|y)(( [A-ZÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖŌÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ\\\\-][a-zàáâäãåąčćęèéêëėįìíîïłńòóōôöõøùúûüųūÿýżźñçčšžð\\\\-]*)| de la| de| del| y|-[A-ZÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔŌÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ\\\\-][a-zàáâäãåąčćęèéêëėįìíîïłńòóōôöõøùúûüųūÿýżźñçčšžð\\\\-]*|´|'[A-ZÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔŌÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ\\\\-]?[a-zàáâäãåąčćęèéêëėįìíîïłńòóôōöõøùúûüųūÿýżźñçčšžð\\\\-]*)*$";
     private final Pattern patronNombre = Pattern.compile(regexNombre);
 
     private final String regexCadenas = "^[A-ZÁÉÍÓÚÑ][a-zA-z0-9\\(\\) ]*$";

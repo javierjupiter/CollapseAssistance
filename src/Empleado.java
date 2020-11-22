@@ -66,9 +66,38 @@ public class Empleado {
         direccionE.setEstado(estado);
         direccionE.setNumeroInterior(numeroInterior);
         direccionE.setNumeroExterior(numeroExterior);
-        direccionE.setEstado(estado);
         direccionE.setMunicipio(municipio);
     }
+
+    public void setCalle(String calle){
+        direccionE.setCalle(calle);
+    }
+
+    public void setCodigoPostal(String codigoPosrtal){
+        direccionE.setCodigoPostal(codigoPosrtal);
+    }
+
+    public void setColonia(String colonia){
+        direccionE.setColonia(colonia);
+    }
+
+    public void setEstado(String estado){
+        direccionE.setEstado(estado);
+    }
+
+    public void setMunicipio(String municipio){
+        direccionE.setMunicipio(municipio);
+    }
+
+    public void setNumeroExterior(String numero){
+        direccionE.setNumeroExterior(numero);
+    }
+
+    public void setNumeroInterior(String numero){
+        direccionE.setNumeroInterior(numero);
+    }
+
+
 
     public Fecha getFechaContratacionE() {
         return fechaContratacionE;
