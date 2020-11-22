@@ -26,7 +26,7 @@ public class Validaciones {
     private String regexClave = "^[0-9]{6}$";
     private Pattern patronClave = Pattern.compile(regexClave);
 
-    private String regexNumeroDireccion = "^[1-9 \\-A-Za-z]+$";
+    private String regexNumeroDireccion = "^([0-9 A-Za-z]|-)+$";
     private Pattern patronNumeroDireccion = Pattern.compile(regexNumeroDireccion);
 
     private String regexCP = "^[0-9]{5}$";
