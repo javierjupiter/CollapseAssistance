@@ -18,6 +18,7 @@ public class FormularioEmpleado {
     }
 
     public void formulario(){
+        empleado = new Empleado();
         System.out.println("Datos del empleado:");
         do {
             System.out.println("¿Cuál es tu Clave?");
@@ -53,7 +54,7 @@ public class FormularioEmpleado {
             System.out.println("¿Cuál es la fecha de ingreso?");
             cadena = leer.nextLine();
         } while (!validaciones.validarFecha(cadena));
-        empleado.setFechaContratacionE(Integer.parseInt(cadena.substring(0,3)), Integer.parseInt(cadena.substring(5,6)), Integer.parseInt(cadena.substring(7,8)));
+        empleado.setFechaContratacionE(Integer.parseInt(cadena.substring(0,4)), Integer.parseInt(cadena.substring(5,7)), Integer.parseInt(cadena.substring(8,10)));
 
         System.out.println("Datos de la dirección:");
         do {
