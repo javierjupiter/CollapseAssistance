@@ -1,0 +1,48 @@
+Sebástian
+    Aguascalientes (1, 11)
+    Baja California (12, 17)
+    Baja California Sur (18,22)
+    Campeche (23,35)
+    Chiapas (36,160)
+    Chihuahua (161,227)
+    CDMX (228,243)
+    Coahuila (Primeros 31 municipios) (242, 274)
+Mike
+    Coahuila (Ultimos 7 municipios) (275, 281)
+    Colima (282, 291)
+    Durango (292, 330)
+    Guanajuato (331, 376)
+    Guerrero (376, 465)
+    Hidalgo (466, 549)
+    Jalisco (Primeros 7 Municipios) (549, 556)
+Daniel
+    Jalisco (Ultimos 118 municipios) (557, 674)
+    Estado de México (675, 799)
+    Michoacan (Primeros 31 Municipios) (800, 830)
+Vanessa
+    Michoacan (Ultimos 82 municipios) (831, 912)
+    Morelos (913, 945)
+    Nayarit (913, 965)
+    Nuevo León (966, 1016)
+    Oaxaca (Primeros 88 Estados) (1017, 1104)
+Marco
+    Oaxaca (Segundos 89 a 362 municipios) (1105, 1377)
+Pedro
+    Oaxaca (Ultimos 208 municios) (1378, 1585)
+    Puebla (Primeros 66 municipios)(1586, 1651)
+Ricardo
+    Puebla (Ultimos 151 municipios)(1652, 1802)
+    Quintana Roo (1803, 1813)
+    San Luis Potosi (1814, 1871)
+    Sinaloa (1872, 1907)
+    Sonora (Primeros 36) (1908, 1943)
+Grisell
+    Sonora (Ultimos 36) (1945, 1979)
+    Tabasco (1978, 1996)
+    Tamaulipas (1997, 2039)
+    Tlaxcala (2040, 2099)
+    Veracuruz (Primeros 118 municipios) (2100, 2217)
+Javier
+    Veracurz (ultimos 94 estados) (2218, 2311)
+    Yucatán (2312, 2417)
+    Zacatecas (2417, 2475)
