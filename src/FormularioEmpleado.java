@@ -25,18 +25,21 @@ public class FormularioEmpleado {
             cadena = leer.nextLine();
         } while (!validaciones.validarClave(cadena));
         empleado.setClaveE(cadena);
+        System.out.println(""+cadena);
 
         do {
             System.out.println("¿Cual es el nombre?");
             cadena = leer.nextLine();
         } while (!validaciones.validarNombre(cadena));
         empleado.setNombreE(cadena);
+        System.out.println(""+cadena);
 
         do {
             System.out.println("¿Cual es el apellido paterno?");
             cadena = leer.nextLine();
         } while (!validaciones.validarNombre(cadena));
         empleado.setApllidoPaternoE(cadena);
+        System.out.println(""+cadena);
 
         do {
             System.out.println("¿Cual es el apellido materno?");
