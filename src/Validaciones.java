@@ -1,3 +1,5 @@
+import org.omg.CORBA.PRIVATE_MEMBER;
+
 import java.util.regex.Pattern;
 
 public class Validaciones {
@@ -47,6 +49,16 @@ public class Validaciones {
     private final String regexBiometrico = "[0-9]{2}";
     private final Pattern patronBiometrico = Pattern.compile(regexBiometrico);
 
+    private final String regexIncidencia = "[0-9]";
+    private final Pattern patronIncidencia = Pattern.compile(regexIncidencia);
+
+    private  final String regexSIncidencia = "[RJV]";
+    private final  Pattern patronSIncidencia = Pattern.compile(regexSIncidencia);
+
+
+    public  boolean validarStatusIncidencia(String bio){return patronSIncidencia.matcher(bio).matches();}
+
+    public  boolean validarIncidencia(String bio){return patronIncidencia.matcher(bio).matches();}
 
     public boolean validarBiometrico(String bio){ return patronBiometrico.matcher(bio).matches();}
 

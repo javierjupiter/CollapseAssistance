@@ -25,7 +25,7 @@ public class FormularioHorario {
             } while (!validaciones.validarCP(cadena));
             horario.setID_Horario(cadena);
 
-            System.out.println("" + cadena);
+            System.out.println("El get guardo:" + horario.getID_Horario());
 
             do {
                 System.out.println("Escriba la descripcion: ");
@@ -33,7 +33,7 @@ public class FormularioHorario {
             } while (!validaciones.validarCadena(cadena));
             horario.setDescripcion_Horario(cadena);
 
-            System.out.println("" + cadena);
+            System.out.println("El get guardo:" + horario.getDescripcion_Horario());
 
             do {
                 System.out.println("Escriba el estatus (Cadenas aceptadas: 'A' y 'I'): ");
@@ -41,6 +41,6 @@ public class FormularioHorario {
             } while (!validaciones.validarEstatus(cadena));
             horario.setStatus_Horario(cadena);
 
-            System.out.println("" + cadena);
+            System.out.println("El get guardo:" + horario.getStatus_Horario());
         }
     }

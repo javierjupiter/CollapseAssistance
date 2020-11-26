@@ -24,7 +24,7 @@ public class RegistroAsistencia {
         Clave_Empleado = clave_Empleado;
     }
 
-    public String getNumero_Dispositivo_Biometrico(String cadena) {
+    public String getNumero_Dispositivo_Biometrico() {
         return Numero_Dispositivo_Biometrico;
     }
 
@@ -32,11 +32,13 @@ public class RegistroAsistencia {
         Numero_Dispositivo_Biometrico = numero_Dispositivo_Biometrico;
     }
 
-    public String getStatus_Registro(String cadena) {
+    public String getStatus_Registro() {
         return Status_Registro;
     }
 
     public void setStatus_Registro(String status_Registro) {
         Status_Registro = status_Registro;
     }
+
+
 }

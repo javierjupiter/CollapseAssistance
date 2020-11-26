@@ -25,7 +25,7 @@ public class Formulario_RegistroAsistencia {
             cadena = leer.nextLine();
         } while (!validaciones.validarClave(cadena));
         registroAsistencia.setClave_Empleado(cadena);
-        System.out.println("" + cadena);
+        System.out.println("El get guardo:" + registroAsistencia.getClave_Empleado());
 
 
         do {
@@ -33,7 +33,7 @@ public class Formulario_RegistroAsistencia {
             cadena = leer.nextLine();
         } while (!validaciones.validarFecha(cadena));
         registroAsistencia.setFecha(Integer.parseInt(cadena.substring(0,4)), Integer.parseInt(cadena.substring(5,7)), Integer.parseInt(cadena.substring(8,10)));
-        System.out.println("" + cadena);
+        System.out.println("El get guardo:" + registroAsistencia.getFecha_Asignacion_Horario());
 
 
 
@@ -43,7 +43,7 @@ public class Formulario_RegistroAsistencia {
 
         } while (!validaciones.validarBiometrico(cadena));
         registroAsistencia.setNumero_Dispositivo_Biometrico(cadena);
-        System.out.println("" + cadena);
+        System.out.println("El get guardo:" + registroAsistencia.getNumero_Dispositivo_Biometrico());
 
         do {
             System.out.println("Escriba el estatus (Cadenas aceptadas: 'A' y 'I'): ");
@@ -51,6 +51,6 @@ public class Formulario_RegistroAsistencia {
         } while (!validaciones.validarEstatus(cadena));
         registroAsistencia.setStatus_Registro(cadena);
 
-        System.out.println(""+cadena);
+        System.out.println("El get guardo:"+registroAsistencia.getStatus_Registro());
     }
 }

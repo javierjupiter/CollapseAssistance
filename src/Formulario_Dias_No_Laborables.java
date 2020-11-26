@@ -24,7 +24,7 @@ public class Formulario_Dias_No_Laborables {
         } while (!validaciones.validarFecha(cadena));
         dias_no_laborables.setFecha(Integer.parseInt(cadena.substring(0,4)), Integer.parseInt(cadena.substring(5,7)), Integer.parseInt(cadena.substring(8,10)));
 
-        System.out.println(""+cadena);
+        System.out.println("El get guardo:"+dias_no_laborables.getFecha());
 
         do {
             System.out.println("Escriba el motivo: ");
@@ -32,7 +32,7 @@ public class Formulario_Dias_No_Laborables {
         } while (!validaciones.validarCadena(cadena));
         dias_no_laborables.setMotivo(cadena);
 
-        System.out.println(""+cadena);
+        System.out.println("El get guardo:"+ dias_no_laborables.getMotivo());
 
         do {
             System.out.println("Escriba el estatus (Cadenas aceptadas: 'A' y 'I'): ");
@@ -40,6 +40,6 @@ public class Formulario_Dias_No_Laborables {
         } while (!validaciones.validarEstatus(cadena));
         dias_no_laborables.setStatus(cadena);
 
-        System.out.println(""+cadena);
+        System.out.println("El get guardo:"+dias_no_laborables.getStatus());
     }
     }

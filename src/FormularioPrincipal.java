@@ -1,3 +1,5 @@
+import com.sun.scenario.effect.impl.sw.sse.SSEBlend_SRC_OUTPeer;
+
 import java.util.Scanner;
 
 public class FormularioPrincipal {
@@ -18,10 +20,13 @@ public class FormularioPrincipal {
         FormularioHorario horario = new FormularioHorario();
         Foemulario_Horarios_por_empleado horariosEmpleado = new Foemulario_Horarios_por_empleado();
         Formulario_RegistroAsistencia RegistroAsistencia = new Formulario_RegistroAsistencia();
+        Formulario_Justificante_empelados justificanteEmpelados = new Formulario_Justificante_empelados();
+        Formulario_Incidencias_Empleado incidenciasEmpleado = new Formulario_Incidencias_Empleado();
 
         do {
+            System.out.println("\n_________________________________________________________");
             System.out.println("¿Qué desas hacer?");
-            System.out.println("1. Datos Generales\n2. Catalogo de horarios\n3. Horarios por empleado\n4. Dias no laborables\n5. Registro de asistencia\n6. Salir");
+            System.out.println("1. Datos Generales\n2. Catalogo de horarios\n3. Horarios por empleado\n4. Dias no laborables\n5. Registro de asistencia\n6. Justificante Empleado\n7. Incidencias Empleado\n8. Salir");
             opcion = leer.nextInt();
 
             switch (opcion){
@@ -41,6 +46,12 @@ public class FormularioPrincipal {
                     RegistroAsistencia.Formulario_RegistroAsistencia();
                     break;
                 case 6 :
+                    justificanteEmpelados.Formulario_Justificante_empelados();
+                    break;
+                case 7 :
+                    incidenciasEmpleado.Formulario_Incidencias_Empleado();
+                    break;
+                case 8 :
                     continuar = false;
                     break;
             }

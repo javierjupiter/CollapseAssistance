@@ -5,7 +5,7 @@ public class Horarios_por_empleado {
 
     public Horarios_por_empleado(){ Fecha_Asignacion_Horario =new Fecha(); }
 
-    public String getID_Horario(String cadena) {
+    public String getID_Horario() {
         return ID_Horario;
     }
 

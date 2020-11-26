@@ -25,7 +25,7 @@ public class Foemulario_Horarios_por_empleado {
         } while (!validaciones.validarCP(cadena));
         horario.setID_Horario(cadena);
 
-        System.out.println("" + cadena);
+        System.out.println("El get guardo:" + horario.getID_Horario());
 
         do {
             System.out.println("Escriba el ID del empleado: ");
@@ -33,7 +33,7 @@ public class Foemulario_Horarios_por_empleado {
         } while (!validaciones.validarClave(cadena));
         horario.setClave_Empleado(cadena);
 
-        System.out.println("" + cadena);
+        System.out.println("El get guardo:" + horario.getClave_Empleado());
 
         do {
             System.out.println("Escriba la fecha: ");
@@ -41,6 +41,6 @@ public class Foemulario_Horarios_por_empleado {
         } while (!validaciones.validarFecha(cadena));
         horario.setFecha(Integer.parseInt(cadena.substring(0,4)), Integer.parseInt(cadena.substring(5,7)), Integer.parseInt(cadena.substring(8,10)));
 
-
+        System.out.println("El get guardo:" + horario.getFecha_Asignacion_Horario());
     }
 }
