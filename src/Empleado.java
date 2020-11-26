@@ -106,4 +106,7 @@ public class Empleado {
     public Direccion getDireccionE() {
         return direccionE;
     }
+
+
+
 }

@@ -40,4 +40,5 @@ public class Incidencias_Empleados {
     public String getTipo_Incidencia() {
         return Tipo_Incidencia;
     }
+
 }
