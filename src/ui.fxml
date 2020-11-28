@@ -1,14 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="ContorladorVista"
-            prefHeight="400.0" prefWidth="600.0">
-
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="613.28" prefWidth="1000.0" style="-fx-background-color: linear-gradient(to left, #FE81BB, #FF4E10);" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <HBox prefHeight="613.28" prefWidth="1000.0">
+         <children>
+            <VBox opacity="0.85" prefHeight="613.281" prefWidth="96.09" style="-fx-background-color: #ffffff; -fx-blend-mode:lighten">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets></VBox>
+            <VBox prefHeight="613.281" prefWidth="903.91" />
+         </children>
+      </HBox>
+   </children>
 </AnchorPane>
