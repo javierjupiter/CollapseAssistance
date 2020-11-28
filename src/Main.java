@@ -14,7 +14,7 @@ public class Main extends Application {
         primaryStage.setResizable(false);
         Image icon = new Image(getClass().getResourceAsStream("/images/Collapse_icon.png"));
         primaryStage.getIcons().add(icon);
-        primaryStage.setScene(new Scene(root, 640, 392.5));
+        primaryStage.setScene(new Scene(root, 800, 490));
         primaryStage.show();
     }
 
