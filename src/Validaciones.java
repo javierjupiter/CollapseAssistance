@@ -43,7 +43,7 @@ public class Validaciones {
     private final String regexIDMunicipio = "^((000[1-9])|(00[0-9]{2})|([01][0-9]{3})|(2[0-4][0-5][0-8]))$";
     private final Pattern patronIDMunicipio = Pattern.compile(regexIDMunicipio);
 
-    private final String regexEstatus = "[A,I]";
+    private final String regexEstatus = "[AIai]";
     private final Pattern patronEstatus = Pattern.compile(regexEstatus);
 
     private final String regexBiometrico = "[0-9]{2}";
