@@ -7,7 +7,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class ControladorUI {
-
+/*
     @FXML
     private ResourceBundle resources;
 
@@ -117,4 +117,5 @@ public class ControladorUI {
         objRegistroIncidenciasUI = new RegistroIncidenciasUI(txtClaveRegistroIncidencias,pickerIncidenciaFechaRegistroIncidencias,pickerInsercionRegistroIncidencias,comboTipoRegistroIncidencias,comboStatusRegistroIncidencias,btnGuardarRegistroIncidencias);
         objRegitroEmpleadosUI = new RegistroEmpleadosUI(txtIdEmpleadoREmpleados, comboMunicipioREmpleados, pickerFechaREmpleados, btnGuardarREmpleados, txtNombresREmpleados, txtCurpREmpleados, txtNumeroExtREmpleados, txtCodigoPostalREmpleados, txtApellidoMaternoREmpleados, txtCalleREmpleados, txtColoniaREmpleados, txtApellidoPaternoREmpleados, txtNumeroIntREmpleados, comboEstadoREmpleados);
     }
+    */
 }
