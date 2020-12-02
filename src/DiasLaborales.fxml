@@ -1,16 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXTextField?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.effect.Blend?>
 <?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.SVGPath?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="613.28" prefWidth="1000.0" style="-fx-background-color: linear-gradient(to left, #FE81BB, #FF4E10);" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="613.28" prefWidth="1000.0" style="-fx-background-color: linear-gradient(to left, #fe81bb, #ff4e10);" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="DiasLaboralesUI">
    <children>
       <HBox prefHeight="613.28" prefWidth="1000.0">
          <children>
@@ -121,7 +127,7 @@
                </HBox.margin></VBox>
             <VBox prefHeight="614.0" prefWidth="904.0">
                <children>
-                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="0.0" prefWidth="884.0" text="Titulo" textFill="WHITE">
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="0.0" prefWidth="884.0" text="Dias Laborales" textFill="WHITE">
                      <font>
                         <Font name="Poppins Regular" size="36.0" />
                      </font>
@@ -136,6 +142,54 @@
                      <VBox.margin>
                         <Insets bottom="20.0" left="20.0" right="20.0" top="5.0" />
                      </VBox.margin>
+                     <children>
+                        <HBox maxHeight="512.0" maxWidth="864.0" minHeight="512.0" minWidth="864.0" prefHeight="512.0" prefWidth="864.0">
+                           <children>
+                              <VBox maxWidth="432.0" minWidth="432.0" prefHeight="200.0" prefWidth="432.0">
+                                 <children>
+                                    <JFXDatePicker fx:id="pickerLaboralesFechaLaborales" maxHeight="40.0" maxWidth="292.0" minHeight="40.0" minWidth="292.0" prefHeight="40.0" prefWidth="292.0" promptText="Fecha:" style="-jfx-default-color: #FF4E10;">
+                                       <VBox.margin>
+                                          <Insets left="70.0" right="70.0" top="80.0" />
+                                       </VBox.margin>
+                                    </JFXDatePicker>
+                                    <JFXTextField fx:id="txtMotivoLaborales" maxHeight="40.0" maxWidth="292.0" minHeight="40.0" minWidth="292.0" prefHeight="40.0" prefWidth="292.0" promptText="Motivo:" style="-jfx-unfocus-color: #5776C8; -jfx-focus-color: #FF4E10; -jfx-label-float: true;">
+                                       <VBox.margin>
+                                          <Insets left="70.0" right="70.0" top="80.0" />
+                                       </VBox.margin>
+                                    </JFXTextField>
+                                    <JFXComboBox fx:id="comboStatusDiasLaborables" focusColor="#ff4e10" maxHeight="40.0" maxWidth="292.0" minHeight="40.0" minWidth="292.0" prefHeight="40.0" prefWidth="292.0" promptText="Seleccione status" unFocusColor="#5776c8">
+                                       <opaqueInsets>
+                                          <Insets />
+                                       </opaqueInsets>
+                                       <VBox.margin>
+                                          <Insets left="70.0" right="70.0" top="80.0" />
+                                       </VBox.margin>
+                                    </JFXComboBox>
+                                    <JFXButton fx:id="btnGuardarDiasLaborables" maxWidth="200.0" minWidth="200.0" prefWidth="200.0" ripplerFill="#fe81bb" style="-fx-border-color: #000; -fx-border-radius: 4px;" text="Guardar" textFill="#fe4e10">
+                                       <VBox.margin>
+                                          <Insets left="116.0" right="116.0" top="80.0" />
+                                       </VBox.margin>
+                                    </JFXButton>
+                                 </children>
+                              </VBox>
+                              <VBox maxWidth="432.0" minWidth="432.0" prefHeight="200.0" prefWidth="432.0">
+                                 <children>
+                                    <ImageView fitHeight="250.0" fitWidth="523.0" pickOnBounds="true" preserveRatio="true" rotate="90.0">
+                                       <image>
+                                          <Image url="@images/dias_laborales_img.png" />
+                                       </image>
+                                       <VBox.margin>
+                                          <Insets top="130.0" />
+                                       </VBox.margin>
+                                    </ImageView>
+                                 </children>
+                                 <HBox.margin>
+                                    <Insets right="130.5" />
+                                 </HBox.margin>
+                              </VBox>
+                           </children>
+                        </HBox>
+                     </children>
                   </VBox>
                </children>
             </VBox>
