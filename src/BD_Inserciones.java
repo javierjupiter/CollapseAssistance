@@ -6,7 +6,24 @@ import java.util.ArrayList;
 
 public class BD_Inserciones {
 
+    public String insertJustificante(String IdTipoJustificante, String descripcion, String status){
+        String sql = "INSERT INTO Tipo_Justificante (ID_Tipo_Justificante,Descripcion_Justificante,Status_Tipo_Justificante) VALUES (" + IdTipoJustificante + ",'" + descripcion +"','" + status +"')";
+        return sql;
+    }
+    public boolean hacerIncercionesJustificantes(Connection conn, String IdTipoJustificante, String descripcion, String status){
+        try{
+            PreparedStatement stmt = conn.prepareStatement(insertJustificante(IdTipoJustificante, descripcion, status));
+            stmt.execute();
+            return true;
 
+        }catch (Exception e){
+            System.out.println("No jalo xd"+e);
+            return false;
+        }
+
+    }
+
+    //____________________________________________________________________________________________________________________________________________
     public String insertEmpleado(String claveE, String nombreE, String apellidoP, String apellidoM, String curpE, String fecha, String calle, String nExterior, String nInterior, String colonia, String cp, String idEstados, String idMunicipios, String Status){
         String sql = "INSERT INTO Empleados (Clave_Empleado,Nombre_Empleado,Apellido_Paterno_Empleado,Apellido_Materno_Empleado,CURP_Empleado,"
                 + "Fecha_Contratacion,Direccion_Calle,Direccion_No_Exterior,Direccion_No_Interior,Direccion_Colonia,Direccion_Codigo_Postal,"

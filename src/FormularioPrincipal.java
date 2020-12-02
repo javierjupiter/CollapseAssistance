@@ -22,11 +22,12 @@ public class FormularioPrincipal {
         Formulario_RegistroAsistencia RegistroAsistencia = new Formulario_RegistroAsistencia(conn);
         Formulario_Justificante_empelados justificanteEmpelados = new Formulario_Justificante_empelados(conn);//esto xd
         Formulario_Incidencias_Empleado incidenciasEmpleado = new Formulario_Incidencias_Empleado(conn);
+        FormularioTipoJustificante tipoJustificante = new FormularioTipoJustificante(conn);
 
         do {
             System.out.println("\n_________________________________________________________");
             System.out.println("¿Qué desas hacer?");
-            System.out.println("1. Datos Generales\n2. Catalogo de horarios\n3. Horarios por empleado\n4. Dias no laborables\n5. Registro de asistencia\n6. Justificante Empleado\n7. Incidencias Empleado\n8. Salir");
+            System.out.println("1. Datos Generales\n2. Catalogo de horarios\n3. Horarios por empleado\n4. Dias no laborables\n5. Registro de asistencia\n6. Justificante Empleado\n7. Incidencias Empleado\n8. Tipos Justificante\n9. Salir");
             opcion = leer.nextInt();
 
             switch (opcion){
@@ -52,6 +53,9 @@ public class FormularioPrincipal {
                     incidenciasEmpleado.Formulario_Incidencias_Empleado();
                     break;
                 case 8 :
+                    tipoJustificante.FormularioTipoJustificante();
+                    break;
+                case 9 :
                     continuar = false;
                     break;
             }
