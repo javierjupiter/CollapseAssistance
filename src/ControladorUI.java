@@ -77,13 +77,44 @@ public class ControladorUI {
     private JFXButton btnGuardarDiasLaborables;
     //Finaliza propiedades de registro de dias laborales
 
+    //Inicia propiedades del registro de empleados
+    private RegistroEmpleadosUI objRegitroEmpleadosUI;
+    @FXML
+    private JFXTextField txtIdEmpleadoREmpleados;
+    @FXML
+    private JFXComboBox<String> comboMunicipioREmpleados;
+    @FXML
+    private JFXDatePicker pickerFechaREmpleados;
+    @FXML
+    private JFXButton btnGuardarREmpleados;
+    @FXML
+    private JFXTextField txtNombresREmpleados;
+    @FXML
+    private JFXTextField txtCurpREmpleados;
+    @FXML
+    private JFXTextField txtNumeroExtREmpleados;
+    @FXML
+    private JFXTextField txtCodigoPostalREmpleados;
+    @FXML
+    private JFXTextField txtApellidoMaternoREmpleados;
+    @FXML
+    private JFXTextField txtCalleREmpleados;
+    @FXML
+    private JFXTextField txtColoniaREmpleados;
+    @FXML
+    private JFXTextField txtApellidoPaternoREmpleados;
+    @FXML
+    private JFXTextField txtNumeroIntREmpleados;
+    @FXML
+    private JFXComboBox<String> comboEstadoREmpleados;
+    //Finaliza propiedades de registro de empleados
+
     @FXML
     public void initialize(){
         objDiasLaboralesUI = new DiasLaboralesUI(txtMotivoLaborales,comboStatusLaborales,pickerLaboralesFechaLaborales,btnGuardarDiasLaborables);
         objHorariosUI = new HorariosUI(txtIdHorarioHorarios,txtDescripcionHorarioHorarios,txtEstatusHorarios,btnGuardarHorarios);
         objRJustificantesUI = new RegistroJustificantesUI(comboTipoRJustificantes, comboEstatusRJustificantes, txtClaveRJustificantes, txtApellidoMRJustificantes, txtNombreRJustificantes, txtApellidoPRJustificantes, btnGuardaRJustificantes);
         objRegistroIncidenciasUI = new RegistroIncidenciasUI(txtClaveRegistroIncidencias,pickerIncidenciaFechaRegistroIncidencias,pickerInsercionRegistroIncidencias,comboTipoRegistroIncidencias,comboStatusRegistroIncidencias,btnGuardarRegistroIncidencias);
-
+        objRegitroEmpleadosUI = new RegistroEmpleadosUI(txtIdEmpleadoREmpleados, comboMunicipioREmpleados, pickerFechaREmpleados, btnGuardarREmpleados, txtNombresREmpleados, txtCurpREmpleados, txtNumeroExtREmpleados, txtCodigoPostalREmpleados, txtApellidoMaternoREmpleados, txtCalleREmpleados, txtColoniaREmpleados, txtApellidoPaternoREmpleados, txtNumeroIntREmpleados, comboEstadoREmpleados);
     }
 }
-
