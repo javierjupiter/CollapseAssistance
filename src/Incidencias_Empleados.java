@@ -16,12 +16,14 @@ public class Incidencias_Empleados {
     public Incidencias_Empleados(){ Fecha_Incidencia =new Fecha(); }
 
     public void setFecha(int dia, int mes, int anyo) {
-        getFecha_Incidencia().setAnyo(anyo);
-        getFecha_Incidencia().setMes(mes);
-        getFecha_Incidencia().setDia(dia);
+        Fecha_Incidencia.setAnyo(anyo);
+        Fecha_Incidencia.setMes(mes);
+        Fecha_Incidencia.setDia(dia);
     }
 
-    public Fecha getFecha_Incidencia() { return  Fecha_Incidencia;
+    public String getFecha_Incidencia() {
+        String fecha = (Fecha_Incidencia.getDia() + "-" + Fecha_Incidencia.getMes() + "-" + Fecha_Incidencia.getAnyo());
+        return fecha;
     }
 
 

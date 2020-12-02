@@ -1,15 +1,18 @@
+import java.sql.Connection;
 import java.util.Scanner;
 
 public class Formulario_RegistroAsistencia {
     private String cadena;
     private Scanner leer = new Scanner(System.in);
     private Validaciones validaciones;
-    private Conexion conexion;
+    private Connection connection;//esta
     private RegistroAsistencia registroAsistencia;
+    private BD_Inserciones inserciones;//esta
 
-    public Formulario_RegistroAsistencia (Conexion conexion) {
+    public Formulario_RegistroAsistencia (Connection connection) {
         validaciones = new Validaciones();
-        this.conexion = conexion;
+        this.connection = connection; //esta
+        inserciones = new BD_Inserciones(); //esta
     }
 
     public Formulario_RegistroAsistencia () {
@@ -33,7 +36,7 @@ public class Formulario_RegistroAsistencia {
             cadena = leer.nextLine();
         } while (!validaciones.validarFecha(cadena));
         registroAsistencia.setFecha(Integer.parseInt(cadena.substring(0,4)), Integer.parseInt(cadena.substring(5,7)), Integer.parseInt(cadena.substring(8,10)));
-        System.out.println("El get guardo:" + registroAsistencia.getFecha_Asignacion_Horario());
+        System.out.println("El get guardo:" + registroAsistencia.getFecha_Registro());
 
 
 
@@ -46,11 +49,14 @@ public class Formulario_RegistroAsistencia {
         System.out.println("El get guardo:" + registroAsistencia.getNumero_Dispositivo_Biometrico());
 
         do {
-            System.out.println("Escriba el estatus (Cadenas aceptadas: 'A' y 'I'): ");
+            System.out.println("Escriba el estatus (Cadenas aceptadas: 'R' y 'P'): ");
             cadena = leer.nextLine();
-        } while (!validaciones.validarEstatus(cadena));
+        } while (!validaciones.validarStatusRAsistencia(cadena));
         registroAsistencia.setStatus_Registro(cadena);
 
         System.out.println("El get guardo:"+registroAsistencia.getStatus_Registro());
+
+        inserciones.hacerInsercionRegistroAsistencia(connection, registroAsistencia.getClave_Empleado(), registroAsistencia.getFecha_Registro(), registroAsistencia.getNumero_Dispositivo_Biometrico(), registroAsistencia.getStatus_Registro());
+
     }
 }

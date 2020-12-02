@@ -40,7 +40,8 @@ public class Validaciones {
     private final String regexIDEstado = "^([0-2][1-9]|3[0-2])$";
     private final Pattern patronIDEstado = Pattern.compile(regexIDEstado);
 
-    private final String regexIDMunicipio = "^((000[1-9])|(00[0-9]{2})|([01][0-9]{3})|(2[0-4][0-5][0-8]))$";
+    //private final String regexIDMunicipio = "^((000[1-9])|(00[0-9]{2})|([01][0-9]{3})|(2[0-4][0-5][0-8]))$";
+    private final String regexIDMunicipio = "[0-9]{3}";
     private final Pattern patronIDMunicipio = Pattern.compile(regexIDMunicipio);
 
     private final String regexEstatus = "[AIai]";
@@ -49,12 +50,16 @@ public class Validaciones {
     private final String regexBiometrico = "[0-9]{2}";
     private final Pattern patronBiometrico = Pattern.compile(regexBiometrico);
 
-    private final String regexIncidencia = "[0-9]";
+    private final String regexIncidencia = "[A-Z]";
     private final Pattern patronIncidencia = Pattern.compile(regexIncidencia);
 
     private  final String regexSIncidencia = "[RJV]";
     private final  Pattern patronSIncidencia = Pattern.compile(regexSIncidencia);
 
+    private  final String regexRAsistencia = "[RP]";
+    private final  Pattern patronRAsistencia  = Pattern.compile(regexRAsistencia);
+
+    public  boolean validarStatusRAsistencia(String bio){return patronRAsistencia.matcher(bio).matches();}
 
     public  boolean validarStatusIncidencia(String bio){return patronSIncidencia.matcher(bio).matches();}
 

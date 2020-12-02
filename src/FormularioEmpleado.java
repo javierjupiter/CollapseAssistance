@@ -1,3 +1,6 @@
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.Statement;
 import java.util.Scanner;
 
 public class FormularioEmpleado {
@@ -5,19 +8,23 @@ public class FormularioEmpleado {
     private String cadena;
     private Scanner leer = new Scanner(System.in);
     private Validaciones validaciones;
-    private Conexion conexion;
     private Empleado empleado;
+    private BD_Inserciones inserciones;//revisar
+    private Direccion direccion;
+    private Connection connection;//esta
 
-    public FormularioEmpleado(Conexion conexion){
+    public FormularioEmpleado(Connection connection){
         validaciones = new Validaciones();
-        this.conexion = conexion;
+        this.connection = connection; //esta
+        inserciones = new BD_Inserciones(); //esta
     }
 
-    public FormularioEmpleado(){
-        validaciones = new Validaciones();
-    }
+    //public FormularioEmpleado(){
+      //  validaciones = new Validaciones();
+    //}
 
-    public void formulario(){
+
+    public void formularioEmpleado(){
         empleado = new Empleado();
         System.out.println("Datos del empleado:");
         do {
@@ -63,7 +70,7 @@ public class FormularioEmpleado {
         do {
             System.out.println("¿Cuál es la calle?");
             cadena = leer.nextLine();
-        } while (validaciones.validarCadena(cadena));
+        } while (validaciones.validarNombre(cadena));
         empleado.setCalle(cadena);
 
         do {
@@ -87,13 +94,13 @@ public class FormularioEmpleado {
         do {
             System.out.println("¿Cuál es la colonia?");
             cadena = leer.nextLine();
-        } while (validaciones.validarCadena(cadena));
+        } while (validaciones.validarNombre(cadena));
         empleado.setColonia(cadena);
 
         do {
             System.out.println("¿Cuál es el ID del estado?");
             cadena = leer.nextLine();
-        } while (!validaciones.validarIDEstado(cadena));
+        } while (!validaciones.validarBiometrico(cadena));
         empleado.setEstado(cadena);
 
         do {
@@ -101,5 +108,11 @@ public class FormularioEmpleado {
             cadena = leer.nextLine();
         } while (!validaciones.validarIDMunicipio(cadena));
         empleado.setMunicipio(cadena);
+        System.out.println("holi");
+        inserciones.hacerInsercionEmpleado(connection, empleado.getClaveE(), empleado.getNombreE(), empleado.getApllidoPaternoE(), empleado.getApllidoMaternoE(), empleado.getCurpE(),empleado.getFechaContratacionE(),empleado.getCalle(), empleado.getNumeroExterior(), empleado.getNumeroInterior(), empleado.getColonia(), empleado.getCodigoPostal(), empleado.getEstado(), empleado.getMunicipio(),"A"  );
+
+
+
+
     }
 }

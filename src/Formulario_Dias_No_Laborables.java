@@ -1,15 +1,19 @@
+import java.sql.Connection;
 import java.util.Scanner;
 
 public class Formulario_Dias_No_Laborables {
     private String cadena;
     private Scanner leer = new Scanner(System.in);
     private Validaciones validaciones;
-    private Conexion conexion;
+    private Connection connection;//esta
     private Dias_no_laborables dias_no_laborables;
+    private BD_Inserciones inserciones;//esta
 
-    public Formulario_Dias_No_Laborables(Conexion conexion){
+    public Formulario_Dias_No_Laborables(Connection connection){
         validaciones = new Validaciones();
-        this.conexion = conexion;
+        this.connection = connection; //esta
+        inserciones = new BD_Inserciones(); //esta
+
     }
     public Formulario_Dias_No_Laborables(){
         validaciones = new Validaciones();
@@ -41,5 +45,8 @@ public class Formulario_Dias_No_Laborables {
         dias_no_laborables.setStatus(cadena);
 
         System.out.println("El get guardo:"+dias_no_laborables.getStatus());
+
+        inserciones.hacerIncercionesDiasNoLaborables(connection, dias_no_laborables.getFecha(), dias_no_laborables.getMotivo(), dias_no_laborables.getStatus());
+
     }
     }

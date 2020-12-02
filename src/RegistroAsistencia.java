@@ -7,13 +7,15 @@ public class RegistroAsistencia {
     public RegistroAsistencia(){ Fecha_Registro =new Fecha(); }
 
     public void setFecha(int dia, int mes, int anyo) {
-        getFecha_Asignacion_Horario().setAnyo(anyo);
-        getFecha_Asignacion_Horario().setMes(mes);
-        getFecha_Asignacion_Horario().setDia(dia);
+        Fecha_Registro.setAnyo(anyo);
+        Fecha_Registro.setMes(mes);
+        Fecha_Registro.setDia(dia);
     }
 
-    public Fecha getFecha_Asignacion_Horario() {
-        return Fecha_Registro;
+    public String getFecha_Registro() {
+        String fecha = (Fecha_Registro.getDia() + "-" + Fecha_Registro.getMes() + "-" + Fecha_Registro.getAnyo());
+        return fecha;
+        //colocar esto
     }
 
     public String getClave_Empleado() {
