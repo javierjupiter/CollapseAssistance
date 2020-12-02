@@ -104,4 +104,8 @@ public class Validaciones {
     public boolean validarIDMunicipio(String IDMunicipio){
         return patronIDMunicipio.matcher(IDMunicipio).matches();
     }
+
+    public String getRegexClave(){
+        return regexClave;
+    }
 }
