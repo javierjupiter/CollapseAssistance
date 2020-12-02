@@ -9,7 +9,7 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        //Parent root = FXMLLoader.load(getClass().getResource("ui.fxml"));
+        //Parent root = FXMLLoader.load(getClass().getResource("DiasLaborales.fxml"));
         Parent root = FXMLLoader.load(getClass().getResource("incidencias.fxml"));
         primaryStage.setTitle("Collapse Assitance");
         primaryStage.setResizable(false);
