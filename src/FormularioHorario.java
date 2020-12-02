@@ -1,15 +1,18 @@
+import java.sql.Connection;
 import java.util.Scanner;
 
 public class FormularioHorario {
         private String cadena;
         private Scanner leer = new Scanner(System.in);
         private Validaciones validaciones;
-        private Conexion conexion;
+        private Connection connection;//esta
         private Horario horario;
+        private BD_Inserciones inserciones;//esta
 
-        public FormularioHorario(Conexion conexion) {
+        public FormularioHorario(Connection connection) {
             validaciones = new Validaciones();
-            this.conexion = conexion;
+            this.connection = connection; //esta
+            inserciones = new BD_Inserciones(); //esta
         }
 
         public FormularioHorario() {
@@ -42,5 +45,8 @@ public class FormularioHorario {
             horario.setStatus_Horario(cadena);
 
             System.out.println("El get guardo:" + horario.getStatus_Horario());
+
+            inserciones.hacerIncercionesCatalogoHorarios(connection, horario.getID_Horario(), horario.getDescripcion_Horario(), horario.getStatus_Horario());
+
         }
     }

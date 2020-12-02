@@ -20,13 +20,17 @@ public class Horarios_por_empleado {
     public void setClave_Empleado(String clave_Empleado) {
         Clave_Empleado = clave_Empleado;
     }
+
+
     public void setFecha(int dia, int mes, int anyo) {
-        getFecha_Asignacion_Horario().setAnyo(anyo);
-        getFecha_Asignacion_Horario().setMes(mes);
-        getFecha_Asignacion_Horario().setDia(dia);
+        Fecha_Asignacion_Horario.setAnyo(anyo);
+        Fecha_Asignacion_Horario.setMes(mes);
+        Fecha_Asignacion_Horario.setDia(dia);
     }
 
-    public Fecha getFecha_Asignacion_Horario() {
-        return Fecha_Asignacion_Horario;
+    public String getFecha_Asignacion_Horario() {//String
+        String fecha = (Fecha_Asignacion_Horario.getDia() + "-" + Fecha_Asignacion_Horario.getMes() + "-" + Fecha_Asignacion_Horario.getAnyo());
+        return fecha;
+        //colocar esto
     }
 }

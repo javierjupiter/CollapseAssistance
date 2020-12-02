@@ -1,15 +1,20 @@
+import java.sql.Connection;
 import java.util.Scanner;
 
 public class Formulario_Justificante_empelados {
     private String cadena;
     private Scanner leer = new Scanner(System.in);
     private Validaciones validaciones;
-    private Conexion conexion;
+    private Connection connection;
     private Justificante_empelados justificanteEmpelados;
+    private BD_Inserciones inserciones;//esta
 
-    public Formulario_Justificante_empelados  (Conexion conexion) {
+
+    public Formulario_Justificante_empelados(Connection connection) {//estoooooooooooooooooooooo
         validaciones = new Validaciones();
-        this.conexion = conexion;
+        this.connection = connection; //esta
+        inserciones = new BD_Inserciones(); //esta
+
     }
 
     public Formulario_Justificante_empelados() {
@@ -48,6 +53,8 @@ public class Formulario_Justificante_empelados {
         } while (!validaciones.validarEstatus(cadena));
         justificanteEmpelados.setStatus_Justificante(cadena);
         System.out.println("El get guardo:" + justificanteEmpelados.getStatus_Justificante());
+
+        inserciones.hacerInsercionJustificantesEmpleados(connection, justificanteEmpelados.getClave_Empleado(), justificanteEmpelados.getFecha_Incidencia(), justificanteEmpelados.getID_Tipo_Justificante(), justificanteEmpelados.getStatus_Justificante());
 
 
     }

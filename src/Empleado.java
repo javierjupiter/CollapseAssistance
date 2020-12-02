@@ -5,12 +5,18 @@ public class Empleado {
     private String apllidoMaternoE;
     private String curpE;
     private Fecha fechaContratacionE;
-    private Direccion direccionE;
     private String claveE;
+    private String calle;
+    private String numeroExterior;
+    private String numeroInterior;
+    private String colonia;
+    private String codigoPostal;
+    private String estado;
+    private String Estado;
+    private String municipio;
 
     public Empleado(){
         fechaContratacionE = new Fecha();
-        direccionE = new Direccion();
     }
 
     public String getClaveE() {
@@ -32,6 +38,7 @@ public class Empleado {
     public String getCurpE() {
         return curpE;
     }
+
 
     public void setClaveE(String claveE) {
         this.claveE = claveE;
@@ -59,54 +66,68 @@ public class Empleado {
         fechaContratacionE.setDia(dia);
     }
 
-    public void setDireccionE(String  calle, String numeroInterior, String numeroExterior, String colonia, String codigoPostal, String estado, String municipio) {
-        direccionE.setCalle(calle);
-        direccionE.setCodigoPostal(codigoPostal);
-        direccionE.setColonia(colonia);
-        direccionE.setEstado(estado);
-        direccionE.setNumeroInterior(numeroInterior);
-        direccionE.setNumeroExterior(numeroExterior);
-        direccionE.setMunicipio(municipio);
-    }
 
-    public void setCalle(String calle){
-        direccionE.setCalle(calle);
-    }
 
-    public void setCodigoPostal(String codigoPosrtal){
-        direccionE.setCodigoPostal(codigoPosrtal);
-    }
 
-    public void setColonia(String colonia){
-        direccionE.setColonia(colonia);
-    }
-
-    public void setEstado(String estado){
-        direccionE.setEstado(estado);
-    }
-
-    public void setMunicipio(String municipio){
-        direccionE.setMunicipio(municipio);
-    }
-
-    public void setNumeroExterior(String numero){
-        direccionE.setNumeroExterior(numero);
-    }
-
-    public void setNumeroInterior(String numero){
-        direccionE.setNumeroInterior(numero);
+    public String getFechaContratacionE() {
+        String fecha = (fechaContratacionE.getDia() + "-" + fechaContratacionE.getMes() + "-" + fechaContratacionE.getAnyo());
+        return fecha;
     }
 
 
-
-    public Fecha getFechaContratacionE() {
-        return fechaContratacionE;
+    public String getCalle() {
+        return calle;
     }
 
-    public Direccion getDireccionE() {
-        return direccionE;
+    public void setCalle(String calle) {
+        this.calle = calle;
     }
 
+    public String getNumeroExterior() {
+        return numeroExterior;
+    }
 
+    public void setNumeroExterior(String numeroExterior) {
+        this.numeroExterior = numeroExterior;
+    }
 
+    public String getNumeroInterior() {
+        return numeroInterior;
+    }
+
+    public void setNumeroInterior(String numeroInterior) {
+        this.numeroInterior = numeroInterior;
+    }
+
+    public String getColonia() {
+        return colonia;
+    }
+
+    public void setColonia(String colonia) {
+        this.colonia = colonia;
+    }
+
+    public String getCodigoPostal() {
+        return codigoPostal;
+    }
+
+    public void setCodigoPostal(String codigoPostal) {
+        this.codigoPostal = codigoPostal;
+    }
+
+    public String getEstado() {
+        return Estado;
+    }
+
+    public void setEstado(String estado) {
+        Estado = estado;
+    }
+
+    public String getMunicipio() {
+        return municipio;
+    }
+
+    public void setMunicipio(String municipio) {
+        this.municipio = municipio;
+    }
 }

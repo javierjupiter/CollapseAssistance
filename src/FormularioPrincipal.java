@@ -1,8 +1,10 @@
+import java.sql.Connection;
 import java.util.Scanner;
 
 public class FormularioPrincipal {
 
-    //private static Conexion conexion;
+    private static Conexion conexion;
+    private static Connection conn;
 
     public static void main(String[] args) {
         int opcion;
@@ -11,15 +13,15 @@ public class FormularioPrincipal {
 
         Scanner leer = new Scanner(System.in);
         System.out.print("Contraseña root de mySQL:\t");
-        //conexion = new Conexion(leer.nextLine());
-
-        FormularioEmpleado empleado = new FormularioEmpleado();/*conexion*/
-        Formulario_Dias_No_Laborables noLaborables = new Formulario_Dias_No_Laborables();
-        FormularioHorario horario = new FormularioHorario();
-        Foemulario_Horarios_por_empleado horariosEmpleado = new Foemulario_Horarios_por_empleado();
-        Formulario_RegistroAsistencia RegistroAsistencia = new Formulario_RegistroAsistencia();
-        Formulario_Justificante_empelados justificanteEmpelados = new Formulario_Justificante_empelados();
-        Formulario_Incidencias_Empleado incidenciasEmpleado = new Formulario_Incidencias_Empleado();
+        conexion = new Conexion(leer.nextLine());
+        conn = conexion.getConnection();
+        FormularioEmpleado empleado = new FormularioEmpleado(conn);/*conexion*/
+        Formulario_Dias_No_Laborables noLaborables = new Formulario_Dias_No_Laborables(conn);
+        FormularioHorario horario = new FormularioHorario(conn);
+        Foemulario_Horarios_por_empleado horariosEmpleado = new Foemulario_Horarios_por_empleado(conn);
+        Formulario_RegistroAsistencia RegistroAsistencia = new Formulario_RegistroAsistencia(conn);
+        Formulario_Justificante_empelados justificanteEmpelados = new Formulario_Justificante_empelados(conn);//esto xd
+        Formulario_Incidencias_Empleado incidenciasEmpleado = new Formulario_Incidencias_Empleado(conn);
 
         do {
             System.out.println("\n_________________________________________________________");
@@ -29,7 +31,7 @@ public class FormularioPrincipal {
 
             switch (opcion){
                 case 1 :
-                    empleado.formulario();
+                    empleado.formularioEmpleado();
                     break;
                 case 2 :
                     horario.FormularioHorario();

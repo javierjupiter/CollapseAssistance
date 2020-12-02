@@ -1,6 +1,7 @@
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.sql.Statement;
 
 public class Conexion {
     static String bd = "CollapseAssistance";
@@ -32,5 +33,9 @@ public class Conexion {
 
     public void desconectar(){
         conn = null;
+    }
+
+    Statement createStatement() {/////////////////revisaaaaaaaaaaaaaar
+        throw new UnsupportedOperationException("No Conectado");
     }
 }
