@@ -24,13 +24,14 @@ public class Dias_no_laborables {
 
 
     public void setFecha(int dia, int mes, int anyo) {
-        getFecha().setAnyo(anyo);
-        getFecha().setMes(mes);
-        getFecha().setDia(dia);
+        Fecha.setAnyo(anyo);
+        Fecha.setMes(mes);
+        Fecha.setDia(dia);
     }
 
-    public Fecha getFecha() {
-        return Fecha;
+    public String getFecha() {
+        String fecha = (Fecha.getDia() + "-" + Fecha.getMes() + "-" + Fecha.getAnyo());
+        return fecha;
     }
 
 }
