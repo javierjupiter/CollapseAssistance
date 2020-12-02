@@ -7,6 +7,16 @@ public class BD_Consultas {
     private Estados[] estados;
     private int tamanioEstados;
 
+    public Municipios[] getMunicipios() {
+        return municipios;
+    }
+    public int getTamnnioMunicipios() {
+        return tamnnioMunicipios;
+    }
+
+    private Municipios[] municipios;
+    private int tamnnioMunicipios;
+
     public boolean hacerConsultasEstados(Connection conn){
         try{
             ArrayList<Estados> listaEstados = new ArrayList<Estados>();
@@ -30,12 +40,37 @@ public class BD_Consultas {
         this.estados = new Estados[contador];
         for(int i=0; i<contador; i++){
             this.getEstados()[i] = arreglo.get(i);
-
         }
         return true;
     }
 
+    public boolean convertirArrayM(ArrayList<Municipios> arreglo){
+        int contador = arreglo.size();
+        this.tamnnioMunicipios = contador;
+        this.municipios = new Municipios[contador];
+        for (int i = 0; i < contador; i++){
+            this.getMunicipios()[i] = arreglo.get(i);
+        }
+        return true;
+    }
 
+    public boolean hacerConsultasMunicipios(Connection conn, int idEstado){
+        try{
+            ArrayList<Municipios> listaMunicipios = new ArrayList<Municipios>();
+            Statement select = conn.createStatement();
+            ResultSet resultadoConsulta = select.executeQuery(consultaMunicipios(idEstado));
+
+            while (resultadoConsulta.next()){
+                Municipios municipios = new Municipios(resultadoConsulta.getString(1), resultadoConsulta.getString(2), resultadoConsulta.getString(3));
+                listaMunicipios.add(municipios);
+            }
+            return convertirArrayM(listaMunicipios);
+
+        }catch (Exception e) {
+            System.out.println(e);
+            return false;
+        }
+    }
 
 
 
@@ -46,10 +81,7 @@ public class BD_Consultas {
 
 
     public String consultaMunicipios(int idEdo){
-        String sql = "SELECT CONCAT(NIDMUNI,' ',Nombre_Municipio) "
-                + " FROM Municipios_Estados "
-                + " WHERE ID_Estado = " + idEdo
-                + " ORDER BY ID_Municipios";
+        String sql = "SELECT * FROM municipios_estados WHERE id_estado = " + idEdo;
         return sql;
     }
 

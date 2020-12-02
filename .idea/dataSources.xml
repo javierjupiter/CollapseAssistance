@@ -10,5 +10,14 @@
         <property name="serverTimezone" value="GMT-6" />
       </driver-properties>
     </data-source>
+    <data-source source="LOCAL" name="CollapseAssistance@localhost" uuid="d2dcd845-56f3-492c-b6a6-b15ef30c4c76">
+      <driver-ref>mysql.8</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://localhost:3306/CollapseAssistance</jdbc-url>
+      <driver-properties>
+        <property name="serverTimezone" value="GMT-5" />
+      </driver-properties>
+    </data-source>
   </component>
 </project>
