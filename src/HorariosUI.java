@@ -5,7 +5,7 @@ import com.jfoenix.validation.RequiredFieldValidator;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 
-public class HorariosUI {
+public class  HorariosUI {
 
     private Connection connection;
 

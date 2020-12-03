@@ -178,6 +178,24 @@ public class ControladorUI {
     @FXML
     private JFXButton btnGuardarDiasLaborables;
 
+    @FXML
+    public void hacerInserccionesDiasNoLaborales(){
+        BD_Inserciones Inserciones = new BD_Inserciones();
+        String Estatus, fecha =  String.valueOf(pickerLaboralesFechaLaborales.getValue());
+        if (comboStatusDiasLaborables.getValue()=="Activo"){
+            Estatus = "A";
+        }
+        else{
+            Estatus = "I";
+        }
+        if (Inserciones.hacerIncercionesDiasNoLaborables(connection, fecha, txtMotivoLaborales.getText(), Estatus)){
+            System.out.println("Insercion correcta");
+        }
+        else{
+            System.out.println("Insercion incorrecta");
+        }
+    }
+
     private void llenarMotivoLaborales(){
         RequiredFieldValidator validatorClave = new RequiredFieldValidator();
         txtMotivoLaborales.getValidators().add(validatorClave);

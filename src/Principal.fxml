@@ -18,7 +18,7 @@
 <?import javafx.scene.shape.SVGPath?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="613.28" prefWidth="1000.0" style="-fx-background-color: linear-gradient(to left, #FE81BB, #FF4E10);" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ControladorUI">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="613.28" prefWidth="1000.0" style="-fx-background-color: linear-gradient(to left, #FE81BB, #FF4E10);" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ControladorUI">
     <children>
         <HBox prefHeight="613.28" prefWidth="1000.0">
             <children>
@@ -464,7 +464,7 @@
                                                             <Insets left="70.0" right="70.0" top="80.0" />
                                                          </VBox.margin>
                                                       </JFXComboBox>
-                                                      <JFXButton fx:id="btnGuardarDiasLaborables" maxWidth="200.0" minWidth="200.0" prefWidth="200.0" ripplerFill="#fe81bb" style="-fx-border-color: #000; -fx-border-radius: 4px;" text="Guardar" textFill="#fe4e10">
+                                                      <JFXButton fx:id="btnGuardarDiasLaborables" maxWidth="200.0" minWidth="200.0" onMouseClicked="#hacerInserccionesDiasNoLaboraleshacerInserccionesDiasNoLaborales" prefWidth="200.0" ripplerFill="#fe81bb" style="-fx-border-color: #000; -fx-border-radius: 4px;" text="Guardar" textFill="#fe4e10">
                                                          <VBox.margin>
                                                             <Insets left="116.0" right="116.0" top="80.0" />
                                                          </VBox.margin>
