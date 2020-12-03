@@ -159,6 +159,7 @@ public class RegistroEmpleadosUI {
 
 
     public RegistroEmpleadosUI (JFXTextField txtIdEmpleadoREmpleados, JFXComboBox<String> comboMunicipioREmpleados, JFXDatePicker pickerFechaREmpleados, JFXButton btnGuardarREmpleados, JFXTextField txtNombresREmpleados, JFXTextField txtCurpREmpleados, JFXTextField txtNumeroExtREmpleados, JFXTextField txtCodigoPostalREmpleados, JFXTextField txtApellidoMaternoREmpleados, JFXTextField txtCalleREmpleados, JFXTextField txtColoniaREmpleados, JFXTextField txtApellidoPaternoREmpleados, JFXTextField txtNumeroIntREmpleados, JFXComboBox<String> comboEstadoREmpleados){
+        System.out.println("Hola desde Registro de Empleados");
         this.txtIdEmpleadoREmpleados = txtIdEmpleadoREmpleados;
         this.comboMunicipioREmpleados = comboMunicipioREmpleados;
         this.pickerFechaREmpleados = pickerFechaREmpleados;

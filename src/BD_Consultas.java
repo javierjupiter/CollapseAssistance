@@ -72,6 +72,24 @@ public class BD_Consultas {
         }
     }
 
+    public String hacerConsultasMunicipiosID(Connection conn, String nombre){
+        try{
+            String id = "";
+            Statement select = conn.createStatement();
+            ResultSet resultadoConsulta = select.executeQuery(consultaNombreMunicipio(nombre));
+
+            while (resultadoConsulta.next()){
+                Municipios municipios = new Municipios(resultadoConsulta.getString(1), resultadoConsulta.getString(2), resultadoConsulta.getString(3));
+                id = municipios.getIdMunicipio();
+            }
+            return id;
+
+        }catch (Exception e) {
+            System.out.println(e);
+            return "";
+        }
+    }
+
 
 
     public String consultaEstados(){
@@ -82,6 +100,11 @@ public class BD_Consultas {
 
     public String consultaMunicipios(int idEdo){
         String sql = "SELECT * FROM municipios_estados WHERE id_estado = " + idEdo;
+        return sql;
+    }
+
+    public String consultaNombreMunicipio(String nombre){
+        String sql = "SELECT ID_Municipios FROM municipios_estados WHERE Nombre_municipio = '" + nombre + "'";
         return sql;
     }
 

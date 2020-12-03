@@ -18,19 +18,20 @@ public class RegistroIncidenciasUI {
 
     private JFXDatePicker pickerInsercionRegistroIncidencias;
 
-    private JFXComboBox comboTipoRegistroIncidencias;
+    private JFXComboBox<String> comboTipoRegistroIncidencias;
 
-    private JFXComboBox comboStatusRegistroIncidencias;
+    private JFXComboBox<String> comboStatusRegistroIncidencias;
 
     private JFXButton btnGuardarRegistroIncidencias;
 
-    public RegistroIncidenciasUI(JFXTextField txtClaveRegistroIncidencias, JFXDatePicker pickerIncidenciaFechaRegistroIncidencias, JFXDatePicker pickerInsercionRegistroIncidencias, JFXComboBox comboTipoRegistroIncidencias, JFXComboBox comboStatusRegistroIncidencias, JFXButton btnGuardarRegistroIncidencias){
-      this.txtClaveRegistroIncidencias=txtClaveRegistroIncidencias;
-      this.pickerIncidenciaFechaRegistroIncidencias=pickerIncidenciaFechaRegistroIncidencias;
-      this.pickerInsercionRegistroIncidencias=pickerInsercionRegistroIncidencias;
-      this.comboTipoRegistroIncidencias=comboTipoRegistroIncidencias;
-      this.comboStatusRegistroIncidencias=comboStatusRegistroIncidencias;
-      this.btnGuardarRegistroIncidencias=btnGuardarRegistroIncidencias;
+    public RegistroIncidenciasUI(JFXTextField txtClaveRegistroIncidencias, JFXDatePicker pickerIncidenciaFechaRegistroIncidencias, JFXDatePicker pickerInsercionRegistroIncidencias, JFXComboBox<String> comboTipoRegistroIncidencias, JFXComboBox<String> comboStatusRegistroIncidencias, JFXButton btnGuardarRegistroIncidencias){
+        System.out.println("Hola desde Incidencias");
+        this.txtClaveRegistroIncidencias=txtClaveRegistroIncidencias;
+        this.pickerIncidenciaFechaRegistroIncidencias=pickerIncidenciaFechaRegistroIncidencias;
+        this.pickerInsercionRegistroIncidencias=pickerInsercionRegistroIncidencias;
+        this.comboTipoRegistroIncidencias=comboTipoRegistroIncidencias;
+        this.comboStatusRegistroIncidencias=comboStatusRegistroIncidencias;
+        this.btnGuardarRegistroIncidencias=btnGuardarRegistroIncidencias;
     }
 
     public RegistroIncidenciasUI(JFXTextField txtClaveRegistroIncidencias, JFXDatePicker pickerIncidenciaFechaRegistroIncidencias, JFXDatePicker pickerInsercionRegistroIncidencias, JFXComboBox comboTipoRegistroIncidencias, JFXComboBox comboStatusRegistroIncidencias, JFXButton btnGuardarRegistroIncidencias, Connection connection){
@@ -47,10 +48,10 @@ public class RegistroIncidenciasUI {
     public void initialize(){
         llenarComboboxIncidencias();
         llenarComboboxStatus();
-        validarTextField();
+        validarTextFieldIncidencias();
     }
 
-    private void validarTextField(){
+    private void validarTextFieldIncidencias(){
         RequiredFieldValidator validatorClave = new RequiredFieldValidator();
         txtClaveRegistroIncidencias.getValidators().add(validatorClave);
         validatorClave.setMessage("¡Campo Obligatoro!");

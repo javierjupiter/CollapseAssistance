@@ -17,11 +17,11 @@ public class DiasLaboralesUI {
     private Connection connection;
 
 
-    public DiasLaboralesUI(JFXTextField txtMotivoLaborales, JFXComboBox comboStatusLaborales, JFXDatePicker pickerLaboralesFechaLaborales, JFXButton btnGuardarDiasLaborables){
-        this.btnGuardarDiasLaborables=btnGuardarDiasLaborables;
-        this.txtMotivoLaborales=txtMotivoLaborales;
-        this.comboStatusLaborales=comboStatusLaborales;
-        this.pickerLaboralesFechaLaborales=pickerLaboralesFechaLaborales;
+    public DiasLaboralesUI(JFXTextField txtMotivoLaborales, JFXComboBox<String> comboStatusLaborales, JFXDatePicker pickerLaboralesFechaLaborales, JFXButton btnGuardarDiasLaborables){
+        this.btnGuardarDiasLaborables = btnGuardarDiasLaborables;
+        this.txtMotivoLaborales = txtMotivoLaborales;
+        this.comboStatusLaborales = comboStatusLaborales;
+        this.pickerLaboralesFechaLaborales = pickerLaboralesFechaLaborales;
         llenarComboboxLaborales();
         llenarMotivo();
 

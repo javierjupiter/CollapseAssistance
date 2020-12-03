@@ -9,18 +9,18 @@ import java.sql.Connection;
 
 public class RegistroJustificantesUI {
     private Validaciones validaciones;
-    private JFXComboBox<String> comboTipoRJustificantes;
-    private JFXComboBox<String> comboEstatusRJustificantes;
-    private JFXTextField txtClaveRJustificantes;
-    private JFXTextField txtApellidoMRJustificantes;
-    private JFXTextField txtNombreRJustificantes;
-    private JFXTextField txtApellidoPRJustificantes;
-    private JFXButton btnGuardaRJustificantes;
+    private final JFXComboBox<String> comboTipoRJustificantes;
+    private final JFXComboBox<String> comboEstatusRJustificantes;
+    private final JFXTextField txtClaveRJustificantes;
+    private final JFXTextField txtApellidoMRJustificantes;
+    private final JFXTextField txtNombreRJustificantes;
+    private final JFXTextField txtApellidoPRJustificantes;
+    private final JFXButton btnGuardaRJustificantes;
     private Connection conn;
 
 
     public RegistroJustificantesUI (JFXComboBox<String> comboTipoRJustificantes, JFXComboBox<String> comboEstatusRJustificantes, JFXTextField txtClaveRJustificantes, JFXTextField txtApellidoMRJustificantes, JFXTextField txtNombreRJustificantes, JFXTextField txtApellidoPRJustificantes, JFXButton btnGuardaRJustificantes){
-        System.out.println("Hola Mundo desde ui.java");
+        System.out.println("Hola Mundo desde Registros Justificantes.java");
         this.comboTipoRJustificantes = comboTipoRJustificantes;
         this.comboEstatusRJustificantes = comboEstatusRJustificantes;
         this.txtClaveRJustificantes = txtClaveRJustificantes;
@@ -30,7 +30,7 @@ public class RegistroJustificantesUI {
         this.btnGuardaRJustificantes = btnGuardaRJustificantes;
         llenarComboboxJustificantes();
         validarTXT();
-
+        System.out.println("Gggggg");
     }
 
     public RegistroJustificantesUI (JFXComboBox<String> comboTipoRJustificantes, JFXComboBox<String> comboEstatusRJustificantes, JFXTextField txtClaveRJustificantes, JFXTextField txtApellidoMRJustificantes, JFXTextField txtNombreRJustificantes, JFXTextField txtApellidoPRJustificantes, JFXButton btnGuardaRJustificantes, Connection conn){
