@@ -3,16 +3,68 @@ import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXDatePicker;
 import com.jfoenix.controls.JFXTextField;
 import javafx.fxml.FXML;
+import javafx.scene.control.Label;
+import javafx.scene.layout.VBox;
+import javafx.scene.shape.SVGPath;
+
+import java.awt.event.ActionEvent;
 import java.net.URL;
 import java.util.ResourceBundle;
 
 public class ControladorUI {
-/*
     @FXML
     private ResourceBundle resources;
 
     @FXML
     private URL location;
+
+    //Inicia propiedades del menú
+    @FXML
+    private SVGPath btnLogo;
+    @FXML
+    private SVGPath btnHome;
+    @FXML
+    private SVGPath btnREmpleados;
+    @FXML
+    private SVGPath btnRHorarios;
+    @FXML
+    private SVGPath btnDiasLaborales;
+    @FXML
+    private SVGPath btnAsistencias;
+    @FXML
+    private SVGPath btnRJustificantes;
+    @FXML
+    private SVGPath btnConfiguraciones;
+    @FXML
+    private Label lblHora;
+    @FXML
+    private Label lblMinutos;
+    @FXML
+    private Label lblMeridian;
+    //Finaliza propiedades del menú
+
+    //Inician propiedades de pantallas
+    @FXML
+    private VBox vboxPantallas;
+    @FXML
+    private VBox vboxHome;
+    @FXML
+    private Label lblTitulo;
+    @FXML
+    private VBox vBoxREmpleados;
+    @FXML
+    private VBox vboxRJustificantes;
+    @FXML
+    private VBox vboxRIncidencias;
+    @FXML
+    private VBox vboxHorarios;
+    @FXML
+    private VBox vboxDiasLaborales;
+    @FXML
+    private VBox vboxRAsistencias;
+    @FXML
+    private VBox vboxConfiguraciones;
+    //Finalizan propiedades de pantallas
 
     //INICIA PROPIEDADES DE HORARIOS
     private HorariosUI objHorariosUI;
@@ -107,6 +159,9 @@ public class ControladorUI {
     private JFXTextField txtNumeroIntREmpleados;
     @FXML
     private JFXComboBox<String> comboEstadoREmpleados;
+
+    public ControladorUI() {
+    }
     //Finaliza propiedades de registro de empleados
 
     @FXML
@@ -117,5 +172,8 @@ public class ControladorUI {
         objRegistroIncidenciasUI = new RegistroIncidenciasUI(txtClaveRegistroIncidencias,pickerIncidenciaFechaRegistroIncidencias,pickerInsercionRegistroIncidencias,comboTipoRegistroIncidencias,comboStatusRegistroIncidencias,btnGuardarRegistroIncidencias);
         objRegitroEmpleadosUI = new RegistroEmpleadosUI(txtIdEmpleadoREmpleados, comboMunicipioREmpleados, pickerFechaREmpleados, btnGuardarREmpleados, txtNombresREmpleados, txtCurpREmpleados, txtNumeroExtREmpleados, txtCodigoPostalREmpleados, txtApellidoMaternoREmpleados, txtCalleREmpleados, txtColoniaREmpleados, txtApellidoPaternoREmpleados, txtNumeroIntREmpleados, comboEstadoREmpleados);
     }
-    */
+
+    /*public  void onSelectedBTNConfiguraciones(ActionEvent actionEvent){
+        System.out.println("Hola de settings");
+    }*/
 }

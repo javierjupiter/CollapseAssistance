@@ -10,7 +10,7 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception{
         //Parent root = FXMLLoader.load(getClass().getResource("DiasLaborales.fxml"));
-        Parent root = FXMLLoader.load(getClass().getResource("incidencias.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("Principal.fxml"));
         primaryStage.setTitle("Collapse Assitance");
         primaryStage.setResizable(false);
         Image icon = new Image(getClass().getResourceAsStream("/images/Collapse_icon.png"));
