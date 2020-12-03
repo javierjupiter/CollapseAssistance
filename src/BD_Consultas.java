@@ -79,8 +79,7 @@ public class BD_Consultas {
             ResultSet resultadoConsulta = select.executeQuery(consultaNombreMunicipio(nombre));
 
             while (resultadoConsulta.next()){
-                Municipios municipios = new Municipios(resultadoConsulta.getString(1), resultadoConsulta.getString(2), resultadoConsulta.getString(3));
-                id = municipios.getIdMunicipio();
+                id = resultadoConsulta.getString(1);
             }
             return id;
 
