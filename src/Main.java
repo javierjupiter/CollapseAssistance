@@ -5,12 +5,22 @@ import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
+import java.util.Scanner;
+
 public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        //Parent root = FXMLLoader.load(getClass().getResource("DiasLaborales.fxml"));
-        Parent root = FXMLLoader.load(getClass().getResource("Principal.fxml"));
+        Scanner leer = new Scanner(System.in);
+        Parent root;
+        System.out.println("1. Completo\n2. Tabla");
+        if (leer.nextLine().equals("1")){
+            root = FXMLLoader.load(getClass().getResource("Principal.fxml"));
+        }else {
+             root = FXMLLoader.load(getClass().getResource("Asistencia_registro.fxml"));
+        }
+
+
         primaryStage.setTitle("Collapse Assitance");
         primaryStage.setResizable(false);
         Image icon = new Image(getClass().getResourceAsStream("/images/Collapse_icon.png"));
