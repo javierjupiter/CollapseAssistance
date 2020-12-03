@@ -561,10 +561,27 @@ public class ControladorUI {
     @FXML
     private JFXTextField txtApellidoPRJustificantes;
     @FXML
+    private JFXDatePicker pickerFechaJustificantes;
+    @FXML
     private JFXButton btnGuardaRJustificantes;
 
+    @FXML
+    public void guardarJustificantes(){
+        BD_Inserciones inserciones = new BD_Inserciones();
+        String fecha = String.valueOf(pickerFechaJustificantes.getValue()), estatus;
+        if (comboEstatusRJustificantes.getValue().equals("Activo")){
+            estatus = "A";
+        } else{
+            estatus = "I";
+        }
+        if (inserciones.hacerInsercionJustificantesEmpleados(connection, txtClaveRJustificantes.getText(), fecha, String.valueOf(comboTipoRegistroIncidencias.getValue()), estatus)){
+            System.out.println("Insercion correcta");
+        } else{
+            System.out.println("Insercion incorrecta");
+        }
+    }
+
     private void llenarComboboxJustificantes(){
-        this.comboTipoRJustificantes.getItems().add("Medica");
         this.comboTipoRJustificantes.getItems().add("Retardo menor");
         this.comboTipoRJustificantes.getItems().add("Retardo mayor");
         this.comboTipoRJustificantes.setPromptText("Tipo incidencia");
