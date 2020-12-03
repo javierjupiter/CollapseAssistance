@@ -162,7 +162,7 @@
                                                             <Insets left="50.0" right="50.0" top="30.0" />
                                                          </VBox.margin>
                                                       </JFXTextField>
-                                                      <JFXTextField fx:id="txtApellidoMaternoREmpleaods" focusColor="#ff4e10" labelFloat="true" promptText="APELLIDO MATERNO" unFocusColor="#5776c8">
+                                                      <JFXTextField fx:id="txtApellidoMaternoREmpleados" focusColor="#ff4e10" labelFloat="true" promptText="APELLIDO MATERNO" unFocusColor="#5776c8">
                                                          <VBox.margin>
                                                             <Insets left="50.0" right="50.0" top="30.0" />
                                                          </VBox.margin>

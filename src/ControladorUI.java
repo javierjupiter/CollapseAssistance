@@ -6,6 +6,8 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;
 import javafx.scene.shape.SVGPath;
+
+import javax.swing.*;
 import java.net.URL;
 import java.sql.Connection;
 import java.util.ResourceBundle;
@@ -241,16 +243,17 @@ public class ControladorUI {
     private void hacerRegistroEmpleados(){
         BD_Inserciones inserciones = new BD_Inserciones();
         String fecha=String.valueOf(pickerFechaREmpleados.getValue());
-       // JFXDialog dialog = new JFXDialog();
+        //JFXDialog dialog = new JFXDialog(stackP);
         if  (inserciones.hacerInsercionEmpleado(connection, txtIdEmpleadoREmpleados.getText(), txtNombresREmpleados.getText(),txtApellidoPaternoREmpleados.getText(),txtApellidoMaternoREmpleados.getText(),txtCurpREmpleados.getText(),fecha,txtCalleREmpleados.getText(),txtNumeroExtREmpleados.getText(),txtNumeroIntREmpleados.getText(),txtColoniaREmpleados.getText(),txtCodigoPostalREmpleados.getText(),idEstado,idMunicipio,"A")) {
             System.out.println("Insercion correcta");
-           // dialog.setContent(new Label("Insercion Correcta"));
+            //dialog.setContent(new Label("Insercion Correcta"));
+            JOptionPane.showMessageDialog((new JFrame()),"Insercion Correcta");
         }
-        else
-            System.out.println("Insercion Incorrecta");
-           // dialog.setContent(new Label("Insercion Incorrecta"));
-
-       // dialog.show();
+        else {
+            //dialog.setContent(new Label("Insercion Incorrecta"));
+            JOptionPane.showMessageDialog((new JFrame()),"Insercion Incorrecta");
+        }
+        //dialog.show(rootStack);
     }
 
     private void comboboxEmpleadosEstados(){
