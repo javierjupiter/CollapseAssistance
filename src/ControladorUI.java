@@ -168,21 +168,20 @@ public class ControladorUI {
     //Finaliza propiedades de registro de Incidencias
 
     //Inicia propiedades de registro de dias laborales
-    private DiasLaboralesUI objDiasLaboralesUI;
     @FXML
     private JFXTextField txtMotivoLaborales;
     @FXML
     private JFXComboBox<String> comboStatusDiasLaborables;
     @FXML
-    private JFXDatePicker pickerLaboralesFechaLaborales;
+    private JFXDatePicker pickerFechaLaborales;
     @FXML
     private JFXButton btnGuardarDiasLaborables;
 
     @FXML
     public void hacerInserccionesDiasNoLaborales(){
         BD_Inserciones Inserciones = new BD_Inserciones();
-        String Estatus, fecha =  String.valueOf(pickerLaboralesFechaLaborales.getValue());
-        if (comboStatusDiasLaborables.getValue()=="Activo"){
+        String Estatus, fecha =  String.valueOf(pickerFechaLaborales.getValue());
+        if (comboStatusDiasLaborables.getValue().equals("Activo")){
             Estatus = "A";
         }
         else{
