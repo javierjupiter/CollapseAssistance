@@ -1,7 +1,4 @@
-import com.jfoenix.controls.JFXButton;
-import com.jfoenix.controls.JFXComboBox;
-import com.jfoenix.controls.JFXDatePicker;
-import com.jfoenix.controls.JFXTextField;
+import com.jfoenix.controls.*;
 import com.jfoenix.validation.RequiredFieldValidator;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
@@ -242,7 +239,18 @@ public class ControladorUI {
 
     @FXML
     private void hacerRegistroEmpleados(){
+        BD_Inserciones inserciones = new BD_Inserciones();
+        String fecha=String.valueOf(pickerFechaREmpleados.getValue());
+       // JFXDialog dialog = new JFXDialog();
+        if  (inserciones.hacerInsercionEmpleado(connection, txtIdEmpleadoREmpleados.getText(), txtNombresREmpleados.getText(),txtApellidoPaternoREmpleados.getText(),txtApellidoMaternoREmpleados.getText(),txtCurpREmpleados.getText(),fecha,txtCalleREmpleados.getText(),txtNumeroExtREmpleados.getText(),txtNumeroIntREmpleados.getText(),txtColoniaREmpleados.getText(),txtCodigoPostalREmpleados.getText(),idEstado,idMunicipio,"A")) {
+            System.out.println("Insercion correcta");
+           // dialog.setContent(new Label("Insercion Correcta"));
+        }
+        else
+            System.out.println("Insercion Incorrecta");
+           // dialog.setContent(new Label("Insercion Incorrecta"));
 
+       // dialog.show();
     }
 
     private void comboboxEmpleadosEstados(){
