@@ -1,15 +1,23 @@
 import com.jfoenix.controls.*;
 import com.jfoenix.validation.RequiredFieldValidator;
+import javafx.animation.Animation;
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
+import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
+import javafx.scene.paint.Paint;
 import javafx.scene.shape.SVGPath;
+import javafx.util.Duration;
 
 import javax.swing.*;
 import java.net.URL;
 import java.sql.Connection;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.util.ResourceBundle;
 
 public class ControladorUI {
@@ -23,27 +31,149 @@ public class ControladorUI {
 
     //Inicia propiedades del menú
     @FXML
-    private SVGPath btnLogo;
+    private VBox vboxMenu;
     @FXML
-    private SVGPath btnHome;
+    private Pane paneHome;
     @FXML
-    private SVGPath btnREmpleados;
+    private Pane paneREmpleados;
     @FXML
-    private SVGPath btnRHorarios;
+    private Pane paneRHorarios;
     @FXML
-    private SVGPath btnDiasLaborales;
+    private Pane paneDiasLaborales;
     @FXML
-    private SVGPath btnAsistencias;
+    private Pane paneAsistencias;
     @FXML
-    private SVGPath btnRJustificantes;
+    private Pane paneRJustificantes;
     @FXML
-    private SVGPath btnConfiguraciones;
+    private Pane paneReloj;
     @FXML
     private Label lblHora;
     @FXML
     private Label lblMinutos;
     @FXML
     private Label lblMeridian;
+    @FXML
+    private Label lblFecha;
+
+    public void crearMenuLateral(){
+        JFXRippler ripplerHome = new JFXRippler(paneHome);
+        ripplerHome.setRipplerFill(Paint.valueOf("#FE81BB"));
+        vboxMenu.getChildren().add(ripplerHome);
+
+        JFXRippler ripplerREmpleados = new JFXRippler(paneREmpleados);
+        ripplerREmpleados.setRipplerFill(Paint.valueOf("#FE81BB"));
+        vboxMenu.getChildren().add(ripplerREmpleados);
+
+        JFXRippler ripplerRHorarios = new JFXRippler(paneRHorarios);
+        ripplerRHorarios.setRipplerFill(Paint.valueOf("#FE81BB"));
+        vboxMenu.getChildren().add(ripplerRHorarios);
+
+        JFXRippler ripplerDiasLaborales = new JFXRippler(paneDiasLaborales);
+        ripplerDiasLaborales.setRipplerFill(Paint.valueOf("#FE81BB"));
+        vboxMenu.getChildren().add(ripplerDiasLaborales);
+
+        JFXRippler ripplerAsistencias = new JFXRippler(paneAsistencias);
+        ripplerAsistencias.setRipplerFill(Paint.valueOf("#FE81BB"));
+        vboxMenu.getChildren().add(ripplerAsistencias);
+
+        JFXRippler ripplerRJustificantes = new JFXRippler(paneRJustificantes);
+        ripplerRJustificantes.setRipplerFill(Paint.valueOf("#FE81BB"));
+        vboxMenu.getChildren().add(ripplerRJustificantes);
+
+        JFXRippler ripplerReloj = new JFXRippler(paneReloj);
+        ripplerReloj.setRipplerFill(Paint.valueOf("#FFFFFF"));
+        vboxMenu.getChildren().add(ripplerReloj);
+
+        Timeline clock = new Timeline(new KeyFrame(Duration.ZERO, e -> {
+            LocalTime currentTime = LocalTime.now();
+            int h = currentTime.getHour() > 12? currentTime.getHour() - 12 : currentTime.getHour();
+            lblHora.setText(h > 9 ? "" + h : "0" + h);
+            int m = currentTime.getMinute();
+            lblMinutos.setText(m > 9 ? "" + m : "0" + m);
+            String meridiano = currentTime.getHour() > 11 ? "PM" : "AM";
+            lblMeridian.setText(meridiano);
+
+            LocalDateTime currentDate = LocalDateTime.now();
+            String diaSemana;
+
+            switch (String.valueOf(currentDate.getDayOfWeek())){
+                case "MONDAY":
+                    diaSemana = "Lun.";
+                    break;
+                case "TUESDAY":
+                    diaSemana = "Mar.";
+                    break;
+                case "WEDNESDAY":
+                    diaSemana = "Mie.";
+                    break;
+                case "THURSDAY":
+                    diaSemana = "Jue.";
+                    break;
+                case "FRIDAY":
+                    diaSemana = "Vie.";
+                    break;
+                case "SATURDAY":
+                    diaSemana = "Sab.";
+                    break;
+                case "SUNDAY":
+                    diaSemana = "Dom.";
+                    break;
+                default:
+                    diaSemana = "Non.";
+                    break;
+            }
+
+            String mes;
+            switch(String.valueOf(currentDate.getMonth())){
+                case "JANUARY":
+                    mes = "Ene.";
+                    break;
+                case "FEBRUARY":
+                    mes = "Feb.";
+                    break;
+                case "MARCH":
+                    mes = "Mar.";
+                    break;
+                case "APRIL":
+                    mes = "Abr.";
+                    break;
+                case "MAY":
+                    mes = "May.";
+                    break;
+                case "JUNE":
+                    mes = "Jun.";
+                    break;
+                case "JULY":
+                    mes = "Jul.";
+                    break;
+                case "AUGUST":
+                    mes = "Ago.";
+                    break;
+                case "SEPTEMBER":
+                    mes = "Sep.";
+                    break;
+                case "OCTOBER":
+                    mes = "Oct.";
+                    break;
+                case "NOVEMBER":
+                    mes = "Nov.";
+                    break;
+                case "DECEMBER":
+                    mes = "Dec.";
+                    break;
+                default:
+                    mes = "Non.";
+                    break;
+            }
+
+            lblFecha.setText(diaSemana + " " + mes + " " + currentDate.getDayOfMonth());
+        }),
+                new KeyFrame(Duration.seconds(1))
+        );
+        clock.setCycleCount(Animation.INDEFINITE);
+        clock.play();
+
+    }
     //Finaliza propiedades del menú
 
     //Inician propiedades de pantallas
@@ -65,8 +195,6 @@ public class ControladorUI {
     private VBox vboxDiasLaborales;
     @FXML
     private VBox vboxRAsistencias;
-    @FXML
-    private VBox vboxConfiguraciones;
     //Finalizan propiedades de pantallas
 
     //INICIA PROPIEDADES DE HORARIOS
@@ -635,9 +763,7 @@ public class ControladorUI {
 
     //Inicias propiedades de configuraciones
     @FXML
-    private JFXTextField txtPassword;
-    @FXML
-    private  JFXButton btnSetPass;
+    private JFXPasswordField txtPassword;
     @FXML
     public void iniciarConexion(){
         Conexion conexion = new Conexion(txtPassword.getText());
@@ -649,6 +775,12 @@ public class ControladorUI {
             vboxDiasLaborales.setDisable(false);
             vboxRAsistencias.setDisable(false);
             vboxRJustificantes.setDisable(false);
+        } else {
+            vBoxREmpleados.setDisable(true);
+            vboxHorarios.setDisable(true);
+            vboxDiasLaborales.setDisable(true);
+            vboxRAsistencias.setDisable(true);
+            vboxRJustificantes.setDisable(true);
         }
     }
     //Finalizan propiedades de configuraciones
@@ -661,6 +793,7 @@ public class ControladorUI {
         vboxRAsistencias.setDisable(true);
         vboxRJustificantes.setDisable(true);
 
+        crearMenuLateral();
         validacionTextFildHorarios();
         llenarComboboxJustificantes();
         validarTXT();
@@ -686,7 +819,6 @@ public class ControladorUI {
         vboxDiasLaborales.setVisible(false);
         vboxRAsistencias.setVisible(false);
         vboxRJustificantes.setVisible(false);
-        vboxConfiguraciones.setVisible(false);
         lblTitulo.setText("Registro de empleados");
     }
 
@@ -699,7 +831,6 @@ public class ControladorUI {
         vboxDiasLaborales.setVisible(false);
         vboxRAsistencias.setVisible(false);
         vboxRJustificantes.setVisible(false);
-        vboxConfiguraciones.setVisible(false);
         lblTitulo.setText("Registro de horarios");
     }
 
@@ -712,7 +843,6 @@ public class ControladorUI {
         vboxDiasLaborales.setVisible(true);
         vboxRAsistencias.setVisible(false);
         vboxRJustificantes.setVisible(false);
-        vboxConfiguraciones.setVisible(false);
         lblTitulo.setText("Registro de Días no Laborales");
     }
 
@@ -725,7 +855,6 @@ public class ControladorUI {
         vboxDiasLaborales.setVisible(false);
         vboxRAsistencias.setVisible(true);
         vboxRJustificantes.setVisible(false);
-        vboxConfiguraciones.setVisible(false);
         lblTitulo.setText("Registro de asistencias");
     }
 
@@ -738,20 +867,6 @@ public class ControladorUI {
         vboxDiasLaborales.setVisible(false);
         vboxRAsistencias.setVisible(false);
         vboxRJustificantes.setVisible(true);
-        vboxConfiguraciones.setVisible(false);
         lblTitulo.setText("Registro de justificantes");
-    }
-
-    @FXML
-    public void mostrarConfiguraciones(){
-        vboxHome.setVisible(false);
-        vboxPantallas.setVisible(true);
-        vBoxREmpleados.setVisible(false);
-        vboxHorarios.setVisible(false);
-        vboxDiasLaborales.setVisible(false);
-        vboxRAsistencias.setVisible(false);
-        vboxRJustificantes.setVisible(false);
-        vboxConfiguraciones.setVisible(true);
-        lblTitulo.setText("Configuaciones");
     }
 }

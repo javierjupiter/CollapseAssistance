@@ -3,6 +3,7 @@
 <?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXComboBox?>
 <?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXPasswordField?>
 <?import com.jfoenix.controls.JFXTextArea?>
 <?import com.jfoenix.controls.JFXTextField?>
 <?import com.jfoenix.controls.JFXTreeTableView?>
@@ -14,6 +15,7 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.SVGPath?>
 <?import javafx.scene.text.Font?>
@@ -22,7 +24,7 @@
     <children>
         <HBox prefHeight="613.28" prefWidth="1000.0">
             <children>
-                <VBox opacity="0.85" prefHeight="613.281" prefWidth="96.09" style="-fx-background-color: #ffffff;">
+                <VBox fx:id="vboxMenu" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" opacity="0.85" prefHeight="613.281" prefWidth="96.09" style="-fx-background-color: #ffffff;">
                     <opaqueInsets>
                         <Insets />
                     </opaqueInsets>
@@ -35,95 +37,127 @@
                                 <DropShadow color="#00000040" height="11.0" offsetX="3.0" offsetY="2.0" radius="5.0" spread="0.4" width="11.0" />
                             </effect>
                         </SVGPath>
-                        <SVGPath fx:id="btnHome" content="M11.8043 25.4989V17.9937H17.8085V25.4989C17.8085 26.3245 18.484 27 19.3096 27H23.8127C24.6383 27 25.3138 26.3245 25.3138 25.4989V14.9916H27.8656C28.5561 14.9916 28.8863 14.136 28.3609 13.6857L15.8121 2.38277C15.2417 1.87241 14.3711 1.87241 13.8007 2.38277L1.25195 13.6857C0.741597 14.136 1.05682 14.9916 1.7473 14.9916H4.29909V25.4989C4.29909 26.3245 4.97456 27 5.80014 27H10.3033C11.1289 27 11.8043 26.3245 11.8043 25.4989Z" onMouseClicked="#mostrarInicio">
-                            <VBox.margin>
-                                <Insets bottom="35.0" left="35.0" />
-                            </VBox.margin>
-                            <effect>
-                                <DropShadow color="#00000040" height="11.0" offsetX="3.0" offsetY="2.0" radius="5.0" spread="0.4" width="11.0" />
-                            </effect>
-                        </SVGPath>
-                        <SVGPath fx:id="btnREmpleados" content="M11.6,11.6H3.9c-2.2,0-3.9,1.7-3.9,3.9v7.7h2.6v-7.7c0-0.8,0.5-1.3,1.3-1.3h7.7c0.8,0,1.3,0.5,1.3,1.3v7.7h2.6v-7.7  C15.5,13.3,13.8,11.6,11.6,11.6z M7.7,10.3c2.8,0,5.2-2.3,5.2-5.2S10.6,0,7.7,0S2.6,2.3,2.6,5.2S4.9,10.3,7.7,10.3z M7.7,2.6  c1.4,0,2.6,1.2,2.6,2.6S9.2,7.7,7.7,7.7S5.2,6.6,5.2,5.2S6.3,2.6,7.7,2.6z" onMouseClicked="#mostrarRegistrosEmpleados">
-                            <VBox.margin>
-                                <Insets bottom="35.0" left="40.0" />
-                            </VBox.margin>
-                            <effect>
-                                <DropShadow color="#00000040" height="11.0" offsetX="3.0" offsetY="2.0" radius="5.0" spread="0.4" width="11.0" />
-                            </effect>
-                        </SVGPath>
-                        <SVGPath fx:id="btnRHorarios" content="M10.5,5.8H8.2V14h8.2v-2.3h-5.8V5.8z M11.7,0C5.2,0,0,5.2,0,11.7c0,6.4,5.2,11.7,11.7,11.7c6.4,0,11.7-5.2,11.7-11.7  C23.3,5.2,18.1,0,11.7,0z M11.7,21c-5.2,0-9.3-4.2-9.3-9.3c0-5.2,4.2-9.3,9.3-9.3c5.2,0,9.3,4.2,9.3,9.3C21,16.8,16.8,21,11.7,21z" onMouseClicked="#mostrarRegistrosHorarios">
-                            <VBox.margin>
-                                <Insets bottom="35.0" left="35.0" />
-                            </VBox.margin>
-                            <effect>
-                                <DropShadow color="#00000040" height="11.0" offsetX="3.0" offsetY="2.0" radius="5.0" spread="0.4" width="11.0" />
-                            </effect>
-                        </SVGPath>
-                        <SVGPath fx:id="btnDiasLaborales" content="M20.4444 6.41176C20.4444 3.97522 18.579 2 16.2778 2H10.7222C8.42104 2 6.55556 3.97522 6.55556 6.41176H5.16667C2.86549 6.41176 1 8.38699 1 10.8235V22.5882C1 25.0249 2.86549 27 5.16667 27H21.8333C24.1346 27 26 25.0249 26 22.5882V10.8235C26 8.38699 24.1346 6.41176 21.8333 6.41176H20.4444ZM16.2778 4.94118H10.7222C9.95517 4.94118 9.33333 5.59959 9.33333 6.41176H17.6667C17.6667 5.59959 17.0449 4.94118 16.2778 4.94118ZM5.16667 9.35294H21.8333C22.6004 9.35294 23.2222 10.0114 23.2222 10.8235V22.5882C23.2222 23.4004 22.6004 24.0588 21.8333 24.0588H5.16667C4.39961 24.0588 3.77778 23.4004 3.77778 22.5882V10.8235C3.77778 10.0114 4.39961 9.35294 5.16667 9.35294Z" onMouseClicked="#mostrarRegistrosDiasLaborales">
-                            <VBox.margin>
-                                <Insets bottom="35.0" left="35.0" />
-                            </VBox.margin>
-                            <effect>
-                                <DropShadow color="#00000040" height="11.0" offsetX="3.0" offsetY="2.0" radius="5.0" spread="0.4" width="11.0" />
-                            </effect>
-                        </SVGPath>
-                        <SVGPath fx:id="btnAsistencias" content="M17.25 13.9125C16.8875 13.55 16.2875 13.55 15.925 13.9125L10.4875 19.35L8.5 17.3625C8.1375 17 7.5375 17 7.175 17.3625C6.8125 17.725 6.8125 18.325 7.175 18.6875L9.6 21.1125C10.0875 21.6 10.875 21.6 11.3625 21.1125L17.2375 15.2375C17.6125 14.875 17.6125 14.275 17.25 13.9125V13.9125ZM21 4.5H19.75V3.25C19.75 2.5625 19.1875 2 18.5 2C17.8125 2 17.25 2.5625 17.25 3.25V4.5H7.25V3.25C7.25 2.5625 6.6875 2 6 2C5.3125 2 4.75 2.5625 4.75 3.25V4.5H3.5C2.1125 4.5 1.0125 5.625 1.0125 7L1 24.5C1 25.875 2.1125 27 3.5 27H21C22.375 27 23.5 25.875 23.5 24.5V7C23.5 5.625 22.375 4.5 21 4.5ZM19.75 24.5H4.75C4.0625 24.5 3.5 23.9375 3.5 23.25V10.75H21V23.25C21 23.9375 20.4375 24.5 19.75 24.5Z" onMouseClicked="#mostrarRegistrosAsistencias">
-                            <VBox.margin>
-                                <Insets bottom="35.0" left="35.0" />
-                            </VBox.margin>
-                            <effect>
-                                <DropShadow color="#00000040" height="11.0" offsetX="3.0" offsetY="2.0" radius="5.0" spread="0.4" width="11.0" />
-                            </effect>
-                        </SVGPath>
-                        <SVGPath fx:id="btnRJustificantes" content="M20.6,1.9L18.8,0l-1.9,1.9L15,0l-1.9,1.9L11.2,0L9.4,1.9L7.5,0L5.6,1.9L3.8,0v17.5H1.2c-0.7,0-1.2,0.6-1.2,1.2v2.5  C0,23.3,1.7,25,3.8,25h15c2.1,0,3.8-1.7,3.8-3.8V0L20.6,1.9z M15,22.5H3.8c-0.7,0-1.2-0.6-1.2-1.2V20H15V22.5z M20,21.2  c0,0.7-0.6,1.2-1.2,1.2s-1.2-0.6-1.2-1.2v-2.5c0-0.7-0.6-1.2-1.2-1.2h-10V3.7H20V21.2z M17.5,8.8c0.7,0,1.2-0.6,1.2-1.2  c0-0.7-0.6-1.2-1.2-1.2c-0.7,0-1.2,0.6-1.2,1.2C16.2,8.2,16.8,8.8,17.5,8.8z M8.8,8.8h5c0.7,0,1.2-0.6,1.2-1.2s-0.6-1.2-1.2-1.2h-5  c-0.7,0-1.2,0.6-1.2,1.2S8.1,8.8,8.8,8.8z M17.5,12.5c0.7,0,1.2-0.6,1.2-1.2S18.2,10,17.5,10c-0.7,0-1.2,0.6-1.2,1.2  S16.8,12.5,17.5,12.5z M8.8,12.5h5c0.7,0,1.2-0.6,1.2-1.2S14.4,10,13.8,10h-5c-0.7,0-1.2,0.6-1.2,1.2S8.1,12.5,8.8,12.5z" onMouseClicked="#mostrarRegistrosJustificantes">
-                            <VBox.margin>
-                                <Insets bottom="35.0" left="35.0" />
-                            </VBox.margin>
-                            <effect>
-                                <DropShadow color="#00000040" height="11.0" offsetX="3.0" offsetY="2.0" radius="5.0" spread="0.4" width="11.0" />
-                            </effect>
-                        </SVGPath>
-                        <SVGPath fx:id="btnConfiguraciones" content="M22.4,10c-0.7-0.1-1.4-0.2-2.1-0.3c-0.2,0-0.2-0.1-0.2-0.2c-0.2-0.5-0.4-1.1-0.6-1.6c-0.1-0.1-0.1-0.2,0-0.3  c0.4-0.5,0.9-1,1.3-1.6c0.4-0.5,0.4-1,0-1.5c-0.3-0.3-0.5-0.6-0.8-0.9c-0.5-0.5-0.9-0.6-1.5-0.2C18,3.7,17.4,4,16.8,4.4  c-0.1,0.1-0.2,0.1-0.3,0c-0.8-0.5-1.6-0.9-2.6-1.2c-0.1,0-0.2-0.1-0.2-0.2c-0.1-0.7-0.2-1.4-0.4-2.1c-0.1-0.5-0.5-0.9-1-0.9  c-0.4,0-0.9,0-1.3,0c-0.6,0-1,0.3-1.1,0.9c-0.1,0.7-0.2,1.3-0.3,2c0,0.2-0.1,0.2-0.3,0.3C8.7,3.5,8,3.8,7.3,4.1  C7.2,4.2,7.1,4.2,7,4.1C6.4,3.7,5.9,3.3,5.3,2.9C4.8,2.5,4.3,2.6,3.9,3C3.6,3.3,3.3,3.6,3.1,3.8c-0.5,0.5-0.5,1-0.1,1.5  C3.3,5.9,3.7,6.4,4.1,7c0.1,0.1,0.1,0.2,0,0.3C3.7,8,3.4,8.7,3.2,9.4c0,0.1-0.1,0.2-0.2,0.2C2.3,9.7,1.6,9.8,0.9,10  C0.3,10,0,10.4,0,11c0,0.4,0,0.9,0,1.3c0,0.6,0.3,1,0.9,1.1c0.7,0.1,1.4,0.2,2.1,0.3c0.1,0,0.2,0.1,0.2,0.2c0.2,0.6,0.4,1.1,0.6,1.7  c0.1,0.1,0.1,0.2,0,0.3C3.4,16.5,3,17,2.5,17.5c-0.4,0.5-0.4,1,0,1.4c0.3,0.3,0.5,0.6,0.8,0.9c0.5,0.5,0.9,0.6,1.5,0.2  C5.4,19.7,6,19.4,6.5,19c0.2-0.1,0.3-0.1,0.4,0c0.7,0.5,1.5,0.8,2.4,1.1c0.2,0.1,0.3,0.2,0.3,0.3c0.1,0.7,0.2,1.3,0.3,2  c0.1,0.6,0.5,0.9,1.1,0.9c0.4,0,0.9,0,1.3,0c0.5,0,0.9-0.3,1-0.9c0.1-0.7,0.3-1.4,0.4-2.1c0-0.2,0.1-0.2,0.3-0.3  c0.7-0.3,1.4-0.5,2-0.8c0.1-0.1,0.2-0.1,0.3,0c0.6,0.4,1.1,0.8,1.7,1.2c0.2,0.1,0.4,0.2,0.6,0.3c0.3,0,0.6-0.2,0.8-0.4  c0.3-0.3,0.6-0.6,0.9-0.9c0.5-0.5,0.5-0.9,0.1-1.5c-0.4-0.6-0.8-1.1-1.2-1.7c-0.1-0.1-0.1-0.2,0-0.3c0.4-0.7,0.7-1.4,0.9-2.1  c0-0.1,0.1-0.2,0.2-0.2c0.7-0.1,1.4-0.2,2.1-0.3c0.6-0.1,0.9-0.5,0.9-1.1c0-0.4,0-0.9,0-1.3C23.3,10.4,23,10,22.4,10z M11.7,16  c-2.4,0-4.4-2-4.4-4.3c0-2.4,1.9-4.4,4.4-4.4c2.4,0,4.4,2,4.4,4.4C16.1,14.1,14.1,16,11.7,16z" onMouseClicked="#mostrarConfiguraciones">
+                  <Pane fx:id="paneHome" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#mostrarInicio" prefHeight="49.0" prefWidth="96.09">
+                     <children>
+                              <SVGPath fx:id="btnHome" content="M11.8043 25.4989V17.9937H17.8085V25.4989C17.8085 26.3245 18.484 27 19.3096 27H23.8127C24.6383 27 25.3138 26.3245 25.3138 25.4989V14.9916H27.8656C28.5561 14.9916 28.8863 14.136 28.3609 13.6857L15.8121 2.38277C15.2417 1.87241 14.3711 1.87241 13.8007 2.38277L1.25195 13.6857C0.741597 14.136 1.05682 14.9916 1.7473 14.9916H4.29909V25.4989C4.29909 26.3245 4.97456 27 5.80014 27H10.3033C11.1289 27 11.8043 26.3245 11.8043 25.4989Z" layoutX="35.0" layoutY="10.0" onMouseClicked="#mostrarInicio">
+                                  <effect>
+                                      <DropShadow color="#00000040" height="11.0" offsetX="3.0" offsetY="2.0" radius="5.0" spread="0.4" width="11.0" />
+                                  </effect>
+                              </SVGPath>
+                     </children>
                      <VBox.margin>
-                        <Insets left="35.0" right="35.0" />
-                     </VBox.margin></SVGPath>
-                        <Label fx:id="lblHora" text="08">
-                            <font>
-                                <Font name="Poppins Regular" size="36.0" />
-                            </font>
-                            <padding>
-                                <Insets left="15.0" />
-                            </padding>
-                            <VBox.margin>
-                                <Insets top="21.0" />
-                            </VBox.margin>
+                        <Insets top="5.0" />
+                     </VBox.margin>
+                  </Pane>
+                  <Pane fx:id="paneREmpleados" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#mostrarRegistrosEmpleados" prefHeight="49.0" prefWidth="96.09">
+                     <children>
+                              <SVGPath fx:id="btnREmpleados" content="M11.6,11.6H3.9c-2.2,0-3.9,1.7-3.9,3.9v7.7h2.6v-7.7c0-0.8,0.5-1.3,1.3-1.3h7.7c0.8,0,1.3,0.5,1.3,1.3v7.7h2.6v-7.7  C15.5,13.3,13.8,11.6,11.6,11.6z M7.7,10.3c2.8,0,5.2-2.3,5.2-5.2S10.6,0,7.7,0S2.6,2.3,2.6,5.2S4.9,10.3,7.7,10.3z M7.7,2.6  c1.4,0,2.6,1.2,2.6,2.6S9.2,7.7,7.7,7.7S5.2,6.6,5.2,5.2S6.3,2.6,7.7,2.6z" layoutX="40.0" layoutY="10.0" onMouseClicked="#mostrarRegistrosEmpleados">
+                                  <effect>
+                                      <DropShadow color="#00000040" height="11.0" offsetX="3.0" offsetY="2.0" radius="5.0" spread="0.4" width="11.0" />
+                                  </effect>
+                              </SVGPath>
+                     </children>
+                     <VBox.margin>
+                        <Insets top="5.0" />
+                     </VBox.margin>
+                  </Pane>
+                  <Pane fx:id="paneRHorarios" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#mostrarRegistrosHorarios" prefHeight="49.0" prefWidth="96.09">
+                     <children>
+                              <SVGPath fx:id="btnRHorarios" content="M10.5,5.8H8.2V14h8.2v-2.3h-5.8V5.8z M11.7,0C5.2,0,0,5.2,0,11.7c0,6.4,5.2,11.7,11.7,11.7c6.4,0,11.7-5.2,11.7-11.7  C23.3,5.2,18.1,0,11.7,0z M11.7,21c-5.2,0-9.3-4.2-9.3-9.3c0-5.2,4.2-9.3,9.3-9.3c5.2,0,9.3,4.2,9.3,9.3C21,16.8,16.8,21,11.7,21z" layoutX="35.0" layoutY="10.0" onMouseClicked="#mostrarRegistrosHorarios">
+                                  <effect>
+                                      <DropShadow color="#00000040" height="11.0" offsetX="3.0" offsetY="2.0" radius="5.0" spread="0.4" width="11.0" />
+                                  </effect>
+                              </SVGPath>
+                     </children>
+                     <VBox.margin>
+                        <Insets top="5.0" />
+                     </VBox.margin>
+                  </Pane>
+                  <Pane fx:id="paneDiasLaborales" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#mostrarRegistrosDiasLaborales" prefHeight="49.0" prefWidth="96.09">
+                     <children>
+                              <SVGPath fx:id="btnDiasLaborales" content="M20.4444 6.41176C20.4444 3.97522 18.579 2 16.2778 2H10.7222C8.42104 2 6.55556 3.97522 6.55556 6.41176H5.16667C2.86549 6.41176 1 8.38699 1 10.8235V22.5882C1 25.0249 2.86549 27 5.16667 27H21.8333C24.1346 27 26 25.0249 26 22.5882V10.8235C26 8.38699 24.1346 6.41176 21.8333 6.41176H20.4444ZM16.2778 4.94118H10.7222C9.95517 4.94118 9.33333 5.59959 9.33333 6.41176H17.6667C17.6667 5.59959 17.0449 4.94118 16.2778 4.94118ZM5.16667 9.35294H21.8333C22.6004 9.35294 23.2222 10.0114 23.2222 10.8235V22.5882C23.2222 23.4004 22.6004 24.0588 21.8333 24.0588H5.16667C4.39961 24.0588 3.77778 23.4004 3.77778 22.5882V10.8235C3.77778 10.0114 4.39961 9.35294 5.16667 9.35294Z" layoutX="35.0" layoutY="10.0" onMouseClicked="#mostrarRegistrosDiasLaborales">
+                                  <effect>
+                                      <DropShadow color="#00000040" height="11.0" offsetX="3.0" offsetY="2.0" radius="5.0" spread="0.4" width="11.0" />
+                                  </effect>
+                              </SVGPath>
+                     </children>
+                     <VBox.margin>
+                        <Insets top="5.0" />
+                     </VBox.margin>
+                  </Pane>
+                  <Pane fx:id="paneAsistencias" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#mostrarRegistrosAsistencias" prefHeight="49.0" prefWidth="96.09">
+                     <children>
+                              <SVGPath fx:id="btnAsistencias" content="M17.25 13.9125C16.8875 13.55 16.2875 13.55 15.925 13.9125L10.4875 19.35L8.5 17.3625C8.1375 17 7.5375 17 7.175 17.3625C6.8125 17.725 6.8125 18.325 7.175 18.6875L9.6 21.1125C10.0875 21.6 10.875 21.6 11.3625 21.1125L17.2375 15.2375C17.6125 14.875 17.6125 14.275 17.25 13.9125V13.9125ZM21 4.5H19.75V3.25C19.75 2.5625 19.1875 2 18.5 2C17.8125 2 17.25 2.5625 17.25 3.25V4.5H7.25V3.25C7.25 2.5625 6.6875 2 6 2C5.3125 2 4.75 2.5625 4.75 3.25V4.5H3.5C2.1125 4.5 1.0125 5.625 1.0125 7L1 24.5C1 25.875 2.1125 27 3.5 27H21C22.375 27 23.5 25.875 23.5 24.5V7C23.5 5.625 22.375 4.5 21 4.5ZM19.75 24.5H4.75C4.0625 24.5 3.5 23.9375 3.5 23.25V10.75H21V23.25C21 23.9375 20.4375 24.5 19.75 24.5Z" layoutX="35.0" layoutY="10.0" onMouseClicked="#mostrarRegistrosAsistencias">
+                                  <effect>
+                                      <DropShadow color="#00000040" height="11.0" offsetX="3.0" offsetY="2.0" radius="5.0" spread="0.4" width="11.0" />
+                                  </effect>
+                              </SVGPath>
+                     </children>
+                     <VBox.margin>
+                        <Insets top="5.0" />
+                     </VBox.margin>
+                  </Pane>
+                  <Pane fx:id="paneRJustificantes" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#mostrarRegistrosJustificantes" prefHeight="49.0" prefWidth="96.09">
+                     <children>
+                              <SVGPath fx:id="btnRJustificantes" content="M20.6,1.9L18.8,0l-1.9,1.9L15,0l-1.9,1.9L11.2,0L9.4,1.9L7.5,0L5.6,1.9L3.8,0v17.5H1.2c-0.7,0-1.2,0.6-1.2,1.2v2.5  C0,23.3,1.7,25,3.8,25h15c2.1,0,3.8-1.7,3.8-3.8V0L20.6,1.9z M15,22.5H3.8c-0.7,0-1.2-0.6-1.2-1.2V20H15V22.5z M20,21.2  c0,0.7-0.6,1.2-1.2,1.2s-1.2-0.6-1.2-1.2v-2.5c0-0.7-0.6-1.2-1.2-1.2h-10V3.7H20V21.2z M17.5,8.8c0.7,0,1.2-0.6,1.2-1.2  c0-0.7-0.6-1.2-1.2-1.2c-0.7,0-1.2,0.6-1.2,1.2C16.2,8.2,16.8,8.8,17.5,8.8z M8.8,8.8h5c0.7,0,1.2-0.6,1.2-1.2s-0.6-1.2-1.2-1.2h-5  c-0.7,0-1.2,0.6-1.2,1.2S8.1,8.8,8.8,8.8z M17.5,12.5c0.7,0,1.2-0.6,1.2-1.2S18.2,10,17.5,10c-0.7,0-1.2,0.6-1.2,1.2  S16.8,12.5,17.5,12.5z M8.8,12.5h5c0.7,0,1.2-0.6,1.2-1.2S14.4,10,13.8,10h-5c-0.7,0-1.2,0.6-1.2,1.2S8.1,12.5,8.8,12.5z" layoutX="35.0" layoutY="10.0" onMouseClicked="#mostrarRegistrosJustificantes">
+                                  <effect>
+                                      <DropShadow color="#00000040" height="11.0" offsetX="3.0" offsetY="2.0" radius="5.0" spread="0.4" width="11.0" />
+                                  </effect>
+                              </SVGPath>
+                     </children>
+                     <VBox.margin>
+                        <Insets top="5.0" />
+                     </VBox.margin>
+                  </Pane>
+                  <Pane fx:id="paneReloj" prefHeight="197.0" prefWidth="97.0">
+                     <children>
+                              <Label fx:id="lblHora" layoutY="85.0" text="08">
+                                  <font>
+                                      <Font name="Poppins Regular" size="36.0" />
+                                  </font>
+                                  <padding>
+                                      <Insets left="15.0" />
+                                  </padding>
+                                  <effect>
+                                      <DropShadow color="#00000040" height="11.0" offsetX="3.0" offsetY="2.0" radius="5.0" spread="0.4" width="11.0" />
+                                  </effect>
+                              </Label>
+                              <HBox layoutY="127.0" prefHeight="8.0" prefWidth="97.0">
+                                  <children>
+                                      <Label fx:id="lblMinutos" layoutY="15.0" prefHeight="51.0" prefWidth="48.0" text="35">
+                                          <font>
+                                              <Font name="Poppins Regular" size="36.0" />
+                                          </font>
+                                          <effect>
+                                              <DropShadow color="#00000040" height="11.0" offsetX="3.0" offsetY="2.0" radius="5.0" spread="0.4" width="11.0" />
+                                          </effect>
+                                      </Label>
+                                      <Label fx:id="lblMeridian" alignment="BOTTOM_CENTER" contentDisplay="TEXT_ONLY" layoutY="15.0" text="PM">
+                                          <HBox.margin>
+                                              <Insets top="22.0" />
+                                          </HBox.margin>
+                                          <effect>
+                                              <DropShadow color="#00000040" height="11.0" offsetX="3.0" offsetY="2.0" radius="5.0" spread="0.4" width="11.0" />
+                                          </effect>
+                                      </Label>
+                                  </children>
+                                  <padding>
+                                      <Insets bottom="15.0" left="15.0" />
+                                  </padding>
+                              </HBox>
+                        <Label fx:id="lblFecha" layoutX="7.0" layoutY="175.0" text="Mie. Nov, 28">
                             <effect>
                                 <DropShadow color="#00000040" height="11.0" offsetX="3.0" offsetY="2.0" radius="5.0" spread="0.4" width="11.0" />
                             </effect>
                         </Label>
-                        <HBox prefHeight="50.0" prefWidth="97.0">
-                            <children>
-                                <Label fx:id="lblMinutos" prefHeight="25.0" prefWidth="44.0" text="35">
-                                    <font>
-                                        <Font name="Poppins Regular" size="36.0" />
-                                    </font>
-                                    <effect>
-                                        <DropShadow color="#00000040" height="11.0" offsetX="3.0" offsetY="2.0" radius="5.0" spread="0.4" width="11.0" />
-                                    </effect>
-                                </Label>
-                                <Label fx:id="lblMeridian" alignment="BOTTOM_CENTER" contentDisplay="TEXT_ONLY" text="PM">
-                                    <HBox.margin>
-                                        <Insets top="22.0" />
-                                    </HBox.margin>
-                                    <effect>
-                                        <DropShadow color="#00000040" height="11.0" offsetX="3.0" offsetY="2.0" radius="5.0" spread="0.4" width="11.0" />
-                                    </effect>
-                                </Label>
-                            </children>
-                            <padding>
-                                <Insets bottom="15.0" left="15.0" />
-                            </padding>
-                        </HBox>
+                     </children>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                     <padding>
+                        <Insets top="20.0" />
+                     </padding>
+                  </Pane>
                     </children>
                     <effect>
                         <Blend mode="LIGHTEN" opacity="0.7" />
@@ -146,7 +180,7 @@
                         <AnchorPane maxHeight="504.0" maxWidth="864.0" minHeight="508.0" minWidth="864.0" prefHeight="508.0" prefWidth="864.0">
                            <children>
                               <AnchorPane blendMode="LIGHTEN" maxHeight="504.0" maxWidth="864.0" minHeight="508.0" minWidth="864.0" opacity="0.7" prefHeight="508.0" prefWidth="864.0" style="-fx-background-color: #fff;" />
-                              <AnchorPane maxHeight="508.0" maxWidth="864.0" minHeight="508.0" minWidth="864.0" prefHeight="508.0" prefWidth="864.0">
+                              <AnchorPane maxHeight="508.0" maxWidth="864.0" minHeight="508.0" minWidth="864.0" prefHeight="508.0" prefWidth="864.0" style="-fx-border-radius: 4px;">
                                  <children>
                                     <VBox fx:id="vBoxREmpleados" opacity="0.85" visible="false">
                                        <effect>
@@ -516,38 +550,6 @@
                                           </HBox>
                                        </children>
                                     </VBox>
-                                    <VBox fx:id="vboxConfiguraciones" maxHeight="510.0" maxWidth="864.0" minHeight="510.0" minWidth="864.0" opacity="0.85" prefHeight="510.0" prefWidth="864.0" visible="false">
-                                       <effect>
-                                          <Blend mode="LIGHTEN" opacity="0.85" />
-                                       </effect>
-                                       <children>
-                                          <HBox prefHeight="100.0" prefWidth="200.0">
-                                             <children>
-                                                <ImageView fitHeight="150.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
-                                                   <image>
-                                                      <Image url="@images/Collapse_icon.png" />
-                                                   </image>
-                                                   <HBox.margin>
-                                                      <Insets />
-                                                   </HBox.margin>
-                                                </ImageView>
-                                                <JFXTextField fx:id="txtPassword" focusColor="#ff4e10" labelFloat="true" prefHeight="508.0" prefWidth="432.0" promptText="Contraseña de Root MySQL" unFocusColor="#5776c8">
-                                                   <HBox.margin>
-                                                      <Insets bottom="25.0" left="50.0" top="25.0" />
-                                                   </HBox.margin>
-                                                </JFXTextField>
-                                             </children>
-                                             <VBox.margin>
-                                                <Insets bottom="40.0" left="70.0" right="70.0" top="125.0" />
-                                             </VBox.margin>
-                                          </HBox>
-                                          <JFXButton fx:id="btnSetPass" maxWidth="200.0" minWidth="200.0" onMouseClicked="#iniciarConexion" prefWidth="200.0" ripplerFill="#fe81bb" style="-fx-border-color: #000; -fx-border-radius: 4px;" text="Aplicar" textFill="#ff4e10">
-                                             <VBox.margin>
-                                                <Insets left="332.0" right="332.0" />
-                                             </VBox.margin>
-                                          </JFXButton>
-                                       </children>
-                                    </VBox>
                                  </children>
                               </AnchorPane>
                            </children>
@@ -557,19 +559,36 @@
                         </AnchorPane>
                           </children>
                       </VBox>
-                  <VBox fx:id="vboxHome" opacity="0.85" prefHeight="534.0" prefWidth="204.0" style="-fx-background-color: #fff;" AnchorPane.leftAnchor="27.0" AnchorPane.topAnchor="42.0">
+                  <VBox fx:id="vboxHome" opacity="0.85" prefHeight="534.0" prefWidth="850.0" style="-fx-background-color: #fff; -fx-border-radius: 10px;" AnchorPane.bottomAnchor="42.0" AnchorPane.leftAnchor="27.0" AnchorPane.rightAnchor="27.0" AnchorPane.topAnchor="42.0">
                      <effect>
                         <Blend mode="LIGHTEN" opacity="0.85" />
                      </effect>
                      <children>
-                        <ImageView fitHeight="1000.0" fitWidth="650.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="400.0" fitWidth="650.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@images/logini.png" />
                            </image>
                            <VBox.margin>
-                              <Insets left="100.0" right="100.0" top="20.0" />
+                              <Insets left="160.0" right="100.0" />
                            </VBox.margin>
                         </ImageView>
+                        <HBox prefHeight="100.0" prefWidth="200.0">
+                           <children>
+                              <JFXPasswordField fx:id="txtPassword" focusColor="#ff4e10" labelFloat="true" prefHeight="508.0" prefWidth="432.0" promptText="Contraseña de Root MySQL" unFocusColor="#5776c8">
+                                 <HBox.margin>
+                                    <Insets bottom="25.0" left="50.0" top="25.0" />
+                                 </HBox.margin>
+                              </JFXPasswordField>
+                              <JFXButton fx:id="btnSetPass" maxWidth="200.0" minWidth="200.0" onMouseClicked="#iniciarConexion" prefWidth="200.0" ripplerFill="#fe81bb" style="-fx-border-color: #000; -fx-border-radius: 4px;" text="Aplicar" textFill="#ff4e10">
+                                 <HBox.margin>
+                                    <Insets left="30.0" top="33.5" />
+                                 </HBox.margin>
+                              </JFXButton>
+                           </children>
+                           <VBox.margin>
+                              <Insets bottom="40.0" left="70.0" right="70.0" />
+                           </VBox.margin>
+                        </HBox>
                      </children>
                   </VBox>
                </children>
