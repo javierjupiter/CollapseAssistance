@@ -3,29 +3,18 @@ import com.jfoenix.validation.RequiredFieldValidator;
 import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Paint;
-import javafx.scene.shape.SVGPath;
 import javafx.util.Duration;
-
 import javax.swing.*;
-import java.net.URL;
 import java.sql.Connection;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
-import java.util.ResourceBundle;
 
 public class ControladorUI {
-    @FXML
-    private ResourceBundle resources;
-
-    @FXML
-    private URL location;
 
     private Connection connection;
 
@@ -188,8 +177,6 @@ public class ControladorUI {
     @FXML
     private VBox vboxRJustificantes;
     @FXML
-    private VBox vboxRIncidencias;
-    @FXML
     private VBox vboxHorarios;
     @FXML
     private VBox vboxDiasLaborales;
@@ -207,37 +194,25 @@ public class ControladorUI {
     @FXML
     private JFXTextField txtEstatusHorarios;
 
-    @FXML
-    private JFXButton btnGuardarHorarios;
-
     private void validacionTextFildHorarios() {
         RequiredFieldValidator validatorClave = new RequiredFieldValidator();
         txtIdHorarioHorarios.getValidators().add(validatorClave);
         txtDescripcionHorarioHorarios.getValidators().add(validatorClave);
         txtEstatusHorarios.getValidators().add(validatorClave);
         validatorClave.setMessage("¡Campo Obligatoro!");
-        txtIdHorarioHorarios.focusedProperty().addListener(new ChangeListener<Boolean>() {
-            @Override
-            public void changed(ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) {
-                if (!newValue) {
-                    txtIdHorarioHorarios.validate();
-                }
+        txtIdHorarioHorarios.focusedProperty().addListener((observable, oldValue, newValue) -> {
+            if (!newValue) {
+                txtIdHorarioHorarios.validate();
             }
         });
-        txtDescripcionHorarioHorarios.focusedProperty().addListener(new ChangeListener<Boolean>() {
-            @Override
-            public void changed(ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) {
-                if (!newValue) {
-                    txtDescripcionHorarioHorarios.validate();
-                }
+        txtDescripcionHorarioHorarios.focusedProperty().addListener((observable, oldValue, newValue) -> {
+            if (!newValue) {
+                txtDescripcionHorarioHorarios.validate();
             }
         });
-        txtEstatusHorarios.focusedProperty().addListener(new ChangeListener<Boolean>() {
-            @Override
-            public void changed(ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) {
-                if (!newValue) {
-                    txtEstatusHorarios.validate();
-                }
+        txtEstatusHorarios.focusedProperty().addListener((observable, oldValue, newValue) -> {
+            if (!newValue) {
+                txtEstatusHorarios.validate();
             }
         });
     }
@@ -252,33 +227,21 @@ public class ControladorUI {
 
     //Inicia propiedades de registro de Incidencias
     @FXML
-    private RegistroIncidenciasUI objRegistroIncidenciasUI;
-    @FXML
     private JFXTextField txtClaveRegistroIncidencias;
     @FXML
-    private JFXDatePicker pickerIncidenciaFechaRegistroIncidencias;
+    private JFXComboBox<String> comboTipoRegistroIncidencias;
     @FXML
-    private JFXDatePicker pickerInsercionRegistroIncidencias;
-    @FXML
-    private JFXComboBox comboTipoRegistroIncidencias;
-    @FXML
-    private JFXComboBox comboStatusRegistroIncidencias;
-    @FXML
-    private JFXButton btnGuardarRegistroIncidencias;
+    private JFXComboBox<String> comboStatusRegistroIncidencias;
 
     private void validarTextFieldIncidencias(){
         RequiredFieldValidator validatorClave = new RequiredFieldValidator();
         txtClaveRegistroIncidencias.getValidators().add(validatorClave);
         validatorClave.setMessage("¡Campo Obligatoro!");
-        txtClaveRegistroIncidencias.focusedProperty().addListener(new ChangeListener<Boolean>() {
-            @Override
-            public void changed(ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) {
-                if (!newValue) {
+        txtClaveRegistroIncidencias.focusedProperty().addListener((observable, oldValue, newValue) -> {
+            if (!newValue) {
 
-                    txtClaveRegistroIncidencias.validate();
-                }
+                txtClaveRegistroIncidencias.validate();
             }
-
         });
     }
 
@@ -302,8 +265,6 @@ public class ControladorUI {
     private JFXComboBox<String> comboStatusDiasLaborables;
     @FXML
     private JFXDatePicker pickerFechaLaborales;
-    @FXML
-    private JFXButton btnGuardarDiasLaborables;
 
     @FXML
     public void hacerInserccionesDiasNoLaborales(){
@@ -327,14 +288,10 @@ public class ControladorUI {
         RequiredFieldValidator validatorClave = new RequiredFieldValidator();
         txtMotivoLaborales.getValidators().add(validatorClave);
         validatorClave.setMessage("¡Campo Obligatoro!");
-        txtMotivoLaborales.focusedProperty().addListener(new ChangeListener<Boolean>() {
-            @Override
-            public void changed(ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) {
-                if (!newValue) {
-                    txtMotivoLaborales.validate();
-                }
+        txtMotivoLaborales.focusedProperty().addListener((observable, oldValue, newValue) -> {
+            if (!newValue) {
+                txtMotivoLaborales.validate();
             }
-
         });
     }
 
@@ -351,8 +308,6 @@ public class ControladorUI {
     private JFXComboBox<String> comboMunicipioREmpleados;
     @FXML
     private JFXDatePicker pickerFechaREmpleados;
-    @FXML
-    private JFXButton btnGuardarREmpleados;
     @FXML
     private JFXTextField txtNombresREmpleados;
     @FXML
@@ -442,8 +397,8 @@ public class ControladorUI {
         BD_Consultas consultas = new BD_Consultas();
         consultas.hacerConsultasMunicipios(connection, choose);
         Municipios[] municipios = consultas.getMunicipios();
-        for (int i = 0; i < municipios.length; i++){
-            comboMunicipioREmpleados.getItems().add(municipios[i].getNombre());
+        for (Municipios municipio : municipios) {
+            comboMunicipioREmpleados.getItems().add(municipio.getNombre());
         }
         comboMunicipioREmpleados.setDisable(false);
     }
@@ -600,76 +555,49 @@ public class ControladorUI {
         txtApellidoPaternoREmpleados.getValidators().add(validatorClave);
         txtNumeroIntREmpleados.getValidators().add(validatorClave);
         validatorClave.setMessage("¡Campo Obligatoro!");
-        txtIdEmpleadoREmpleados.focusedProperty().addListener(new ChangeListener<Boolean>() {
-            @Override
-            public void changed(ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) {
-                if (!newValue) {
-                    txtIdEmpleadoREmpleados.validate();
-                }
+        txtIdEmpleadoREmpleados.focusedProperty().addListener((observable, oldValue, newValue) -> {
+            if (!newValue) {
+                txtIdEmpleadoREmpleados.validate();
             }
         });
-        txtCalleREmpleados.focusedProperty().addListener(new ChangeListener<Boolean>() {
-            @Override
-            public void changed(ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) {
-                if (!newValue) {
-                    txtCalleREmpleados.validate();
-                }
+        txtCalleREmpleados.focusedProperty().addListener((observable, oldValue, newValue) -> {
+            if (!newValue) {
+                txtCalleREmpleados.validate();
             }
         });
-        txtColoniaREmpleados.focusedProperty().addListener(new ChangeListener<Boolean>() {
-            @Override
-            public void changed(ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) {
-                if (!newValue) {
-                    txtColoniaREmpleados.validate();
-                }
+        txtColoniaREmpleados.focusedProperty().addListener((observable, oldValue, newValue) -> {
+            if (!newValue) {
+                txtColoniaREmpleados.validate();
             }
         });
-        txtNombresREmpleados.focusedProperty().addListener(new ChangeListener<Boolean>() {
-            @Override
-            public void changed(ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) {
-                if (!newValue) {
-                    txtNombresREmpleados.validate();
-                }
+        txtNombresREmpleados.focusedProperty().addListener((observable, oldValue, newValue) -> {
+            if (!newValue) {
+                txtNombresREmpleados.validate();
             }
         });
-        txtCurpREmpleados.focusedProperty().addListener(new ChangeListener<Boolean>() {
-            @Override
-            public void changed(ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) {
-                if (!newValue) {
-                    txtCurpREmpleados.validate();
-                }
+        txtCurpREmpleados.focusedProperty().addListener((observable, oldValue, newValue) -> {
+            if (!newValue) {
+                txtCurpREmpleados.validate();
             }
         });
-        txtNumeroExtREmpleados.focusedProperty().addListener(new ChangeListener<Boolean>() {
-            @Override
-            public void changed(ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) {
-                if (!newValue) {
-                    txtNumeroExtREmpleados.validate();
-                }
+        txtNumeroExtREmpleados.focusedProperty().addListener((observable, oldValue, newValue) -> {
+            if (!newValue) {
+                txtNumeroExtREmpleados.validate();
             }
         });
-        txtCodigoPostalREmpleados.focusedProperty().addListener(new ChangeListener<Boolean>() {
-            @Override
-            public void changed(ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) {
-                if (!newValue) {
-                    txtCodigoPostalREmpleados.validate();
-                }
+        txtCodigoPostalREmpleados.focusedProperty().addListener((observable, oldValue, newValue) -> {
+            if (!newValue) {
+                txtCodigoPostalREmpleados.validate();
             }
         });
-        txtApellidoPaternoREmpleados.focusedProperty().addListener(new ChangeListener<Boolean>() {
-            @Override
-            public void changed(ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) {
-                if (!newValue) {
-                    txtApellidoPaternoREmpleados.validate();
-                }
+        txtApellidoPaternoREmpleados.focusedProperty().addListener((observable, oldValue, newValue) -> {
+            if (!newValue) {
+                txtApellidoPaternoREmpleados.validate();
             }
         });
-        txtNumeroIntREmpleados.focusedProperty().addListener(new ChangeListener<Boolean>() {
-            @Override
-            public void changed(ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) {
-                if (!newValue) {
-                    txtNumeroIntREmpleados.validate();
-                }
+        txtNumeroIntREmpleados.focusedProperty().addListener((observable, oldValue, newValue) -> {
+            if (!newValue) {
+                txtNumeroIntREmpleados.validate();
             }
         });
     }
@@ -690,8 +618,6 @@ public class ControladorUI {
     private JFXTextField txtApellidoPRJustificantes;
     @FXML
     private JFXDatePicker pickerFechaJustificantes;
-    @FXML
-    private JFXButton btnGuardaRJustificantes;
 
     @FXML
     public void guardarJustificantes(){
@@ -724,38 +650,26 @@ public class ControladorUI {
         txtApellidoMRJustificantes.getValidators().add(validatorClave);
         txtApellidoPRJustificantes.getValidators().add(validatorClave);
         validatorClave.setMessage("¡Campo Obligatoro!");
-        txtClaveRJustificantes.focusedProperty().addListener(new ChangeListener<Boolean>() {
-            @Override
-            public void changed(ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) {
-                if (!newValue) {
-                    txtClaveRJustificantes.validate();
-                }
-            }
-            //}
-        });
-        txtNombreRJustificantes.focusedProperty().addListener(new ChangeListener<Boolean>() {
-            @Override
-            public void changed(ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) {
-                if (!newValue) {
-                    txtNombreRJustificantes.validate();
-                }
+        //}
+        txtClaveRJustificantes.focusedProperty().addListener((observable, oldValue, newValue) -> {
+            if (!newValue) {
+                txtClaveRJustificantes.validate();
             }
         });
-        txtApellidoPRJustificantes.focusedProperty().addListener(new ChangeListener<Boolean>() {
-            @Override
-            public void changed(ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) {
-                if (!newValue) {
-                    txtApellidoPRJustificantes.validate();
-                }
+        txtNombreRJustificantes.focusedProperty().addListener((observable, oldValue, newValue) -> {
+            if (!newValue) {
+                txtNombreRJustificantes.validate();
             }
         });
-        txtApellidoMRJustificantes.focusedProperty().addListener(new ChangeListener<Boolean>() {
-            @Override
-            public void changed(ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) {
-                if (!newValue) {
+        txtApellidoPRJustificantes.focusedProperty().addListener((observable, oldValue, newValue) -> {
+            if (!newValue) {
+                txtApellidoPRJustificantes.validate();
+            }
+        });
+        txtApellidoMRJustificantes.focusedProperty().addListener((observable, oldValue, newValue) -> {
+            if (!newValue) {
 
-                    txtApellidoMRJustificantes.validate();
-                }
+                txtApellidoMRJustificantes.validate();
             }
         });
     }
@@ -793,6 +707,9 @@ public class ControladorUI {
         vboxRAsistencias.setDisable(true);
         vboxRJustificantes.setDisable(true);
 
+        validarTextFieldIncidencias();
+        llenarComboboxStatus();
+        llenarComboboxIncidencias();
         crearMenuLateral();
         validacionTextFildHorarios();
         llenarComboboxJustificantes();
