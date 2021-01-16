@@ -15,7 +15,7 @@ public class Main extends Application {
         Parent root;
         System.out.println("1. Completo\n2. Tabla");
         if (leer.nextLine().equals("1")){
-            root = FXMLLoader.load(getClass().getResource("Principal.fxml"));
+            root = FXMLLoader.load(getClass().getResource("Interfaz.fxml"));
         }else {
              root = FXMLLoader.load(getClass().getResource("Asistencia_registro.fxml"));
         }

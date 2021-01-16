@@ -5,6 +5,7 @@ import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Paint;
@@ -22,6 +23,14 @@ public class ControladorUI {
     @FXML
     private VBox vboxMenu;
     @FXML
+    private HBox hBoxPestanyas;
+    @FXML
+    private HBox panePestanyasFondo;
+    @FXML
+    private Pane paneAgregar;
+    @FXML
+    private Pane paneBuscar;
+    @FXML
     private Pane paneHome;
     @FXML
     private Pane paneREmpleados;
@@ -33,6 +42,10 @@ public class ControladorUI {
     private Pane paneAsistencias;
     @FXML
     private Pane paneRJustificantes;
+    @FXML
+    private Pane paneJIncidencias;
+    @FXML
+    private Pane paneAHorario;
     @FXML
     private Pane paneReloj;
     @FXML
@@ -69,9 +82,25 @@ public class ControladorUI {
         ripplerRJustificantes.setRipplerFill(Paint.valueOf("#FE81BB"));
         vboxMenu.getChildren().add(ripplerRJustificantes);
 
+        JFXRippler ripplerJIncidencias = new JFXRippler(paneJIncidencias);
+        ripplerJIncidencias.setRipplerFill(Paint.valueOf("#FE81BB"));
+        vboxMenu.getChildren().add(ripplerJIncidencias);
+
+        JFXRippler ripplerAHorario = new JFXRippler(paneAHorario);
+        ripplerAHorario.setRipplerFill(Paint.valueOf("#FE81BB"));
+        vboxMenu.getChildren().add(ripplerAHorario);
+
         JFXRippler ripplerReloj = new JFXRippler(paneReloj);
         ripplerReloj.setRipplerFill(Paint.valueOf("#FFFFFF"));
         vboxMenu.getChildren().add(ripplerReloj);
+
+        JFXRippler ripplerAgregar = new JFXRippler(paneAgregar);
+        ripplerAgregar.setRipplerFill(Paint.valueOf("#FF4E10"));
+        hBoxPestanyas.getChildren().add(ripplerAgregar);
+
+        JFXRippler ripplerBuscar = new JFXRippler(paneBuscar);
+        ripplerBuscar.setRipplerFill(Paint.valueOf("#FF4E10"));
+        hBoxPestanyas.getChildren().add(ripplerBuscar);
 
         Timeline clock = new Timeline(new KeyFrame(Duration.ZERO, e -> {
             LocalTime currentTime = LocalTime.now();
@@ -683,7 +712,6 @@ public class ControladorUI {
         Conexion conexion = new Conexion(txtPassword.getText());
         connection = conexion.getConnection();
         if (connection != null){
-            System.out.println("Conexión lista");
             vBoxREmpleados.setDisable(false);
             vboxHorarios.setDisable(false);
             vboxDiasLaborales.setDisable(false);
@@ -712,8 +740,8 @@ public class ControladorUI {
         llenarComboboxIncidencias();
         crearMenuLateral();
         validacionTextFildHorarios();
-        llenarComboboxJustificantes();
-        validarTXT();
+        //llenarComboboxJustificantes();
+        //validarTXT();
         comboboxEmpleadosEstados();
         validacionTextFieldEmpleados();
         llenarComboboxLaborales();
@@ -725,6 +753,8 @@ public class ControladorUI {
     public void mostrarInicio(){
         vboxHome.setVisible(true);
         vboxPantallas.setVisible(false);
+        hBoxPestanyas.setVisible(false);
+        panePestanyasFondo.setVisible(false);
     }
 
     @FXML
@@ -736,6 +766,8 @@ public class ControladorUI {
         vboxDiasLaborales.setVisible(false);
         vboxRAsistencias.setVisible(false);
         vboxRJustificantes.setVisible(false);
+        hBoxPestanyas.setVisible(true);
+        panePestanyasFondo.setVisible(true);
         lblTitulo.setText("Registro de empleados");
     }
 
@@ -748,6 +780,8 @@ public class ControladorUI {
         vboxDiasLaborales.setVisible(false);
         vboxRAsistencias.setVisible(false);
         vboxRJustificantes.setVisible(false);
+        hBoxPestanyas.setVisible(true);
+        panePestanyasFondo.setVisible(true);
         lblTitulo.setText("Registro de horarios");
     }
 
@@ -760,6 +794,8 @@ public class ControladorUI {
         vboxDiasLaborales.setVisible(true);
         vboxRAsistencias.setVisible(false);
         vboxRJustificantes.setVisible(false);
+        hBoxPestanyas.setVisible(true);
+        panePestanyasFondo.setVisible(true);
         lblTitulo.setText("Registro de Días no Laborales");
     }
 
@@ -772,6 +808,8 @@ public class ControladorUI {
         vboxDiasLaborales.setVisible(false);
         vboxRAsistencias.setVisible(true);
         vboxRJustificantes.setVisible(false);
+        hBoxPestanyas.setVisible(true);
+        panePestanyasFondo.setVisible(true);
         lblTitulo.setText("Registro de asistencias");
     }
 
@@ -784,6 +822,8 @@ public class ControladorUI {
         vboxDiasLaborales.setVisible(false);
         vboxRAsistencias.setVisible(false);
         vboxRJustificantes.setVisible(true);
+        hBoxPestanyas.setVisible(true);
+        panePestanyasFondo.setVisible(true);
         lblTitulo.setText("Registro de justificantes");
     }
 }
