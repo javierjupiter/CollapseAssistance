@@ -13,8 +13,7 @@ public class Main extends Application {
     public void start(Stage primaryStage) throws Exception{
         Scanner leer = new Scanner(System.in);
         Parent root;
-        System.out.println("1. Completo\n2. Tabla");
-        if (leer.nextLine().equals("1")){
+        if (true){
             root = FXMLLoader.load(getClass().getResource("Interfaz.fxml"));
         }else {
              root = FXMLLoader.load(getClass().getResource("Asistencia_registro.fxml"));
