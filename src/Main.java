@@ -13,12 +13,7 @@ public class Main extends Application {
     public void start(Stage primaryStage) throws Exception{
         Scanner leer = new Scanner(System.in);
         Parent root;
-        System.out.println("1. Completo\n2. Tabla");
-        if (leer.nextLine().equals("1")){
-            root = FXMLLoader.load(getClass().getResource("Principal.fxml"));
-        }else {
-             root = FXMLLoader.load(getClass().getResource("Asistencia_registro.fxml"));
-        }
+        root = FXMLLoader.load(getClass().getResource("Interfaz.fxml"));
 
 
         primaryStage.setTitle("Collapse Assitance");
@@ -31,7 +26,6 @@ public class Main extends Application {
 
 
     public static void main(String[] args) {
-        System.out.println("Hola mundo de la clase MAIN");
         launch(args);
     }
 }
