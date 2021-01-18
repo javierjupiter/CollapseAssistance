@@ -5,6 +5,7 @@
 <?import com.jfoenix.controls.JFXDatePicker?>
 <?import com.jfoenix.controls.JFXPasswordField?>
 <?import com.jfoenix.controls.JFXTextField?>
+<?import com.jfoenix.controls.JFXToggleButton?>
 <?import com.jfoenix.controls.JFXTreeTableView?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
@@ -95,9 +96,9 @@
                      <Insets top="5.0" />
                   </VBox.margin>
                </Pane>
-               <Pane fx:id="paneRJustificantes" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#mostrarRegistrosJustificantes" prefHeight="45.0" prefWidth="96.09">
+               <Pane fx:id="paneRJustificantes" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#mostrarJustificantes" prefHeight="45.0" prefWidth="96.09">
                   <children>
-                     <SVGPath fx:id="btnRJustificantes" content="M20.6,1.9L18.8,0l-1.9,1.9L15,0l-1.9,1.9L11.2,0L9.4,1.9L7.5,0L5.6,1.9L3.8,0v17.5H1.2c-0.7,0-1.2,0.6-1.2,1.2v2.5  C0,23.3,1.7,25,3.8,25h15c2.1,0,3.8-1.7,3.8-3.8V0L20.6,1.9z M15,22.5H3.8c-0.7,0-1.2-0.6-1.2-1.2V20H15V22.5z M20,21.2  c0,0.7-0.6,1.2-1.2,1.2s-1.2-0.6-1.2-1.2v-2.5c0-0.7-0.6-1.2-1.2-1.2h-10V3.7H20V21.2z M17.5,8.8c0.7,0,1.2-0.6,1.2-1.2  c0-0.7-0.6-1.2-1.2-1.2c-0.7,0-1.2,0.6-1.2,1.2C16.2,8.2,16.8,8.8,17.5,8.8z M8.8,8.8h5c0.7,0,1.2-0.6,1.2-1.2s-0.6-1.2-1.2-1.2h-5  c-0.7,0-1.2,0.6-1.2,1.2S8.1,8.8,8.8,8.8z M17.5,12.5c0.7,0,1.2-0.6,1.2-1.2S18.2,10,17.5,10c-0.7,0-1.2,0.6-1.2,1.2  S16.8,12.5,17.5,12.5z M8.8,12.5h5c0.7,0,1.2-0.6,1.2-1.2S14.4,10,13.8,10h-5c-0.7,0-1.2,0.6-1.2,1.2S8.1,12.5,8.8,12.5z" layoutX="35.0" layoutY="5.0" onMouseClicked="#mostrarRegistrosJustificantes">
+                     <SVGPath fx:id="btnRJustificantes" content="M20.6,1.9L18.8,0l-1.9,1.9L15,0l-1.9,1.9L11.2,0L9.4,1.9L7.5,0L5.6,1.9L3.8,0v17.5H1.2c-0.7,0-1.2,0.6-1.2,1.2v2.5  C0,23.3,1.7,25,3.8,25h15c2.1,0,3.8-1.7,3.8-3.8V0L20.6,1.9z M15,22.5H3.8c-0.7,0-1.2-0.6-1.2-1.2V20H15V22.5z M20,21.2  c0,0.7-0.6,1.2-1.2,1.2s-1.2-0.6-1.2-1.2v-2.5c0-0.7-0.6-1.2-1.2-1.2h-10V3.7H20V21.2z M17.5,8.8c0.7,0,1.2-0.6,1.2-1.2  c0-0.7-0.6-1.2-1.2-1.2c-0.7,0-1.2,0.6-1.2,1.2C16.2,8.2,16.8,8.8,17.5,8.8z M8.8,8.8h5c0.7,0,1.2-0.6,1.2-1.2s-0.6-1.2-1.2-1.2h-5  c-0.7,0-1.2,0.6-1.2,1.2S8.1,8.8,8.8,8.8z M17.5,12.5c0.7,0,1.2-0.6,1.2-1.2S18.2,10,17.5,10c-0.7,0-1.2,0.6-1.2,1.2  S16.8,12.5,17.5,12.5z M8.8,12.5h5c0.7,0,1.2-0.6,1.2-1.2S14.4,10,13.8,10h-5c-0.7,0-1.2,0.6-1.2,1.2S8.1,12.5,8.8,12.5z" layoutX="35.0" layoutY="5.0" onMouseClicked="#mostrarJustificantes">
                         <effect>
                            <DropShadow color="#00000040" height="11.0" offsetX="3.0" offsetY="2.0" radius="5.0" spread="0.4" width="11.0" />
                         </effect>
@@ -119,9 +120,9 @@
                      <Insets bottom="5.0" />
                   </VBox.margin>
                </Pane>
-               <Pane fx:id="paneAHorario" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#mostrarRegistrosJustificantes" prefHeight="45.0" prefWidth="96.09">
+               <Pane fx:id="paneAHorario" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#mostrarAHorarios" prefHeight="45.0" prefWidth="96.09">
                   <children>
-                     <SVGPath fx:id="btnAHorario" content="M2.3,21.6V4.6h2.3V8h9.1V4.6h2.3v5.8c0.8,0.1,1.6,0.4,2.3,0.7V4.6c0-1.3-1-2.3-2.3-2.3h-3.6C11.8,1,10.6,0,9.1,0S6.4,1,5.9,2.3H2.3C1,2.3,0,3.3,0,4.6v17.1c0,1.3,1,2.3,2.3,2.3h7c-0.7-0.6-1.2-1.4-1.6-2.3H2.3z M9.1,2.3c0.6,0,1.1,0.5,1.1,1.1S9.7,4.6,9.1,4.6S8,4,8,3.4S8.5,2.3,9.1,2.3z M14.8,12.5c-3.1,0-5.7,2.5-5.7,5.7s2.5,5.7,5.7,5.7s5.7-2.5,5.7-5.7S17.9,12.5,14.8,12.5z M16.7,20.9l-2.4-2.4v-3.6h1.1V18l2.1,2.1L16.7,20.9z" layoutX="38.0" layoutY="5.0" onMouseClicked="#mostrarRegistrosJustificantes">
+                     <SVGPath fx:id="btnAHorario" content="M2.3,21.6V4.6h2.3V8h9.1V4.6h2.3v5.8c0.8,0.1,1.6,0.4,2.3,0.7V4.6c0-1.3-1-2.3-2.3-2.3h-3.6C11.8,1,10.6,0,9.1,0S6.4,1,5.9,2.3H2.3C1,2.3,0,3.3,0,4.6v17.1c0,1.3,1,2.3,2.3,2.3h7c-0.7-0.6-1.2-1.4-1.6-2.3H2.3z M9.1,2.3c0.6,0,1.1,0.5,1.1,1.1S9.7,4.6,9.1,4.6S8,4,8,3.4S8.5,2.3,9.1,2.3z M14.8,12.5c-3.1,0-5.7,2.5-5.7,5.7s2.5,5.7,5.7,5.7s5.7-2.5,5.7-5.7S17.9,12.5,14.8,12.5z M16.7,20.9l-2.4-2.4v-3.6h1.1V18l2.1,2.1L16.7,20.9z" layoutX="38.0" layoutY="5.0" onMouseClicked="#mostrarAHorarios">
                         <effect>
                            <DropShadow color="#00000040" height="11.0" offsetX="3.0" offsetY="2.0" radius="5.0" spread="0.4" width="11.0" />
                         </effect>
@@ -157,7 +158,7 @@
                            <Insets top="40.0" />
                         </padding>
                      </Label>
-                     <Label fx:id="lblMinutos" layoutX="13.0" layoutY="24.0" prefHeight="51.0" prefWidth="48.0" text="35">
+                     <Label fx:id="lblMinutos" layoutX="15.0" layoutY="24.0" prefHeight="51.0" prefWidth="48.0" text="35">
                         <font>
                            <Font name="Poppins Regular" size="36.0" />
                         </font>
@@ -196,107 +197,181 @@
                      <Font name="Poppins Regular" size="36.0" />
                   </font>
                </Label>
-               <VBox fx:id="vboxPantallas" prefHeight="614.0" prefWidth="904.0" visible="false">
+               <VBox fx:id="vboxPantallas" prefHeight="614.0" prefWidth="904.0">
                   <children>
                      <AnchorPane maxHeight="576.0" maxWidth="864.0" minHeight="508.0" minWidth="864.0" prefHeight="576.0" prefWidth="864.0">
                         <children>
                            <AnchorPane blendMode="LIGHTEN" layoutY="85.0" maxHeight="590.0" maxWidth="864.0" minHeight="491.0" minWidth="864.0" opacity="0.7" prefHeight="500.0" prefWidth="864.0" style="-fx-background-color: #fff; -fx-background-radius: 4;" />
                            <AnchorPane layoutY="84.0" maxHeight="569.0" maxWidth="864.0" minHeight="424.0" minWidth="864.0" prefHeight="424.0" prefWidth="864.0" style="-fx-border-radius: 4px;">
                               <children>
-                                 <VBox fx:id="vBoxREmpleados" opacity="0.85" visible="false">
+                                 <VBox fx:id="vBoxREmpleados" disable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" opacity="0.85" prefHeight="500.0" prefWidth="864.0" visible="false">
                                     <effect>
                                        <Blend mode="LIGHTEN" opacity="0.85" />
                                     </effect>
                                     <children>
                                        <HBox maxHeight="407.5" maxWidth="864.0" minHeight="407.5" minWidth="864.0" prefHeight="407.5" prefWidth="864.0">
                                           <children>
-                                             <VBox maxHeight="407.5" maxWidth="288.0" minHeight="407.5" minWidth="288.0" prefHeight="407.5" prefWidth="288.0">
+                                             <VBox prefHeight="200.0" prefWidth="100.0">
                                                 <children>
-                                                   <JFXTextField fx:id="txtIdEmpleadoREmpleados" focusColor="#ff4e10" labelFloat="true" promptText="ID EMPLEADO" unFocusColor="#5776c8">
+                                                   <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity">
+                                                      <children>
+                                                         <VBox maxHeight="407.5" maxWidth="288.0" minHeight="407.5" minWidth="288.0" prefHeight="407.5" prefWidth="288.0">
+                                                            <children>
+                                                               <JFXTextField fx:id="txtIdEmpleadoREmpleados" focusColor="#ff4e10" labelFloat="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="200.0" promptText="ID Empleado" unFocusColor="#5776c8">
+                                                                  <VBox.margin>
+                                                                     <Insets left="50.0" right="50.0" top="50.0" />
+                                                                  </VBox.margin>
+                                                               </JFXTextField>
+                                                               <JFXTextField fx:id="txtNombresREmpleados" focusColor="#ff4e10" labelFloat="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="200.0" promptText="Nombre(s)" unFocusColor="#5776c8">
+                                                                  <VBox.margin>
+                                                                     <Insets left="50.0" right="50.0" top="30.0" />
+                                                                  </VBox.margin>
+                                                               </JFXTextField>
+                                                               <JFXTextField fx:id="txtApellidoPaternoREmpleados" focusColor="#ff4e10" labelFloat="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="200.0" promptText="Apellido Paterno" unFocusColor="#5776c8">
+                                                                  <VBox.margin>
+                                                                     <Insets left="50.0" right="50.0" top="30.0" />
+                                                                  </VBox.margin>
+                                                               </JFXTextField>
+                                                               <JFXTextField fx:id="txtApellidoMaternoREmpleados" focusColor="#ff4e10" labelFloat="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="200.0" promptText="Apellido Materno" unFocusColor="#5776c8">
+                                                                  <VBox.margin>
+                                                                     <Insets left="50.0" right="50.0" top="30.0" />
+                                                                  </VBox.margin>
+                                                               </JFXTextField>
+                                                               <JFXTextField fx:id="txtCurpREmpleados" focusColor="#ff4e10" labelFloat="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="200.0" promptText="CURP" unFocusColor="#5776c8">
+                                                                  <VBox.margin>
+                                                                     <Insets left="50.0" right="50.0" top="30.0" />
+                                                                  </VBox.margin>
+                                                               </JFXTextField>
+                                                               <JFXComboBox fx:id="comboEstadoREmpleados" focusColor="#ff4e10" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#cargarMunicipios" prefHeight="35.0" prefWidth="200.0" promptText="Estado" unFocusColor="#5776c8">
+                                                                  <VBox.margin>
+                                                                     <Insets left="50.0" right="50.0" top="30.0" />
+                                                                  </VBox.margin>
+                                                               </JFXComboBox>
+                                                            </children>
+                                                         </VBox>
+                                                         <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="407.5" prefWidth="200.0">
+                                                            <children>
+                                                               <JFXTextField fx:id="txtCalleREmpleados" focusColor="#ff4e10" labelFloat="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="200.0" promptText="Calle" unFocusColor="#5776c8">
+                                                                  <VBox.margin>
+                                                                     <Insets top="50.0" />
+                                                                  </VBox.margin>
+                                                               </JFXTextField>
+                                                               <JFXTextField fx:id="txtNumeroIntREmpleados" focusColor="#ff4e10" labelFloat="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="200.0" promptText="Número Interior" unFocusColor="#5777c8">
+                                                                  <VBox.margin>
+                                                                     <Insets top="30.0" />
+                                                                  </VBox.margin>
+                                                               </JFXTextField>
+                                                               <JFXTextField fx:id="txtNumeroExtREmpleados" focusColor="#ff4e10" labelFloat="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="200.0" promptText="Número Exterior" unFocusColor="#5776c8">
+                                                                  <VBox.margin>
+                                                                     <Insets top="30.0" />
+                                                                  </VBox.margin>
+                                                               </JFXTextField>
+                                                               <JFXTextField fx:id="txtCodigoPostalREmpleados" focusColor="#ff4e10" labelFloat="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="200.0" promptText="Código Postal" unFocusColor="#5776c8">
+                                                                  <VBox.margin>
+                                                                     <Insets top="30.0" />
+                                                                  </VBox.margin>
+                                                               </JFXTextField>
+                                                               <JFXTextField fx:id="txtColoniaREmpleados" focusColor="#ff4e10" labelFloat="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="200.0" promptText="Colonia" unFocusColor="#5776c8">
+                                                                  <VBox.margin>
+                                                                     <Insets top="30.0" />
+                                                                  </VBox.margin>
+                                                               </JFXTextField>
+                                                               <JFXComboBox fx:id="comboMunicipioREmpleados" focusColor="#ff4e10" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#asignarIDMunicipio" prefHeight="35.0" prefWidth="200.0" promptText="Municipio" unFocusColor="#5776c8">
+                                                                  <VBox.margin>
+                                                                     <Insets top="30.0" />
+                                                                  </VBox.margin>
+                                                               </JFXComboBox>
+                                                            </children>
+                                                         </VBox>
+                                                      </children>
+                                                   </HBox>
+                                                   <JFXButton fx:id="btnGuardarREmpleados" maxWidth="200.0" minWidth="200.0" onMouseClicked="#hacerRegistroEmpleados" prefWidth="200.0" ripplerFill="#fe81bb" style="-fx-border-color: #000; -fx-border-radius: 4PX;" text="Guardar" textFill="#ff4e10">
                                                       <VBox.margin>
-                                                         <Insets left="50.0" right="50.0" top="30.0" />
+                                                         <Insets left="144.0" top="29.0" />
                                                       </VBox.margin>
-                                                   </JFXTextField>
-                                                   <JFXTextField fx:id="txtApellidoMaternoREmpleados" focusColor="#ff4e10" labelFloat="true" promptText="APELLIDO MATERNO" unFocusColor="#5776c8">
-                                                      <VBox.margin>
-                                                         <Insets left="50.0" right="50.0" top="30.0" />
-                                                      </VBox.margin>
-                                                   </JFXTextField>
-                                                   <JFXTextField fx:id="txtCalleREmpleados" focusColor="#ff4e10" labelFloat="true" promptText="CALLE" unFocusColor="#5776c8">
-                                                      <VBox.margin>
-                                                         <Insets left="50.0" right="50.0" top="30.0" />
-                                                      </VBox.margin>
-                                                   </JFXTextField>
-                                                   <JFXTextField fx:id="txtColoniaREmpleados" focusColor="#ff4e10" labelFloat="true" promptText="COLONIA" unFocusColor="#5776c8">
-                                                      <VBox.margin>
-                                                         <Insets left="50.0" right="50.0" top="30.0" />
-                                                      </VBox.margin>
-                                                   </JFXTextField>
+                                                   </JFXButton>
                                                 </children>
                                              </VBox>
-                                             <VBox maxHeight="407.5" maxWidth="288.0" minHeight="407.5" minWidth="288.0" prefHeight="407.5" prefWidth="288.0">
-                                                <children>
-                                                   <JFXTextField fx:id="txtNombresREmpleados" focusColor="#ff4e10" labelFloat="true" maxWidth="188.0" minWidth="188.0" prefWidth="188.0" promptText="NOMBRE(S)" unFocusColor="#5776c8">
-                                                      <VBox.margin>
-                                                         <Insets left="50.0" right="50.0" top="30.0" />
-                                                      </VBox.margin>
-                                                   </JFXTextField>
-                                                   <JFXTextField fx:id="txtCurpREmpleados" focusColor="#ff4e10" labelFloat="true" maxWidth="188.0" minWidth="188.0" prefWidth="188.0" promptText="CURP" unFocusColor="#5776c8">
-                                                      <VBox.margin>
-                                                         <Insets left="50.0" right="50.0" top="30.0" />
-                                                      </VBox.margin>
-                                                   </JFXTextField>
-                                                   <JFXTextField fx:id="txtNumeroExtREmpleados" focusColor="#ff4e10" labelFloat="true" maxWidth="188.0" minWidth="188.0" prefWidth="188.0" promptText="NÚMERO EXT." unFocusColor="#5776c8">
-                                                      <VBox.margin>
-                                                         <Insets left="50.0" right="50.0" top="30.0" />
-                                                      </VBox.margin>
-                                                   </JFXTextField>
-                                                   <JFXTextField fx:id="txtCodigoPostalREmpleados" focusColor="#ff4e10" labelFloat="true" maxWidth="188.0" minWidth="188.0" prefWidth="188.0" promptText="CODIGO POSTAL" unFocusColor="#5776c8">
-                                                      <VBox.margin>
-                                                         <Insets left="50.0" right="50.0" top="30.0" />
-                                                      </VBox.margin>
-                                                   </JFXTextField>
-                                                   <JFXComboBox fx:id="comboMunicipioREmpleados" focusColor="#ff4e10" maxWidth="188.0" minHeight="0.0" minWidth="188.0" onAction="#asignarIDMunicipio" prefWidth="188.0" promptText="MUNICIPIO O ALCALDIA" unFocusColor="#5776c8">
-                                                      <VBox.margin>
-                                                         <Insets left="50.0" right="50.0" top="30.0" />
-                                                      </VBox.margin>
-                                                   </JFXComboBox>
-                                                </children>
-                                             </VBox>
-                                             <VBox maxHeight="407.5" maxWidth="288.0" minHeight="407.5" minWidth="288.0" prefHeight="407.5" prefWidth="288.0">
-                                                <children>
-                                                   <JFXTextField fx:id="txtApellidoPaternoREmpleados" focusColor="#ff4e10" labelFloat="true" promptText="APELLIDO PATERNO" unFocusColor="#5776c8">
-                                                      <VBox.margin>
-                                                         <Insets left="50.0" right="50.0" top="30.0" />
-                                                      </VBox.margin>
-                                                   </JFXTextField>
-                                                   <JFXDatePicker fx:id="pickerFechaREmpleados" defaultColor="#ff4e10" maxWidth="188.0" minWidth="188.0" prefWidth="188.0">
-                                                      <VBox.margin>
-                                                         <Insets left="50.0" right="50.0" top="30.0" />
-                                                      </VBox.margin>
-                                                   </JFXDatePicker>
-                                                   <JFXTextField fx:id="txtNumeroIntREmpleados" focusColor="#ff4e10" labelFloat="true" promptText="NUMERO INT." unFocusColor="#5777c8">
-                                                      <VBox.margin>
-                                                         <Insets left="50.0" right="50.0" top="30.0" />
-                                                      </VBox.margin>
-                                                   </JFXTextField>
-                                                   <JFXComboBox fx:id="comboEstadoREmpleados" focusColor="#ff4e10" maxWidth="188.0" minWidth="188.0" onAction="#cargarMunicipios" prefWidth="188.0" promptText="ESTADO" unFocusColor="#5776c8">
-                                                      <VBox.margin>
-                                                         <Insets left="50.0" right="50.0" top="30.0" />
-                                                      </VBox.margin>
-                                                   </JFXComboBox>
-                                                </children>
-                                             </VBox>
+                                             <ImageView fitHeight="480.0" fitWidth="323.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true">
+                                                <image>
+                                                   <Image url="@images/empleado.jpg" />
+                                                </image>
+                                                <HBox.margin>
+                                                   <Insets left="50.0" top="10.0" />
+                                                </HBox.margin>
+                                             </ImageView>
                                           </children>
                                        </HBox>
-                                       <JFXButton fx:id="btnGuardarREmpleados" maxWidth="200.0" minWidth="200.0" onMouseClicked="#hacerRegistroEmpleados" prefWidth="200.0" ripplerFill="#fe81bb" style="-fx-border-color: #000; -fx-border-radius: 4PX;" text="Guardar" textFill="#ff4e10">
-                                          <VBox.margin>
-                                             <Insets left="332.0" />
-                                          </VBox.margin>
-                                       </JFXButton>
                                     </children>
                                  </VBox>
-                                 <VBox fx:id="vboxRJustificantes">
+                                 <VBox prefHeight="500.0" prefWidth="864.0">
+                                    <children>
+                                       <HBox prefHeight="500.0" prefWidth="864.0">
+                                          <children>
+                                             <VBox prefHeight="500.0" prefWidth="300.0" />
+                                             <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" opacity="0.8" prefHeight="400.0" prefWidth="500.0" style="-fx-background-color: #fff; -fx-background-radius: 10;">
+                                                <HBox.margin>
+                                                   <Insets bottom="50.0" left="32.0" top="50.0" />
+                                                </HBox.margin>
+                                                <effect>
+                                                   <DropShadow blurType="GAUSSIAN" color="#402f3b1f" height="31.89" offsetX="4.0" offsetY="6.0" radius="16.61" width="36.55" />
+                                                </effect>
+                                                <children>
+                                                   <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="500.0">
+                                                      <children>
+                                                         <HBox maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="200.0">
+                                                            <children>
+                                                               <HBox maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="230.0">
+                                                                  <children>
+                                                                     <Label text="ID de Empleado">
+                                                                        <HBox.margin>
+                                                                           <Insets right="65.0" top="4.0" />
+                                                                        </HBox.margin>
+                                                                        <font>
+                                                                           <Font name="Nunito Regular" size="12.0" />
+                                                                        </font>
+                                                                     </Label>
+                                                                     <Label text="123456" textAlignment="RIGHT">
+                                                                        <font>
+                                                                           <Font name="Nunito Bold" size="18.0" />
+                                                                        </font>
+                                                                     </Label>
+                                                                  </children>
+                                                               </HBox>
+                                                               <HBox maxHeight="-Infinity" minHeight="-Infinity" prefWidth="230.0">
+                                                                  <children>
+                                                                     <Label text="CURP">
+                                                                        <HBox.margin>
+                                                                           <Insets top="4.0" />
+                                                                        </HBox.margin>
+                                                                        <font>
+                                                                           <Font name="Nunito Regular" size="12.0" />
+                                                                        </font>
+                                                                     </Label>
+                                                                     <Label text="QWERTYUIOPASDFGHJK" textAlignment="RIGHT">
+                                                                        <HBox.margin>
+                                                                           <Insets left="15.0" />
+                                                                        </HBox.margin>
+                                                                        <font>
+                                                                           <Font name="Nunito Bold" size="15.0" />
+                                                                        </font>
+                                                                     </Label>
+                                                                  </children>
+                                                               </HBox>
+                                                            </children>
+                                                         </HBox>
+                                                      </children>
+                                                      <padding>
+                                                         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                                                      </padding>
+                                                   </VBox>
+                                                </children>
+                                             </Pane>
+                                          </children>
+                                       </HBox>
+                                    </children>
+                                 </VBox>
+                                 <VBox fx:id="vboxRJustificantes" disable="true" visible="false">
                                     <effect>
                                        <Blend mode="LIGHTEN" opacity="0.85" />
                                     </effect>
@@ -415,48 +490,110 @@
                                        </HBox>
                                     </children>
                                  </VBox>
-                                 <VBox fx:id="vboxHorarios" maxHeight="510.0" maxWidth="864.0" minHeight="510.0" minWidth="864.0" opacity="0.85" prefHeight="510.0" prefWidth="864.0" visible="false">
+                                 <VBox fx:id="vboxHorarios" disable="true" maxHeight="510.0" maxWidth="864.0" minHeight="510.0" minWidth="864.0" opacity="0.85" prefHeight="510.0" prefWidth="864.0" visible="false">
                                     <effect>
                                        <Blend mode="LIGHTEN" opacity="0.85" />
                                     </effect>
                                     <children>
                                        <HBox maxHeight="510.0" maxWidth="864.0" minHeight="510.0" minWidth="864.0" prefHeight="510.0" prefWidth="864.0">
                                           <children>
-                                             <VBox maxHeight="510.0" maxWidth="432.0" minHeight="510.0" minWidth="432.0" prefHeight="510.0" prefWidth="432.0">
+                                             <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="432.0">
                                                 <children>
                                                    <JFXTextField fx:id="txtIdHorarioHorarios" focusColor="#ff4e10" labelFloat="true" maxHeight="40.0" minHeight="40.0" prefHeight="40.0" promptText="ID de Horario" unFocusColor="#5776c8">
                                                       <VBox.margin>
-                                                         <Insets left="70.0" right="70.0" top="80.0" />
+                                                         <Insets bottom="20.0" left="50.0" right="50.0" />
                                                       </VBox.margin>
                                                    </JFXTextField>
                                                    <JFXTextField fx:id="txtDescripcionHorarioHorarios" focusColor="#ff4e10" labelFloat="true" maxHeight="40.0" minHeight="40.0" prefHeight="40.0" promptText="Descripcion de Horario" unFocusColor="#5776c8">
                                                       <VBox.margin>
-                                                         <Insets left="70.0" right="70.0" top="40.0" />
+                                                         <Insets bottom="20.0" left="50.0" right="50.0" />
                                                       </VBox.margin>
                                                    </JFXTextField>
-                                                   <JFXTextField fx:id="txtEstatusHorarios" focusColor="#ff4e10" labelFloat="true" maxHeight="40.0" minHeight="40.0" prefHeight="40.0" promptText="Estatus" unFocusColor="#5776c8">
+                                                   <JFXComboBox focusColor="#ff4e10" labelFloat="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="332.0" promptText="Día de la semana" unFocusColor="#5776c8">
                                                       <VBox.margin>
-                                                         <Insets left="70.0" right="70.0" top="40.0" />
+                                                         <Insets bottom="20.0" left="50.0" right="50.0" />
                                                       </VBox.margin>
-                                                   </JFXTextField>
+                                                   </JFXComboBox>
+                                                   <Label text="Hora de entrada">
+                                                      <VBox.margin>
+                                                         <Insets bottom="5.0" left="50.0" />
+                                                      </VBox.margin>
+                                                   </Label>
+                                                   <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity">
+                                                      <children>
+                                                         <JFXComboBox focusColor="#ff4e10" labelFloat="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="31.0" prefWidth="88.0" promptText="Hora" unFocusColor="#5776c8">
+                                                            <HBox.margin>
+                                                               <Insets bottom="5.0" left="5.0" right="10.0" top="5.0" />
+                                                            </HBox.margin>
+                                                         </JFXComboBox>
+                                                         <JFXComboBox focusColor="#ff4e10" labelFloat="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="31.0" prefWidth="101.0" promptText="Minuto" unFocusColor="#5776c8">
+                                                            <HBox.margin>
+                                                               <Insets bottom="5.0" left="5.0" right="10.0" top="5.0" />
+                                                            </HBox.margin>
+                                                         </JFXComboBox>
+                                                         <JFXComboBox focusColor="#ff4e10" labelFloat="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" promptText="AM/PM" unFocusColor="#5776c8">
+                                                            <HBox.margin>
+                                                               <Insets bottom="5.0" left="5.0" right="10.0" top="5.0" />
+                                                            </HBox.margin>
+                                                         </JFXComboBox>
+                                                      </children>
+                                                      <VBox.margin>
+                                                         <Insets bottom="20.0" left="50.0" right="50.0" />
+                                                      </VBox.margin>
+                                                   </HBox>
+                                                   <Label text="Hora de salida">
+                                                      <VBox.margin>
+                                                         <Insets bottom="5.0" left="50.0" />
+                                                      </VBox.margin>
+                                                   </Label>
+                                                   <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity">
+                                                      <children>
+                                                         <JFXComboBox focusColor="#ff4e10" labelFloat="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="31.0" prefWidth="88.0" promptText="Hora" unFocusColor="#5776c8">
+                                                            <HBox.margin>
+                                                               <Insets bottom="5.0" left="5.0" right="10.0" top="5.0" />
+                                                            </HBox.margin>
+                                                         </JFXComboBox>
+                                                         <JFXComboBox focusColor="#ff4e10" labelFloat="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="31.0" prefWidth="101.0" promptText="Minuto" unFocusColor="#5776c8">
+                                                            <HBox.margin>
+                                                               <Insets bottom="5.0" left="5.0" right="10.0" top="5.0" />
+                                                            </HBox.margin>
+                                                         </JFXComboBox>
+                                                         <JFXComboBox focusColor="#ff4e10" labelFloat="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" promptText="AM/PM" unFocusColor="#5776c8">
+                                                            <HBox.margin>
+                                                               <Insets bottom="5.0" left="5.0" right="10.0" top="5.0" />
+                                                            </HBox.margin>
+                                                         </JFXComboBox>
+                                                      </children>
+                                                      <VBox.margin>
+                                                         <Insets left="50.0" right="50.0" />
+                                                      </VBox.margin>
+                                                   </HBox>
+                                                   <JFXToggleButton text="Status" textAlignment="RIGHT" toggleColor="#5776c8" toggleLineColor="#95a9dd">
+                                                      <VBox.margin>
+                                                         <Insets left="150.0" right="50.0" />
+                                                      </VBox.margin>
+                                                   </JFXToggleButton>
                                                    <JFXButton fx:id="btnGuardarHorarios" maxWidth="200.0" minHeight="0.0" minWidth="200.0" onMouseClicked="#btnGuardarHorariosOnClicked" prefWidth="200.0" ripplerFill="#fe81bb" style="-fx-border-color: #000; -fx-border-radius: 4px;" text="Guardar" textFill="#ff4e10">
                                                       <VBox.margin>
-                                                         <Insets left="116.0" right="116.0" top="145.0" />
+                                                         <Insets bottom="25.0" left="115.0" right="50.0" />
                                                       </VBox.margin>
                                                    </JFXButton>
                                                 </children>
                                                 <HBox.margin>
                                                    <Insets />
                                                 </HBox.margin>
+                                                <padding>
+                                                   <Insets top="50.0" />
+                                                </padding>
                                              </VBox>
                                              <VBox maxHeight="510.0" maxWidth="432.0" minHeight="510.0" minWidth="432.0" prefHeight="510.0" prefWidth="432.0">
                                                 <children>
-                                                   <ImageView fitHeight="484.0" fitWidth="402.0" pickOnBounds="true" preserveRatio="true">
+                                                   <ImageView fitHeight="480.0" fitWidth="402.0" pickOnBounds="true" preserveRatio="true">
                                                       <image>
-                                                         <Image url="@images/horarios_img.png" />
+                                                         <Image url="@images/horarios.jpg" />
                                                       </image>
                                                       <VBox.margin>
-                                                         <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                                                         <Insets bottom="15.0" left="37.0" right="10.0" top="10.0" />
                                                       </VBox.margin>
                                                    </ImageView>
                                                 </children>
@@ -465,7 +602,7 @@
                                        </HBox>
                                     </children>
                                  </VBox>
-                                 <VBox fx:id="vboxDiasLaborales" opacity="0.85" visible="false">
+                                 <VBox fx:id="vboxDiasLaborales" disable="true" opacity="0.85" visible="false">
                                     <effect>
                                        <Blend mode="LIGHTEN" opacity="0.85" />
                                     </effect>
@@ -501,12 +638,12 @@
                                              </VBox>
                                              <VBox maxWidth="432.0" minWidth="432.0" prefHeight="200.0" prefWidth="432.0">
                                                 <children>
-                                                   <ImageView fitHeight="250.0" fitWidth="523.0" pickOnBounds="true" preserveRatio="true" rotate="90.0">
+                                                   <ImageView fitHeight="480.0" pickOnBounds="true" preserveRatio="true">
                                                       <image>
-                                                         <Image url="@images/dias_laborales_img.png" />
+                                                         <Image url="@images/laborales.jpg" />
                                                       </image>
                                                       <VBox.margin>
-                                                         <Insets top="130.0" />
+                                                         <Insets left="60.0" top="10.0" />
                                                       </VBox.margin>
                                                    </ImageView>
                                                 </children>
@@ -523,10 +660,13 @@
                                        <Blend mode="LIGHTEN" opacity="0.85" />
                                     </effect>
                                     <children>
-                                       <JFXTreeTableView fx:id="tablaRegistroAsistencias">
+                                       <JFXTreeTableView fx:id="tablaRegistroAsistencias" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="350.0" prefWidth="820.0">
                                           <HBox.margin>
                                              <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
                                           </HBox.margin>
+                                          <VBox.margin>
+                                             <Insets top="50.0" />
+                                          </VBox.margin>
                                        </JFXTreeTableView>
                                        <HBox prefHeight="100.0" prefWidth="200.0">
                                           <children>
@@ -544,6 +684,85 @@
                                        </HBox>
                                     </children>
                                  </VBox>
+                                 <VBox fx:id="vBoxJustificantes" disable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="864.0" visible="false">
+                                    <children>
+                                       <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="864.0">
+                                          <children>
+                                             <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="432.0">
+                                                <children>
+                                                   <JFXTextField focusColor="#ff4e10" labelFloat="true" prefHeight="40.0" promptText="Id del Justificante" unFocusColor="#5776c8">
+                                                      <VBox.margin>
+                                                         <Insets bottom="30.0" top="80.0" />
+                                                      </VBox.margin>
+                                                   </JFXTextField>
+                                                   <JFXTextField focusColor="#ff4e10" labelFloat="true" prefHeight="40.0" promptText="Descripción" unFocusColor="#5776c8">
+                                                      <VBox.margin>
+                                                         <Insets bottom="30.0" />
+                                                      </VBox.margin>
+                                                   </JFXTextField>
+                                                   <JFXToggleButton text="Status" toggleColor="#5776c8" toggleLineColor="#95a9dd">
+                                                      <VBox.margin>
+                                                         <Insets left="100.0" />
+                                                      </VBox.margin></JFXToggleButton>
+                                                   <JFXButton maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="332.0" ripplerFill="#fe81bb" style="-fx-border-color: #000; -fx-border-radius: 4px;" text="Guardar" textFill="#ff4e10">
+                                                      <VBox.margin>
+                                                         <Insets top="30.0" />
+                                                      </VBox.margin>
+                                                   </JFXButton>
+                                                </children>
+                                                <padding>
+                                                   <Insets bottom="50.0" left="50.0" right="50.0" top="50.0" />
+                                                </padding>
+                                             </VBox>
+                                             <ImageView fitHeight="482.0" fitWidth="386.0" pickOnBounds="true" preserveRatio="true">
+                                                <image>
+                                                   <Image url="@images/registroJustificantes.jpg" />
+                                                </image>
+                                                <HBox.margin>
+                                                   <Insets left="35.0" top="10.0" />
+                                                </HBox.margin>
+                                             </ImageView>
+                                          </children>
+                                       </HBox>
+                                    </children>
+                                 </VBox>
+                                 <VBox fx:id="vBoxAHorarios" disable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="864.0" visible="false">
+                                    <children>
+                                       <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="864.0">
+                                          <children>
+                                             <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="432.0">
+                                                <children>
+                                                   <JFXTextField focusColor="#ff4e10" labelFloat="true" prefHeight="40.0" prefWidth="332.0" promptText="Clave de Empleado" unFocusColor="#5776c8">
+                                                      <VBox.margin>
+                                                         <Insets bottom="50.0" top="50.0" />
+                                                      </VBox.margin>
+                                                   </JFXTextField>
+                                                   <JFXComboBox focusColor="#ff4e10" labelFloat="true" prefHeight="40.0" prefWidth="332.0" promptText="Seleccione Horario" unFocusColor="#5776c8">
+                                                      <VBox.margin>
+                                                         <Insets bottom="50.0" top="50.0" />
+                                                      </VBox.margin>
+                                                   </JFXComboBox>
+                                                   <JFXButton maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="332.0" ripplerFill="#fe81bb" style="-fx-border-color: #000; -fx-border-radius: 4px;" text="Guardar" textFill="#ff4e10">
+                                                      <VBox.margin>
+                                                         <Insets top="30.0" />
+                                                      </VBox.margin>
+                                                   </JFXButton>
+                                                </children>
+                                                <padding>
+                                                   <Insets bottom="50.0" left="50.0" right="50.0" top="50.0" />
+                                                </padding>
+                                             </VBox>
+                                             <ImageView fitHeight="480.0" fitWidth="386.0" pickOnBounds="true" preserveRatio="true">
+                                                <image>
+                                                   <Image url="@images/asignacionHorarios.jpg" />
+                                                </image>
+                                                <HBox.margin>
+                                                   <Insets left="40.0" top="10.0" />
+                                                </HBox.margin>
+                                             </ImageView>
+                                          </children>
+                                       </HBox>
+                                    </children></VBox>
                               </children>
                            </AnchorPane>
                         </children>
@@ -553,7 +772,7 @@
                      </AnchorPane>
                   </children>
                </VBox>
-               <VBox fx:id="vboxHome" opacity="0.85" prefHeight="534.0" prefWidth="850.0" style="-fx-background-color: #fff; -fx-background-radius: 4;" AnchorPane.bottomAnchor="42.0" AnchorPane.leftAnchor="27.0" AnchorPane.rightAnchor="27.0" AnchorPane.topAnchor="42.0">
+               <VBox fx:id="vboxHome" opacity="0.85" prefHeight="534.0" prefWidth="850.0" style="-fx-background-color: #fff; -fx-background-radius: 4;" visible="false" AnchorPane.bottomAnchor="42.0" AnchorPane.leftAnchor="27.0" AnchorPane.rightAnchor="27.0" AnchorPane.topAnchor="42.0">
                   <effect>
                      <Blend mode="LIGHTEN" opacity="0.85" />
                   </effect>
@@ -591,7 +810,7 @@
                      <Blend mode="LIGHTEN" opacity="0.5" />
                   </effect>
                   <children>
-                     <Pane fx:id="paneBuscar" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity">
+                     <Pane fx:id="paneBuscar" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" style="-fx-background-radius: 15;">
                         <children>
                            <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="400.0">
                               <children>
@@ -612,7 +831,7 @@
                            </HBox>
                         </children>
                      </Pane>
-                     <Pane fx:id="paneAgregar" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity">
+                     <Pane fx:id="paneAgregar" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" style="-fx-background-radius: 15;">
                         <children>
                            <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="400.0">
                               <children>
