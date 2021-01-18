@@ -20,7 +20,7 @@
 <?import javafx.scene.shape.SVGPath?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="613.28" prefWidth="1000.0" style="-fx-background-color: linear-gradient(to left, #FE81BB, #FF4E10);" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ControladorUI">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="613.28" prefWidth="1000.0" style="-fx-background-color: linear-gradient(to left, #FE81BB, #FF4E10);" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ControladorUI">
    <HBox prefHeight="613.28" prefWidth="1000.0">
       <children>
          <VBox fx:id="vboxMenu" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" opacity="0.85" prefHeight="613.281" prefWidth="96.09" style="-fx-background-color: #ffffff;">
@@ -221,26 +221,41 @@
                                                                   <VBox.margin>
                                                                      <Insets left="50.0" right="50.0" top="50.0" />
                                                                   </VBox.margin>
+                                                                  <font>
+                                                                     <Font name="Nunito Regular" size="12.0" />
+                                                                  </font>
                                                                </JFXTextField>
                                                                <JFXTextField fx:id="txtNombresREmpleados" focusColor="#ff4e10" labelFloat="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="200.0" promptText="Nombre(s)" unFocusColor="#5776c8">
                                                                   <VBox.margin>
                                                                      <Insets left="50.0" right="50.0" top="30.0" />
                                                                   </VBox.margin>
+                                                                  <font>
+                                                                     <Font name="Nunito Regular" size="12.0" />
+                                                                  </font>
                                                                </JFXTextField>
                                                                <JFXTextField fx:id="txtApellidoPaternoREmpleados" focusColor="#ff4e10" labelFloat="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="200.0" promptText="Apellido Paterno" unFocusColor="#5776c8">
                                                                   <VBox.margin>
                                                                      <Insets left="50.0" right="50.0" top="30.0" />
                                                                   </VBox.margin>
+                                                                  <font>
+                                                                     <Font name="Nunito Regular" size="12.0" />
+                                                                  </font>
                                                                </JFXTextField>
                                                                <JFXTextField fx:id="txtApellidoMaternoREmpleados" focusColor="#ff4e10" labelFloat="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="200.0" promptText="Apellido Materno" unFocusColor="#5776c8">
                                                                   <VBox.margin>
                                                                      <Insets left="50.0" right="50.0" top="30.0" />
                                                                   </VBox.margin>
+                                                                  <font>
+                                                                     <Font name="Nunito Regular" size="12.0" />
+                                                                  </font>
                                                                </JFXTextField>
                                                                <JFXTextField fx:id="txtCurpREmpleados" focusColor="#ff4e10" labelFloat="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="200.0" promptText="CURP" unFocusColor="#5776c8">
                                                                   <VBox.margin>
                                                                      <Insets left="50.0" right="50.0" top="30.0" />
                                                                   </VBox.margin>
+                                                                  <font>
+                                                                     <Font name="Nunito Regular" size="12.0" />
+                                                                  </font>
                                                                </JFXTextField>
                                                                <JFXComboBox fx:id="comboEstadoREmpleados" focusColor="#ff4e10" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#cargarMunicipios" prefHeight="35.0" prefWidth="200.0" promptText="Estado" unFocusColor="#5776c8">
                                                                   <VBox.margin>
@@ -255,26 +270,41 @@
                                                                   <VBox.margin>
                                                                      <Insets top="50.0" />
                                                                   </VBox.margin>
+                                                                  <font>
+                                                                     <Font name="Nunito Regular" size="12.0" />
+                                                                  </font>
                                                                </JFXTextField>
                                                                <JFXTextField fx:id="txtNumeroIntREmpleados" focusColor="#ff4e10" labelFloat="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="200.0" promptText="Número Interior" unFocusColor="#5777c8">
                                                                   <VBox.margin>
                                                                      <Insets top="30.0" />
                                                                   </VBox.margin>
+                                                                  <font>
+                                                                     <Font name="Nunito Regular" size="12.0" />
+                                                                  </font>
                                                                </JFXTextField>
                                                                <JFXTextField fx:id="txtNumeroExtREmpleados" focusColor="#ff4e10" labelFloat="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="200.0" promptText="Número Exterior" unFocusColor="#5776c8">
                                                                   <VBox.margin>
                                                                      <Insets top="30.0" />
                                                                   </VBox.margin>
+                                                                  <font>
+                                                                     <Font name="Nunito Regular" size="12.0" />
+                                                                  </font>
                                                                </JFXTextField>
                                                                <JFXTextField fx:id="txtCodigoPostalREmpleados" focusColor="#ff4e10" labelFloat="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="200.0" promptText="Código Postal" unFocusColor="#5776c8">
                                                                   <VBox.margin>
                                                                      <Insets top="30.0" />
                                                                   </VBox.margin>
+                                                                  <font>
+                                                                     <Font name="Nunito Regular" size="12.0" />
+                                                                  </font>
                                                                </JFXTextField>
                                                                <JFXTextField fx:id="txtColoniaREmpleados" focusColor="#ff4e10" labelFloat="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="200.0" promptText="Colonia" unFocusColor="#5776c8">
                                                                   <VBox.margin>
                                                                      <Insets top="30.0" />
                                                                   </VBox.margin>
+                                                                  <font>
+                                                                     <Font name="Nunito Regular" size="12.0" />
+                                                                  </font>
                                                                </JFXTextField>
                                                                <JFXComboBox fx:id="comboMunicipioREmpleados" focusColor="#ff4e10" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#asignarIDMunicipio" prefHeight="35.0" prefWidth="200.0" promptText="Municipio" unFocusColor="#5776c8">
                                                                   <VBox.margin>
@@ -664,6 +694,9 @@
                                                             <VBox.margin>
                                                                <Insets bottom="5.0" top="7.0" />
                                                             </VBox.margin>
+                                                            <font>
+                                                               <Font name="Nunito Regular" size="12.0" />
+                                                            </font>
                                                          </JFXTextField>
                                                          <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="440.0">
                                                             <children>
@@ -673,14 +706,20 @@
                                                                   </padding>
                                                                   <HBox.margin>
                                                                      <Insets right="40.0" top="10.0" />
-                                                                  </HBox.margin></JFXTextField>
+                                                                  </HBox.margin>
+                                                                  <font>
+                                                                     <Font name="Nunito Regular" size="12.0" />
+                                                                  </font></JFXTextField>
                                                                <JFXTextField focusColor="#ff4e10" labelFloat="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="200.0" promptText="Apellido Materno" unFocusColor="#5776c8">
                                                                   <padding>
                                                                      <Insets top="7.0" />
                                                                   </padding>
                                                                   <HBox.margin>
                                                                      <Insets top="10.0" />
-                                                                  </HBox.margin></JFXTextField>
+                                                                  </HBox.margin>
+                                                                  <font>
+                                                                     <Font name="Nunito Regular" size="12.0" />
+                                                                  </font></JFXTextField>
                                                             </children>
                                                          </HBox>
                                                          <JFXTextField focusColor="#ff4e10" labelFloat="true" promptText="CURP" unFocusColor="#5776c8">
@@ -690,6 +729,9 @@
                                                             <padding>
                                                                <Insets top="7.0" />
                                                             </padding>
+                                                            <font>
+                                                               <Font name="Nunito Regular" size="12.0" />
+                                                            </font>
                                                          </JFXTextField>
                                                          <JFXTextField focusColor="#ff4e10" labelFloat="true" promptText="Calle" unFocusColor="#5776c8">
                                                             <VBox.margin>
@@ -698,6 +740,9 @@
                                                             <padding>
                                                                <Insets top="7.0" />
                                                             </padding>
+                                                            <font>
+                                                               <Font name="Nunito Regular" size="12.0" />
+                                                            </font>
                                                          </JFXTextField>
                                                          <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="51.0" prefWidth="440.0">
                                                             <children>
@@ -707,14 +752,20 @@
                                                                   </padding>
                                                                   <HBox.margin>
                                                                      <Insets right="40.0" top="20.0" />
-                                                                  </HBox.margin></JFXTextField>
+                                                                  </HBox.margin>
+                                                                  <font>
+                                                                     <Font name="Nunito Regular" size="12.0" />
+                                                                  </font></JFXTextField>
                                                                <JFXTextField focusColor="#ff4e10" labelFloat="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="200.0" promptText="Número Interior" unFocusColor="#5776c8">
                                                                   <padding>
                                                                      <Insets top="7.0" />
                                                                   </padding>
                                                                   <HBox.margin>
                                                                      <Insets top="20.0" />
-                                                                  </HBox.margin></JFXTextField>
+                                                                  </HBox.margin>
+                                                                  <font>
+                                                                     <Font name="Nunito Regular" size="12.0" />
+                                                                  </font></JFXTextField>
                                                             </children>
                                                          </HBox>
                                                          <HBox>
@@ -725,11 +776,17 @@
                                                                   </padding>
                                                                   <HBox.margin>
                                                                      <Insets right="40.0" top="20.0" />
-                                                                  </HBox.margin></JFXTextField>
+                                                                  </HBox.margin>
+                                                                  <font>
+                                                                     <Font name="Nunito Regular" size="12.0" />
+                                                                  </font></JFXTextField>
                                                                <JFXTextField focusColor="#ff4e10" labelFloat="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="200.0" promptText="Código Postal" unFocusColor="#5776c8">
                                                                   <HBox.margin>
                                                                      <Insets right="1.0" top="20.0" />
-                                                                  </HBox.margin></JFXTextField>
+                                                                  </HBox.margin>
+                                                                  <font>
+                                                                     <Font name="Nunito Regular" size="12.0" />
+                                                                  </font></JFXTextField>
                                                             </children>
                                                          </HBox>
                                                          <HBox prefHeight="100.0" prefWidth="200.0">
@@ -795,6 +852,9 @@
                                                                   <VBox.margin>
                                                                      <Insets left="64.0" right="64.0" top="35.0" />
                                                                   </VBox.margin>
+                                                                  <font>
+                                                                     <Font name="Nunito Regular" size="12.0" />
+                                                                  </font>
                                                                </JFXTextField>
                                                                <JFXDatePicker defaultColor="#5776c8" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="304.0" promptText="Seleccione Fecha a Justificar">
                                                                   <VBox.margin>
@@ -815,6 +875,9 @@
                                                                   <VBox.margin>
                                                                      <Insets left="64.0" right="64.0" top="35.0" />
                                                                   </VBox.margin>
+                                                                  <font>
+                                                                     <Font name="Nunito Regular" size="12.0" />
+                                                                  </font>
                                                                </JFXButton>
                                                             </children>
                                                             <HBox.margin>
@@ -850,6 +913,9 @@
                                                       <VBox.margin>
                                                          <Insets left="70.0" right="70.0" top="30.0" />
                                                       </VBox.margin>
+                                                      <font>
+                                                         <Font name="Nunito Regular" size="12.0" />
+                                                      </font>
                                                    </JFXTextField>
                                                    <JFXDatePicker fx:id="pickerIncidenciaFechaRegistroIncidencias" defaultColor="#ff4e10" maxHeight="40.0" maxWidth="292.0" minHeight="40.0" prefHeight="40.0" prefWidth="292.0" promptText="Feha de incidencia">
                                                       <VBox.margin>
@@ -875,6 +941,9 @@
                                                       <VBox.margin>
                                                          <Insets left="116.0" right="116.0" top="100.0" />
                                                       </VBox.margin>
+                                                      <font>
+                                                         <Font name="Nunito Regular" size="12.0" />
+                                                      </font>
                                                    </JFXButton>
                                                 </children>
                                              </VBox>
@@ -910,11 +979,17 @@
                                                       <VBox.margin>
                                                          <Insets bottom="20.0" left="50.0" right="50.0" />
                                                       </VBox.margin>
+                                                      <font>
+                                                         <Font name="Nunito Regular" size="12.0" />
+                                                      </font>
                                                    </JFXTextField>
                                                    <JFXTextField fx:id="txtDescripcionHorarioHorarios" focusColor="#ff4e10" labelFloat="true" maxHeight="40.0" minHeight="40.0" prefHeight="40.0" promptText="Descripcion de Horario" unFocusColor="#5776c8">
                                                       <VBox.margin>
                                                          <Insets bottom="20.0" left="50.0" right="50.0" />
                                                       </VBox.margin>
+                                                      <font>
+                                                         <Font name="Nunito Regular" size="12.0" />
+                                                      </font>
                                                    </JFXTextField>
                                                    <JFXComboBox focusColor="#ff4e10" labelFloat="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="332.0" promptText="Día de la semana" unFocusColor="#5776c8">
                                                       <VBox.margin>
@@ -925,6 +1000,9 @@
                                                       <VBox.margin>
                                                          <Insets bottom="5.0" left="50.0" />
                                                       </VBox.margin>
+                                                      <font>
+                                                         <Font name="Nunito Regular" size="12.0" />
+                                                      </font>
                                                    </Label>
                                                    <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity">
                                                       <children>
@@ -1027,6 +1105,9 @@
                                                       <VBox.margin>
                                                          <Insets left="70.0" right="70.0" top="80.0" />
                                                       </VBox.margin>
+                                                      <font>
+                                                         <Font name="Nunito Regular" size="12.0" />
+                                                      </font>
                                                    </JFXTextField>
                                                    <JFXComboBox fx:id="comboStatusDiasLaborables" focusColor="#ff4e10" maxHeight="40.0" maxWidth="292.0" minHeight="40.0" minWidth="292.0" prefHeight="40.0" prefWidth="292.0" promptText="Seleccione status" unFocusColor="#5776c8">
                                                       <opaqueInsets>
@@ -1040,6 +1121,9 @@
                                                       <VBox.margin>
                                                          <Insets left="116.0" right="116.0" top="80.0" />
                                                       </VBox.margin>
+                                                      <font>
+                                                         <Font name="Nunito Regular" size="12.0" />
+                                                      </font>
                                                    </JFXButton>
                                                 </children>
                                              </VBox>
@@ -1101,20 +1185,32 @@
                                                       <VBox.margin>
                                                          <Insets bottom="30.0" top="80.0" />
                                                       </VBox.margin>
+                                                      <font>
+                                                         <Font name="Nunito Regular" size="12.0" />
+                                                      </font>
                                                    </JFXTextField>
                                                    <JFXTextField focusColor="#ff4e10" labelFloat="true" prefHeight="40.0" promptText="Descripción" unFocusColor="#5776c8">
                                                       <VBox.margin>
                                                          <Insets bottom="30.0" />
                                                       </VBox.margin>
+                                                      <font>
+                                                         <Font name="Nunito Regular" size="12.0" />
+                                                      </font>
                                                    </JFXTextField>
                                                    <JFXToggleButton text="Status" toggleColor="#5776c8" toggleLineColor="#95a9dd">
                                                       <VBox.margin>
                                                          <Insets left="100.0" />
-                                                      </VBox.margin></JFXToggleButton>
+                                                      </VBox.margin>
+                                                      <font>
+                                                         <Font name="Nunito Regular" size="12.0" />
+                                                      </font></JFXToggleButton>
                                                    <JFXButton maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="332.0" ripplerFill="#fe81bb" style="-fx-border-color: #000; -fx-border-radius: 4px;" text="Guardar" textFill="#ff4e10">
                                                       <VBox.margin>
                                                          <Insets top="30.0" />
                                                       </VBox.margin>
+                                                      <font>
+                                                         <Font name="Nunito Regular" size="12.0" />
+                                                      </font>
                                                    </JFXButton>
                                                 </children>
                                                 <padding>
@@ -1143,6 +1239,9 @@
                                                       <VBox.margin>
                                                          <Insets bottom="50.0" top="50.0" />
                                                       </VBox.margin>
+                                                      <font>
+                                                         <Font name="Nunito Regular" size="12.0" />
+                                                      </font>
                                                    </JFXTextField>
                                                    <JFXComboBox focusColor="#ff4e10" labelFloat="true" prefHeight="40.0" prefWidth="332.0" promptText="Seleccione Horario" unFocusColor="#5776c8">
                                                       <VBox.margin>
@@ -1153,6 +1252,9 @@
                                                       <VBox.margin>
                                                          <Insets top="30.0" />
                                                       </VBox.margin>
+                                                      <font>
+                                                         <Font name="Nunito Regular" size="12.0" />
+                                                      </font>
                                                    </JFXButton>
                                                 </children>
                                                 <padding>
@@ -1198,11 +1300,17 @@
                               <HBox.margin>
                                  <Insets bottom="25.0" left="50.0" top="25.0" />
                               </HBox.margin>
+                              <font>
+                                 <Font name="Nunito Regular" size="12.0" />
+                              </font>
                            </JFXPasswordField>
                            <JFXButton fx:id="btnSetPass" maxWidth="200.0" minWidth="200.0" onMouseClicked="#iniciarConexion" prefWidth="200.0" ripplerFill="#fe81bb" style="-fx-border-color: #000; -fx-border-radius: 4px;" text="Aplicar" textFill="#ff4e10">
                               <HBox.margin>
                                  <Insets left="30.0" top="33.5" />
                               </HBox.margin>
+                              <font>
+                                 <Font name="Nunito Regular" size="12.0" />
+                              </font>
                            </JFXButton>
                         </children>
                         <VBox.margin>
@@ -1228,7 +1336,7 @@
                                  </SVGPath>
                                  <Label fx:id="lblAgregar" text="Añadir">
                                     <font>
-                                       <Font size="17.0" />
+                                       <Font name="Nunito Regular" size="17.0" />
                                     </font>
                                     <HBox.margin>
                                        <Insets left="10.0" top="5.0" />
@@ -1249,7 +1357,7 @@
                                  </SVGPath>
                                  <Label fx:id="lblBuscar" text="Buscar">
                                     <font>
-                                       <Font size="17.0" />
+                                       <Font name="Nunito Regular" size="17.0" />
                                     </font>
                                     <HBox.margin>
                                        <Insets left="10.0" top="5.0" />
