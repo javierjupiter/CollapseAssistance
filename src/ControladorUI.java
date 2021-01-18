@@ -6,10 +6,13 @@ import javafx.animation.Timeline;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.Tooltip;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
+import javafx.scene.paint.Color;
 import javafx.scene.paint.Paint;
+import javafx.scene.shape.SVGPath;
 import javafx.util.Duration;
 import javax.swing.*;
 import java.sql.Connection;
@@ -23,11 +26,71 @@ public class ControladorUI {
     private int posicionPantalla;
     //0: Home, 1: Empleados, 2: Horarios, 3: Días no laborales, 4: Asistencias, 5: Justificantes, 6: Justificar Incidencias, 7:Asignación de horarios
 
+    @FXML
+    private Label lblAgregar;
+    @FXML
+    private SVGPath svgAgregar;
+    @FXML
+    private Label lblBuscar;
+    @FXML
+    private SVGPath svgBuscar;
+    @FXML
+    private VBox vboxBuscarEmpleados;
+    @FXML
+    public void pestanyasAgregar(){
+        lblAgregar.setTextFill(Color.web("#FF4E10"));
+        svgAgregar.setFill(Color.web("#FF4E10"));
+        lblBuscar.setTextFill(Color.web("#000000"));
+        svgBuscar.setFill(Color.web("#000000"));
+        switch (posicionPantalla){
+            case 1:
+                vBoxREmpleados.setVisible(true);
+                vboxBuscarEmpleados.setVisible(false);
+                break;
+        }
+    }
+    @FXML
+    public void pestanyasBuscar(){
+        lblAgregar.setTextFill(Color.web("#000000"));
+        svgAgregar.setFill(Color.web("#000000"));
+        lblBuscar.setTextFill(Color.web("#FF4E10"));
+        svgBuscar.setFill(Color.web("#FF4E10"));
+        switch (posicionPantalla){
+            case 1:
+                vBoxREmpleados.setVisible(false);
+                vboxBuscarEmpleados.setVisible(true);
+                break;
+        }
+    }
+
+    @FXML
+    private JFXButton btnEditarCancelar;
+    @FXML
+    private JFXButton btnEliminarGuardar;
+    @FXML
+    private VBox vboxEmpleadosBuscarEditar;
+    @FXML private VBox vboxEmpleadosBuscarEcontrado;
+    @FXML private VBox vboxEmpleadosBuscar;
+    @FXML private ImageView imgEmpleadosNoFound;
+
+    @FXML
+    private void editarEmpleados(){
+        btnEditarCancelar.setText("Cancelar");
+        btnEliminarGuardar.setText("Guardar");
+        buscarEmpleadosPantalla(true, false, false, false);
+    }
+
+    private void buscarEmpleadosPantalla(boolean editar, boolean encontrado, boolean buscar, boolean noFound){
+        vboxEmpleadosBuscarEditar.setVisible(editar);
+        vboxEmpleadosBuscarEcontrado.setVisible(encontrado);
+        vboxEmpleadosBuscar.setVisible(buscar);
+        imgEmpleadosNoFound.setVisible(noFound);
+    }
+
+
     //Inicia propiedades del menú
     @FXML
     private VBox vboxMenu;
-    @FXML
-    private HBox hBoxPestanyas;
     @FXML
     private HBox panePestanyasFondo;
     @FXML
@@ -62,8 +125,13 @@ public class ControladorUI {
     private Label lblMeridian;
     @FXML
     private Label lblFecha;
+    @FXML
+    private HBox hBoxPestanyas;
+
+
 
     public void crearMenuLateral(){
+
         JFXRippler ripplerHome = new JFXRippler(paneHome);
         ripplerHome.setRipplerFill(Paint.valueOf("#FE81BB"));
         vboxMenu.getChildren().add(ripplerHome);
@@ -121,14 +189,13 @@ public class ControladorUI {
         ripplerReloj.setRipplerFill(Paint.valueOf("#FFFFFF"));
         vboxMenu.getChildren().add(ripplerReloj);
 
-        JFXRippler ripplerAgregar = new JFXRippler(paneAgregar);
-        ripplerAgregar.setRipplerFill(Paint.valueOf("#FF4E10"));
-        hBoxPestanyas.getChildren().add(ripplerAgregar);
-
         JFXRippler ripplerBuscar = new JFXRippler(paneBuscar);
         ripplerBuscar.setRipplerFill(Paint.valueOf("#FF4E10"));
         hBoxPestanyas.getChildren().add(ripplerBuscar);
 
+        JFXRippler ripplerAgregar = new JFXRippler(paneAgregar);
+        ripplerAgregar.setRipplerFill(Paint.valueOf("#FF4E10"));
+        hBoxPestanyas.getChildren().add(ripplerAgregar);
 
 
         Timeline clock = new Timeline(new KeyFrame(Duration.ZERO, e -> {
@@ -219,7 +286,6 @@ public class ControladorUI {
         );
         clock.setCycleCount(Animation.INDEFINITE);
         clock.play();
-
     }
     //Finaliza propiedades del menú
 
@@ -797,6 +863,7 @@ public class ControladorUI {
 
     @FXML
     public void mostrarRegistrosEmpleados(){
+        posicionPantalla = 1;
         vboxHome.setVisible(false);
 
         vboxPantallas.setVisible(true);
