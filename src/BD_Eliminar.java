@@ -1,7 +1,7 @@
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 public class BD_Eliminar {
-    //Registro de justificantes------------------------------------------------------------------------
+    //Registro de justificantes---------ya---------------------------------------------------------------
     public String deleteJustificantes(String IdTipoJustificante){
         String sql = "DELETE FROM cjusasi WHERE NIDTPJU = " + IdTipoJustificante;
         return sql;
@@ -19,7 +19,7 @@ public class BD_Eliminar {
 
     }
 
-    //HORARIOS-------------------------------------------------------------------
+    //HORARIOS----------------ya---------------------------------------------------
     public String deleteHorarios(String IdHorario){
         String sql = "DELETE FROM chorars WHERE NIDHORA = " + IdHorario;
         return sql;
@@ -38,7 +38,7 @@ public class BD_Eliminar {
     }
 
 
-    //DIAS NO LABORABLES-------------------------------------------------------------------
+    //DIAS NO LABORABLES----------YA---------------------------------------------------------
     public String deleteDiasNoLaboralbles(String FechaNoLaborable){
         String sql = "DELETE FROM mdiasnl WHERE DFECHNL = " + FechaNoLaborable;
         return sql;
@@ -57,7 +57,7 @@ public class BD_Eliminar {
     }
 
 
-    //Empleados-------------------------------------------------------------------
+    //Empleados-----------YA--------------------------------------------------------
     public String deleteEmpleados(String IdEmpleado){
         String sql = "DELETE FROM ddatemp WHERE CCVEEMP = " + IdEmpleado;
         return sql;
@@ -77,7 +77,7 @@ public class BD_Eliminar {
 
 
 
-    //Horarios Empleados-------------------------------------------------------------------
+    //Horarios Empleados-----------YA--------------------------------------------------------
     //eliminar por la clave empleado
     public String deleteHorariosEmpleadosClaveEmpleado(String IdEmpleado){
         String sql = "DELETE FROM dhremps WHERE CCVEEMP = " + IdEmpleado;
@@ -96,7 +96,7 @@ public class BD_Eliminar {
 
     }
 
-    //Horarios Empleados-------------------------------------------------------------------
+    //Horarios Empleados---------YA----------------------------------------------------------
     //eliminar por el id horario
     public String deleteHorariosEmpleadosIdHorario(String IdHorario){
         String sql = "DELETE FROM dhremps WHERE NIDHORA = " + IdHorario;

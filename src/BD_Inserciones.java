@@ -5,9 +5,9 @@ import java.sql.Statement;
 import java.util.ArrayList;
 
 public class BD_Inserciones {
-
+    //__________________YA__________________________________________________________________________________________________________
     public String insertJustificante(String IdTipoJustificante, String descripcion, String status){
-        String sql = "INSERT INTO Tipo_Justificante (ID_Tipo_Justificante,Descripcion_Justificante,Status_Tipo_Justificante) VALUES (" + IdTipoJustificante + ",'" + descripcion +"','" + status +"')";
+        String sql = "INSERT INTO cjusasi (NIDTPJU, CDESJUS, CSTATUS) VALUES (" + IdTipoJustificante + ",'" + descripcion +"','" + status +"')";
         return sql;
     }
     public boolean hacerIncercionesJustificantes(Connection conn, String IdTipoJustificante, String descripcion, String status){
@@ -23,11 +23,9 @@ public class BD_Inserciones {
 
     }
 
-    //____________________________________________________________________________________________________________________________________________
+    //_______________________________________YA_____________________________________________________________________________________________________
     public String insertEmpleado(String claveE, String nombreE, String apellidoP, String apellidoM, String curpE, String fecha, String calle, String nExterior, String nInterior, String colonia, String cp, String idEstados, String idMunicipios, String Status){
-        String sql = "INSERT INTO Empleados (Clave_Empleado,Nombre_Empleado,Apellido_Paterno_Empleado,Apellido_Materno_Empleado,CURP_Empleado,"
-                + "Fecha_Contratacion,Direccion_Calle,Direccion_No_Exterior,Direccion_No_Interior,Direccion_Colonia,Direccion_Codigo_Postal,"
-                + "ID_Estado,ID_Municipios,Status_Empleado) VALUES (" + claveE + ",'" + nombreE +"','" + apellidoP +"','" + apellidoM + "','" + curpE +"','" + fecha + "','" + calle +"'," + nExterior +","+ nInterior +",'" + colonia +"'," + cp + "," + idEstados +"," + idMunicipios +",'" + Status + "')";
+        String sql = "INSERT INTO ddatemp (CCVEEMP, CNOMBRE, CAPEUNO, CAPEDOS, CCURPEM, DFECING, CNMCALL, CNUMEXT, CNUMINT, CCOLONI, CCODPOS, NIDESTA, NIDMUNI, CSTATUS) VALUES (" + claveE + ",'" + nombreE +"','" + apellidoP +"','" + apellidoM + "','" + curpE +"','" + fecha + "','" + calle +"'," + nExterior +","+ nInterior +",'" + colonia +"'," + cp + "," + idEstados +"," + idMunicipios +",'" + Status + "')";
         return sql;
     }
     public boolean hacerInsercionEmpleado(Connection conn, String claveE, String nombreE, String apellidoP, String apellidoM, String curpE, String fecha, String calle, String nExterior, String nInterior, String colonia, String cp, String idEstados, String idMunicipios, String Status){
@@ -42,9 +40,9 @@ public class BD_Inserciones {
         }
     }
 
-    //____________________________________________________________________________________________________________________________________________
+    //_______________________________________YA_____________________________________________________________________________________________________
     public String insertHorariosEmpleado(String IdHorario, String clave, String fecha){
-        String sql = "INSERT INTO Horario_Empleados (ID_Horario,Clave_Empleado,Fecha_Asignacion_Horario) VALUES (" + IdHorario + ", '" + clave +"' , '" + fecha +"')";
+        String sql = "INSERT INTO dhremps (NIDHORA, CCVEEMP, DFECAIS) VALUES (" + IdHorario + ", '" + clave +"' , '" + fecha +"')";
 
         return sql;
     }
@@ -60,10 +58,10 @@ public class BD_Inserciones {
         }
 
     }
-    //____________________________________________________________________________________________________________________________________________
+    //_____________YA_______________________________________________________________________________________________________________________________
 
     public String insertJustificanteEmpleados(String ClaveE, String fecha, String tipoJustificante, String StatusJustificante){
-        String sql = "INSERT INTO Justificantes_Empleados (Clave_Empleado,Fecha_Incidencia,ID_Tipo_Justificante,Status_Justificante) VALUES ('" + ClaveE+ "', '" + fecha + "' , " + tipoJustificante +", '" + StatusJustificante +"')";
+        String sql = "INSERT INTO pjusasi (CCVEEMP, DFECINC, NIDTPJU, CSTATUS) VALUES ('" + ClaveE+ "', '" + fecha + "' , " + tipoJustificante +", '" + StatusJustificante +"')";
         return sql;
     }
     public boolean hacerInsercionJustificantesEmpleados(Connection conn, String ClaveE, String fecha, String tipoJustificante, String StatusJustificante){
@@ -78,11 +76,11 @@ public class BD_Inserciones {
         }
 
     }
-    //____________________________________________________________________________________________________________________________________________
+    //____________________YA________________________________________________________________________________________________________________________
 
 
     public String insertRegistrosAsistencia(String ClaveR, String fecha, String biometrico, String StatusRegistro){
-        String sql = "INSERT INTO Registro_Asistencias (Clave_Empleado,Fecha_Registro,Numero_Dispositivo_Biometrico,Status_Registro) VALUES ('" + ClaveR+ "', '" + fecha + "' ," + biometrico + ",'" + StatusRegistro +"')";
+        String sql = "INSERT INTO pregasi(CCVEEMP,DFECREG,CNUMBIO,CSTATUS) ('" + ClaveR+ "', '" + fecha + "' ," + biometrico + ",'" + StatusRegistro +"')";
         return sql;
     }
     public boolean hacerInsercionRegistroAsistencia(Connection conn, String ClaveR, String fecha, String biometrico, String StatusRegistro){
@@ -97,9 +95,9 @@ public class BD_Inserciones {
         }
 
     }
-    //____________________________________________________________________________________________________________________________________________
+    //________________YA____________________________________________________________________________________________________________________________
     public String insertIncidenciasEmpleado(String ClaveI, String fecha, String tipo, String StatusIncidencia){
-        String sql = "INSERT INTO Incidencias_Empleados (Clave_Empleado,Fecha_Incidencia,Tipo_Incidencia,Status_Incidencia) VALUES ('" + ClaveI + "', '" + fecha + "' ,'" + tipo + "','" + StatusIncidencia + "')";
+        String sql = "INSERT INTO tincemp(CCVEEMP, DFECINC, CTIPINC, CSTATUS) VALUES ('" + ClaveI + "', '" + fecha + "' ,'" + tipo + "','" + StatusIncidencia + "')";
         return sql;
     }
     public boolean hacerIncercionesIEmpleado(Connection conn, String ClaveI, String fecha, String tipo, String StatusIncidencia){
@@ -114,9 +112,9 @@ public class BD_Inserciones {
         }
 
     }
-    //____________________________________________________________________________________________________________________________________________
+    //_______________________YA_____________________________________________________________________________________________________________________
     public String insertDiasNoLaborable(String fecha, String motivo, String statusFecha){
-        String sql = "INSERT INTO Dias_No_Laborales (Fecha,Motivo,Status_Fecha_No_Laboral) VALUES ('" + fecha + "','" + motivo + "','" + statusFecha + "')";
+        String sql = "INSERT INTO mdiasnl (DFECHNL, CMOTIVO, CSTATUS) VALUES ('" + fecha + "','" + motivo + "','" + statusFecha + "')";
         return sql;
     }
     public boolean hacerIncercionesDiasNoLaborables(Connection conn, String fecha, String motivo, String StatusFecha){
@@ -131,9 +129,9 @@ public class BD_Inserciones {
         }
 
     }
-//____________________________________________________________________________________________________________________________________________
+//________________________________YA____________________________________________________________________________________________________________
     public String insertHorario(String IDhorario, String descripcion, String horario){
-        String sql = "INSERT INTO Horarios (ID_Horario,Descripcion_Horario,Status_Horario) VALUES (" + IDhorario + ",'" + descripcion +"','" + horario +"')";
+        String sql = "INSERT INTO chorars (NIDHORA, CDESCHR, CSTATUS) VALUES (" + IDhorario + ",'" + descripcion +"','" + horario +"')";
         return sql;
     }
     public boolean hacerIncercionesCatalogoHorarios(Connection conn, String IDhorario, String descripcion, String horario){

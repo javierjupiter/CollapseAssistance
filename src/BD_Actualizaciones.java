@@ -1,7 +1,7 @@
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.sql.Statement;
-
+//---------------------------------------YA---------------------------------------------
 public class BD_Actualizaciones {
      public Boolean actualizarJustificantes (Connection conn, String idJustificante, String descripcionJustificante, String estatus){
          try {
@@ -18,7 +18,7 @@ public class BD_Actualizaciones {
          String sql = "UPDATE cjusasi SET CDESJUS = '" + descripcionJustificante + "', CSTATUS = '" + estatus + "' WHERE NIDTPJU = '" + idJustificante + "' ";
          return sql;
      }
-
+//--------------------------------YA----------------------------------------------------
 
     public Boolean actualizarHorarios (Connection conn, String idHorario, String descripcionHorario,  String diaSemana,String horaEntrada, String horaSalida, String estatus){
         try {
@@ -39,10 +39,10 @@ public class BD_Actualizaciones {
         }
 
     public String generarQueryHorarios ( String idhorario, String descripcionHorario, String estatus){
-        String sql = "UPDATE chorars SET DDCDESCHR  = '" + descripcionHorario +  "', CSTATUS = '" + estatus +"' WHERE NIDHORA = '" + idhorario +  "'  ";
-        return sql;
+        String sql = "UPDATE chorars SET CDESCHR  = '" + descripcionHorario +  "', CSTATUS = '" + estatus +"' WHERE NIDHORA = '" + idhorario +  "'  ";
+        return sql;//MODIFIQUE /*DDCDESCHR*/ POR CDESCHR
     }
-
+    //------------------------------------------------------------------------------------
     public Boolean actualizarDiasNoLaborales (Connection conn, String fecha, String motivo,  String estatus){
         try {
             Statement stmt = conn.createStatement();
@@ -55,10 +55,10 @@ public class BD_Actualizaciones {
         }
     }
     public String generarQueryDiasNoLaborales (String fecha, String motivo,  String estatus ){
-        String sql = "UPDATE mdiasnl SET  CMOTIVO = '" + motivo + "' CSTATUS = '"+ estatus+ "'  WHERE DFECHNL = '" + fecha + "' ";
-        return sql;
+        String sql = "UPDATE mdiasnl SET  CMOTIVO = '" + motivo + "', CSTATUS = '"+ estatus+ "'  WHERE DFECHNL = '" + fecha + "' ";
+        return sql;//coloque , antes del CSTATUS
     }
-
+    //------------------------------------------------------------------------------------
     public Boolean actualizarRegistroIncidencias (Connection conn, String claveEmpleado, String fechaRegistro,  String noDispositivoBiometrico, String estatusRegistro, String gato){
         try {
             Statement stmt = conn.createStatement();
@@ -71,11 +71,11 @@ public class BD_Actualizaciones {
         }
     }
     public String generarQueryRegistroIncidencias(String claveEmpleado, String fechaRegistro,  String noDispositivoBiometrico, String estatusRegistro){
-    String sql = "UPDATE TINCEMP SET   DFECINC= '" + fechaRegistro + "' CTIPINC = '"+ noDispositivoBiometrico+ "' CSTATUS = '" + estatusRegistro +"' WHERE CCVEEMP = '" + claveEmpleado + "' ";
-        return sql;
+    String sql = "UPDATE TINCEMP SET   DFECINC= '" + fechaRegistro + "', CTIPINC = '"+ noDispositivoBiometrico+ "', CSTATUS = '" + estatusRegistro +"' WHERE CCVEEMP = '" + claveEmpleado + "' ";
+        return sql;//agregue , faltantes
     }
 
-
+    //------------------------------------------------------------------------------------
     public Boolean actualizarRegistroEmpleados (Connection conn,String idEmpleado, String nombre, String apellidoPaterno,  String apellidoMaterno, String curp, String fechaIngreso, String calle, String numeroExt ,String numerInt, String codigoPostal, String colonia, String estado, String municipioAlcaldia){
         try {
             Statement stmt = conn.createStatement();
@@ -88,8 +88,8 @@ public class BD_Actualizaciones {
         }
     }
     public String generarQueryRegistroEmpleados( String idEmpleado,String nombre, String apellidoPaterno,  String apellidoMaterno, String curp, String fechaIngreso, String calle, String numeroExt ,String numerInt, String codigoPostal, String colonia, String estado, String municipioAlcaldia){
-        String sql = "UPDATE DDATEMP SET CNOMBRE  = '" + nombre + "' CAPEUNO = '"+ apellidoPaterno+ "' CAPEDOS = '" + apellidoMaterno + "'CCURPEM = '" + curp + "' DFECING = '" + fechaIngreso+ "' CNMCALL ='" +calle+ "' CNUMEXT = '" + numeroExt + "' CNUMINT = '" + numerInt + "' CCODPOS = '" + codigoPostal + "' CCOLONI ='"  + colonia + "' NIDESTE = '" +estado+ "' NIDMUNI = '" + municipioAlcaldia + "' WHERE CCVEEMP = '" + idEmpleado + "' ' ";
-        return sql;
+        String sql = "UPDATE DDATEMP SET CNOMBRE  = '" + nombre + "', CAPEUNO = '"+ apellidoPaterno+ "', CAPEDOS = '" + apellidoMaterno + "', CCURPEM = '" + curp + "', DFECING = '" + fechaIngreso+ "', CNMCALL ='" +calle+ "', CNUMEXT = '" + numeroExt + "', CNUMINT = '" + numerInt + "', CCODPOS = '" + codigoPostal + "', CCOLONI ='"  + colonia + "', NIDESTA = '" +estado+ "', NIDMUNI = '" + municipioAlcaldia + "' WHERE CCVEEMP = '" + idEmpleado + "' ' ";
+        return sql; //CORRECCION POR 'NIDESTE' A NIDESTA Y AGREGUE ,
     }
 }
 
