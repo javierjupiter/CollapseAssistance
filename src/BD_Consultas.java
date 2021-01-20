@@ -81,7 +81,7 @@ public class BD_Consultas {
         try{
             String id = "";
             Statement select = conn.createStatement();
-            ResultSet resultadoConsulta = select.executeQuery(consultaNombreMunicipio(nombre));
+            ResultSet resultadoConsulta = select.executeQuery(consultaNombreMunicipioID(nombre));
 
             while (resultadoConsulta.next()){
                 id = resultadoConsulta.getString(1);
@@ -97,7 +97,12 @@ public class BD_Consultas {
 
 
     public String consultaEstados(){
-        String sql = "SELECT * FROM cestads ";
+        String sql = "SELECT CNOMEST FROM cestads ";
+        return sql;
+    }
+
+    public String consultaNombreMunicipioID(String clave){
+        String sql = "SELECT CNOMMUN FROM cmunics WHERE NIDMUNI = " + clave;
         return sql;
     }
 
@@ -118,6 +123,28 @@ public class BD_Consultas {
 
     public int getTamanioEstados() {
         return tamanioEstados;
+    }
+
+    public String hacerConsultasEstadosID(Connection conn, String nombre){
+        try{
+            String id = "";
+            Statement select = conn.createStatement();
+            ResultSet resultadoConsulta = select.executeQuery(consultaNombreEstadosID(nombre));
+
+            while (resultadoConsulta.next()){
+                id = resultadoConsulta.getString(1);
+            }
+            return id;
+
+        }catch (Exception e) {
+            System.out.println(e);
+            return "";
+        }
+    }
+
+    private String consultaNombreEstadosID(String clave){
+        String sql = "SELECT CNOMEST FROM cestads WHERE NIDESTA = " + clave;
+        return sql;
     }
 
     public boolean consultaJustificantes (Connection conn,String IDJustificante){
@@ -491,8 +518,8 @@ public class BD_Consultas {
             ResultSet resultado = select.executeQuery(generarQueryEmpleadoEntero(clave));
 
             while (resultado.next()){
-                for (int i = 1; i < 14; i++){
-                    Temporal[i] = resultado.getString(i);
+                for (int i = 0; i < 14; i++){
+                    Temporal[i] = resultado.getString(i + 1);
                 }
             }
 
@@ -504,8 +531,25 @@ public class BD_Consultas {
     }
 
     public String generarQueryEmpleadoEntero(String clave){
-        return "SELECT * FROM DDATEMP WHERE CCVEEMP = '" + clave + "'";
+        return "SELECT CCVEEMP, CNOMBRE, CAPEUNO, CAPEDOS, CCURPEM, DFECING, CNMCALL, CNUMEXT, CNUMINT, CCOLONI, CCODPOS, NIDESTA, NIDMUNI, CSTATUS FROM DDATEMP WHERE CCVEEMP = '" + clave + "'";
     }
 
+
+    public ArrayList<String> generarTipoJustificantes(Connection conn){
+        try {
+            Temporal = new String[4];
+            ArrayList<String> listaJustificantes = new ArrayList<String>();
+            Statement select = conn.createStatement();
+            ResultSet resultado = select.executeQuery("SELECT CDESJUS FROM cjusasi");
+
+            while (resultado.next()){
+                listaJustificantes.add(resultado.getString(1));
+            }
+            return listaJustificantes;
+        } catch (SQLException throwables) {
+            ArrayList<String> hola = null;
+            return hola;
+        }
+    }
 
 }

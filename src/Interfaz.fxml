@@ -336,7 +336,7 @@
                                        </HBox>
                                     </children>
                                  </VBox>
-                                 <VBox fx:id="vboxBuscarEmpleados" prefHeight="500.0" prefWidth="864.0">
+                                 <VBox fx:id="vboxBuscarEmpleados" prefHeight="500.0" prefWidth="864.0" visible="false">
                                     <children>
                                        <HBox prefHeight="500.0" prefWidth="864.0">
                                           <children>
@@ -370,7 +370,7 @@
                                                    <DropShadow blurType="GAUSSIAN" color="#402f3b1f" height="31.89" offsetX="4.0" offsetY="6.0" radius="16.61" width="36.55" />
                                                 </effect>
                                                 <children>
-                                                   <VBox fx:id="vboxEmpleadosBuscarEcontrado" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="416.0" prefWidth="500.0">
+                                                   <VBox fx:id="vboxEmpleadosBuscarEcontrado" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="416.0" prefWidth="500.0" visible="false">
                                                       <padding>
                                                          <Insets bottom="15.0" left="20.0" right="20.0" top="10.0" />
                                                       </padding>
@@ -405,7 +405,7 @@
                                                                      <Font name="Nunito Regular" size="12.0" />
                                                                   </font>
                                                                </Label>
-                                                               <Label alignment="CENTER_RIGHT" prefHeight="23.0" prefWidth="412.0" text="QWERTYUIOPASDFGHJK" textAlignment="RIGHT">
+                                                               <Label fx:id="lblseacrhEmpleadoCURP" alignment="CENTER_RIGHT" prefHeight="23.0" prefWidth="412.0" text="QWERTYUIOPASDFGHJK" textAlignment="RIGHT">
                                                                   <HBox.margin>
                                                                      <Insets left="15.0" />
                                                                   </HBox.margin>
@@ -428,7 +428,7 @@
                                                                      <Font name="Nunito Regular" size="12.0" />
                                                                   </font>
                                                                </Label>
-                                                               <Label alignment="CENTER_RIGHT" prefHeight="23.0" prefWidth="401.0" text="QWERTYUIOPASDFGHJK" textAlignment="RIGHT">
+                                                               <Label fx:id="lblSearchNombreEmpleado" alignment="CENTER_RIGHT" prefHeight="23.0" prefWidth="401.0" text="QWERTYUIOPASDFGHJK" textAlignment="RIGHT">
                                                                   <HBox.margin>
                                                                      <Insets left="15.0" />
                                                                   </HBox.margin>
@@ -451,7 +451,7 @@
                                                                      <Font name="Nunito Regular" size="12.0" />
                                                                   </font>
                                                                </Label>
-                                                               <Label alignment="CENTER_RIGHT" prefHeight="23.0" prefWidth="392.0" text="QWERTYUIOPASDFGHJK" textAlignment="RIGHT">
+                                                               <Label fx:id="lblsearchApellidosEmpleado" alignment="CENTER_RIGHT" prefHeight="23.0" prefWidth="392.0" text="QWERTYUIOPASDFGHJK" textAlignment="RIGHT">
                                                                   <HBox.margin>
                                                                      <Insets left="15.0" />
                                                                   </HBox.margin>
@@ -474,7 +474,7 @@
                                                                      <Font name="Nunito Regular" size="12.0" />
                                                                   </font>
                                                                </Label>
-                                                               <Label alignment="CENTER_RIGHT" prefHeight="23.0" prefWidth="417.0" text="QWERTYUIOPASDFGHJK" textAlignment="RIGHT">
+                                                               <Label fx:id="lblCalleBuscarEmpleado" alignment="CENTER_RIGHT" prefHeight="23.0" prefWidth="417.0" text="QWERTYUIOPASDFGHJK" textAlignment="RIGHT">
                                                                   <HBox.margin>
                                                                      <Insets left="15.0" />
                                                                   </HBox.margin>
@@ -497,7 +497,7 @@
                                                                      <Font name="Nunito Regular" size="12.0" />
                                                                   </font>
                                                                </Label>
-                                                               <Label alignment="CENTER_RIGHT" prefHeight="23.0" prefWidth="381.0" text="QWERTYUIOPASDFGHJK" textAlignment="RIGHT">
+                                                               <Label fx:id="lblnoExtBuscarEmpleados" alignment="CENTER_RIGHT" prefHeight="23.0" prefWidth="381.0" text="QWERTYUIOPASDFGHJK" textAlignment="RIGHT">
                                                                   <HBox.margin>
                                                                      <Insets left="15.0" />
                                                                   </HBox.margin>
@@ -520,7 +520,7 @@
                                                                      <Font name="Nunito Regular" size="12.0" />
                                                                   </font>
                                                                </Label>
-                                                               <Label alignment="CENTER_RIGHT" prefHeight="23.0" prefWidth="386.0" text="QWERTYUIOPASDFGHJK" textAlignment="RIGHT">
+                                                               <Label fx:id="lblnoIntBuscarEmpleados" alignment="CENTER_RIGHT" prefHeight="23.0" prefWidth="386.0" text="QWERTYUIOPASDFGHJK" textAlignment="RIGHT">
                                                                   <HBox.margin>
                                                                      <Insets left="15.0" />
                                                                   </HBox.margin>
@@ -543,7 +543,7 @@
                                                                      <Font name="Nunito Regular" size="12.0" />
                                                                   </font>
                                                                </Label>
-                                                               <Label alignment="CENTER_RIGHT" prefHeight="23.0" prefWidth="404.0" text="QWERTYUIOPASDFGHJK" textAlignment="RIGHT">
+                                                               <Label fx:id="lblColoniaBuscarEmpleado" alignment="CENTER_RIGHT" prefHeight="23.0" prefWidth="404.0" text="QWERTYUIOPASDFGHJK" textAlignment="RIGHT">
                                                                   <HBox.margin>
                                                                      <Insets left="15.0" />
                                                                   </HBox.margin>
@@ -566,7 +566,7 @@
                                                                      <Font name="Nunito Regular" size="12.0" />
                                                                   </font>
                                                                </Label>
-                                                               <Label alignment="CENTER_RIGHT" prefHeight="23.0" prefWidth="369.0" text="QWERTYUIOPASDFGHJK" textAlignment="RIGHT">
+                                                               <Label fx:id="lblCPBuscarEmpleado" alignment="CENTER_RIGHT" prefHeight="23.0" prefWidth="369.0" text="QWERTYUIOPASDFGHJK" textAlignment="RIGHT">
                                                                   <HBox.margin>
                                                                      <Insets left="15.0" />
                                                                   </HBox.margin>
@@ -589,7 +589,7 @@
                                                                      <Font name="Nunito Regular" size="12.0" />
                                                                   </font>
                                                                </Label>
-                                                               <Label alignment="CENTER_RIGHT" prefHeight="23.0" prefWidth="393.0" text="QWERTYUIOPASDFGHJK" textAlignment="RIGHT">
+                                                               <Label fx:id="lblMunicipioBuscarEmpleados" alignment="CENTER_RIGHT" prefHeight="23.0" prefWidth="393.0" text="QWERTYUIOPASDFGHJK" textAlignment="RIGHT">
                                                                   <HBox.margin>
                                                                      <Insets left="15.0" />
                                                                   </HBox.margin>
@@ -612,7 +612,7 @@
                                                                      <Font name="Nunito Regular" size="12.0" />
                                                                   </font>
                                                                </Label>
-                                                               <Label alignment="CENTER_RIGHT" prefHeight="23.0" prefWidth="409.0" text="QWERTYUIOPASDFGHJK" textAlignment="RIGHT">
+                                                               <Label fx:id="lblEstadoBuscarEmpleado" alignment="CENTER_RIGHT" prefHeight="23.0" prefWidth="409.0" text="QWERTYUIOPASDFGHJK" textAlignment="RIGHT">
                                                                   <HBox.margin>
                                                                      <Insets left="15.0" />
                                                                   </HBox.margin>
@@ -635,7 +635,7 @@
                                                                      <Font name="Nunito Regular" size="12.0" />
                                                                   </font>
                                                                </Label>
-                                                               <Label alignment="CENTER_RIGHT" prefHeight="23.0" prefWidth="325.0" text="QWERTYUIOPASDFGHJK" textAlignment="RIGHT">
+                                                               <Label fx:id="lblContrataciónBuscarEmpleados" alignment="CENTER_RIGHT" prefHeight="23.0" prefWidth="325.0" text="QWERTYUIOPASDFGHJK" textAlignment="RIGHT">
                                                                   <HBox.margin>
                                                                      <Insets left="15.0" />
                                                                   </HBox.margin>
@@ -658,7 +658,7 @@
                                                                      <Font name="Nunito Regular" size="12.0" />
                                                                   </font>
                                                                </Label>
-                                                               <Label alignment="CENTER_RIGHT" prefHeight="23.0" prefWidth="411.0" text="QWERTYUIOPASDFGHJK" textAlignment="RIGHT">
+                                                               <Label fx:id="lblStatusBuscarEmpleado" alignment="CENTER_RIGHT" prefHeight="23.0" prefWidth="411.0" text="QWERTYUIOPASDFGHJK" textAlignment="RIGHT">
                                                                   <HBox.margin>
                                                                      <Insets left="15.0" />
                                                                   </HBox.margin>
@@ -674,7 +674,7 @@
                                                       <children>
                                                          <HBox maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="27.0" prefWidth="433.0">
                                                             <children>
-                                                               <Label text="ID de Empleado">
+                                                               <Label prefHeight="17.0" prefWidth="117.0" text="ID de Empleado">
                                                                   <HBox.margin>
                                                                      <Insets right="65.0" top="4.0" />
                                                                   </HBox.margin>
@@ -692,7 +692,7 @@
                                                                <Insets />
                                                             </VBox.margin>
                                                          </HBox>
-                                                         <JFXTextField focusColor="#ff4e10" labelFloat="true" promptText="Nombre(s)" unFocusColor="#5776c8">
+                                                         <JFXTextField fx:id="txtnombresEditarEmpleado" focusColor="#ff4e10" labelFloat="true" promptText="Nombre(s)" unFocusColor="#5776c8">
                                                             <VBox.margin>
                                                                <Insets bottom="5.0" top="7.0" />
                                                             </VBox.margin>
@@ -702,7 +702,7 @@
                                                          </JFXTextField>
                                                          <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="440.0">
                                                             <children>
-                                                               <JFXTextField focusColor="#ff4e10" labelFloat="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="200.0" promptText="Apellido Paterno" unFocusColor="#5776c8">
+                                                               <JFXTextField fx:id="txtaPaternoEditarEmpleado" focusColor="#ff4e10" labelFloat="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="200.0" promptText="Apellido Paterno" unFocusColor="#5776c8">
                                                                   <padding>
                                                                      <Insets top="7.0" />
                                                                   </padding>
@@ -712,7 +712,7 @@
                                                                   <font>
                                                                      <Font name="Nunito Regular" size="12.0" />
                                                                   </font></JFXTextField>
-                                                               <JFXTextField focusColor="#ff4e10" labelFloat="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="200.0" promptText="Apellido Materno" unFocusColor="#5776c8">
+                                                               <JFXTextField fx:id="txtaMaternoEditarEmpleado" focusColor="#ff4e10" labelFloat="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="200.0" promptText="Apellido Materno" unFocusColor="#5776c8">
                                                                   <padding>
                                                                      <Insets top="7.0" />
                                                                   </padding>
@@ -724,7 +724,7 @@
                                                                   </font></JFXTextField>
                                                             </children>
                                                          </HBox>
-                                                         <JFXTextField focusColor="#ff4e10" labelFloat="true" promptText="CURP" unFocusColor="#5776c8">
+                                                         <JFXTextField fx:id="txtCURPEditarEmpleado" focusColor="#ff4e10" labelFloat="true" promptText="CURP" unFocusColor="#5776c8">
                                                             <VBox.margin>
                                                                <Insets top="20.0" />
                                                             </VBox.margin>
@@ -735,7 +735,7 @@
                                                                <Font name="Nunito Regular" size="12.0" />
                                                             </font>
                                                          </JFXTextField>
-                                                         <JFXTextField focusColor="#ff4e10" labelFloat="true" promptText="Calle" unFocusColor="#5776c8">
+                                                         <JFXTextField fx:id="txtCalleEditarEmpleado" focusColor="#ff4e10" labelFloat="true" promptText="Calle" unFocusColor="#5776c8">
                                                             <VBox.margin>
                                                                <Insets top="20.0" />
                                                             </VBox.margin>
@@ -748,7 +748,7 @@
                                                          </JFXTextField>
                                                          <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="51.0" prefWidth="440.0">
                                                             <children>
-                                                               <JFXTextField focusColor="#ff4e10" labelFloat="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="200.0" promptText="Número Exterior" unFocusColor="#5776c8">
+                                                               <JFXTextField fx:id="txtnoExtBuscarEmpleados" focusColor="#ff4e10" labelFloat="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="200.0" promptText="Número Exterior" unFocusColor="#5776c8">
                                                                   <padding>
                                                                      <Insets top="7.0" />
                                                                   </padding>
@@ -758,7 +758,7 @@
                                                                   <font>
                                                                      <Font name="Nunito Regular" size="12.0" />
                                                                   </font></JFXTextField>
-                                                               <JFXTextField focusColor="#ff4e10" labelFloat="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="200.0" promptText="Número Interior" unFocusColor="#5776c8">
+                                                               <JFXTextField fx:id="txtnoIntBuscarEmpleados" focusColor="#ff4e10" labelFloat="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="200.0" promptText="Número Interior" unFocusColor="#5776c8">
                                                                   <padding>
                                                                      <Insets top="7.0" />
                                                                   </padding>
@@ -772,7 +772,7 @@
                                                          </HBox>
                                                          <HBox>
                                                             <children>
-                                                               <JFXTextField focusColor="#ff4e10" labelFloat="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="200.0" promptText="Colonia" unFocusColor="#5776c8">
+                                                               <JFXTextField fx:id="txtColoniaBusacarEmpleado" focusColor="#ff4e10" labelFloat="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="200.0" promptText="Colonia" unFocusColor="#5776c8">
                                                                   <padding>
                                                                      <Insets top="7.0" />
                                                                   </padding>
@@ -782,7 +782,7 @@
                                                                   <font>
                                                                      <Font name="Nunito Regular" size="12.0" />
                                                                   </font></JFXTextField>
-                                                               <JFXTextField focusColor="#ff4e10" labelFloat="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="200.0" promptText="Código Postal" unFocusColor="#5776c8">
+                                                               <JFXTextField fx:id="txtCPBuscarEmpleados" focusColor="#ff4e10" labelFloat="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="200.0" promptText="Código Postal" unFocusColor="#5776c8">
                                                                   <HBox.margin>
                                                                      <Insets right="1.0" top="20.0" />
                                                                   </HBox.margin>
@@ -793,11 +793,11 @@
                                                          </HBox>
                                                          <HBox prefHeight="100.0" prefWidth="200.0">
                                                             <children>
-                                                               <JFXComboBox focusColor="#ff4e10" labelFloat="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="200.0" promptText="Estado" unFocusColor="#5776c8">
+                                                               <JFXComboBox fx:id="comboEstadoBuscarEmpleados" focusColor="#ff4e10" labelFloat="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="200.0" promptText="Estado" unFocusColor="#5776c8">
                                                                   <HBox.margin>
                                                                      <Insets right="40.0" top="20.0" />
                                                                   </HBox.margin></JFXComboBox>
-                                                               <JFXComboBox focusColor="#ff4e10" labelFloat="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="200.0" promptText="Municipio" unFocusColor="#5776c8">
+                                                               <JFXComboBox fx:id="comboMunicipioBuscarEmpleado" focusColor="#ff4e10" labelFloat="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="200.0" promptText="Municipio" unFocusColor="#5776c8">
                                                                   <HBox.margin>
                                                                      <Insets top="20.0" />
                                                                   </HBox.margin></JFXComboBox>
@@ -807,7 +807,7 @@
                                                       <padding>
                                                          <Insets left="30.0" right="30.0" top="20.0" />
                                                       </padding></VBox>
-                                                   <VBox fx:id="vboxEmpleadosBuscar" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="500.0" visible="false">
+                                                   <VBox fx:id="vboxEmpleadosBuscar" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="500.0">
                                                       <children>
                                                          <ImageView fitHeight="329.0" fitWidth="598.0" pickOnBounds="true" preserveRatio="true">
                                                             <image>
@@ -837,7 +837,7 @@
                                        </HBox>
                                     </children>
                                  </VBox>
-                                 <VBox fx:id="vboxRJustificantes" disable="true" visible="false">
+                                 <VBox fx:id="vboxRJustificantes" disable="true">
                                     <effect>
                                        <Blend mode="LIGHTEN" opacity="0.85" />
                                     </effect>
@@ -863,12 +863,12 @@
                                                                      <Insets left="64.0" right="64.0" top="35.0" />
                                                                   </VBox.margin>
                                                                </JFXDatePicker>
-                                                               <JFXComboBox focusColor="#fe81bb" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="304.0" promptText="Tipo de Justificante" unFocusColor="#5776c8">
+                                                               <JFXComboBox fx:id="comboTipoJIncidencias" focusColor="#fe81bb" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="304.0" promptText="Tipo de Justificante" unFocusColor="#5776c8">
                                                                   <VBox.margin>
                                                                      <Insets left="64.0" right="64.0" top="35.0" />
                                                                   </VBox.margin>
                                                                </JFXComboBox>
-                                                               <JFXComboBox focusColor="#fe81bb" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="304.0" promptText="Status" unFocusColor="#5776c8">
+                                                               <JFXComboBox fx:id="comboStatusJIncidencias" focusColor="#fe81bb" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="304.0" promptText="Status" unFocusColor="#5776c8">
                                                                   <VBox.margin>
                                                                      <Insets left="64.0" right="64.0" top="35.0" />
                                                                   </VBox.margin>

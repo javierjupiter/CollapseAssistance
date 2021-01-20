@@ -21,6 +21,7 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
+import java.util.ArrayList;
 import java.util.Date;
 
 public class ControladorUI {
@@ -569,17 +570,54 @@ public class ControladorUI {
 
     @FXML private JFXTextField txtbuscarEmpleado;
     @FXML private Label lblClaveEmpleado;
+    @FXML private Label lblseacrhEmpleadoCURP;
+    @FXML private Label lblSearchNombreEmpleado;
+    @FXML private Label lblCalleBuscarEmpleado;
+    @FXML private Label lblnoExtBuscarEmpleados;
+    @FXML private Label lblnoIntBuscarEmpleados;
+    @FXML private Label lblColoniaBuscarEmpleado;
+    @FXML private Label lblCPBuscarEmpleado;
+    @FXML private Label lblMunicipioBuscarEmpleados;
+    @FXML private Label lblEstadoBuscarEmpleado;
+    @FXML private Label lblContrataciónBuscarEmpleados;
+    @FXML private Label lblStatusBuscarEmpleado;
+    @FXML private Label lblsearchApellidosEmpleado;
 
     @FXML public void buscarEmpleado() {
         BD_Consultas consultas = new BD_Consultas();
         String[] empleado = new String[14];
         if (consultas.buscarEmpleadoEntero(connection, txtbuscarEmpleado.getText())){
             empleado = consultas.getTemporal();
-            lblClaveEmpleado.setText(empleado[0]);
-            vboxEmpleadosBuscarEcontrado.setVisible(true);
-            vboxEmpleadosBuscarEditar.setVisible(false);
-            vboxEmpleadosBuscar.setVisible(false);
-            imgEmpleadosNoFound.setVisible(false);
+            try {
+
+                lblClaveEmpleado.setText(empleado[0]);
+                lblseacrhEmpleadoCURP.setText(empleado[4]);
+                lblSearchNombreEmpleado.setText(empleado[1]);
+
+                lblsearchApellidosEmpleado.setText(empleado[2] + " " + empleado[3]);
+
+                lblCalleBuscarEmpleado.setText(empleado[6]);
+
+                lblnoExtBuscarEmpleados.setText(empleado[7]);
+                lblnoIntBuscarEmpleados.setText(empleado[8]);
+                lblColoniaBuscarEmpleado.setText(empleado[9]);
+                lblCPBuscarEmpleado.setText(empleado[10]);
+                lblMunicipioBuscarEmpleados.setText(consultas.hacerConsultasMunicipiosID(connection, empleado[12]));
+                lblStatusBuscarEmpleado.setText(empleado[13].equals("A") ? "Activo" : "Inactivo");
+                lblEstadoBuscarEmpleado.setText(consultas.hacerConsultasEstadosID(connection, empleado[11]));
+                lblContrataciónBuscarEmpleados.setText(empleado[5].substring(8,10) + "/" + empleado[5].substring(5,7) + "/" + empleado[5].substring(0, 4));
+
+                vboxEmpleadosBuscarEcontrado.setVisible(true);
+                vboxEmpleadosBuscarEditar.setVisible(false);
+                vboxEmpleadosBuscar.setVisible(false);
+                imgEmpleadosNoFound.setVisible(false);
+
+            }catch(Exception e){
+                vboxEmpleadosBuscarEcontrado.setVisible(false);
+                vboxEmpleadosBuscarEditar.setVisible(false);
+                vboxEmpleadosBuscar.setVisible(false);
+                imgEmpleadosNoFound.setVisible(true);
+            }
         }
 
     }
@@ -874,14 +912,25 @@ public class ControladorUI {
         }
     }
 
-    private void llenarComboboxJustificantes(){
-        this.comboTipoRJustificantes.getItems().add("Retardo menor");
-        this.comboTipoRJustificantes.getItems().add("Retardo mayor");
-        this.comboTipoRJustificantes.setPromptText("Tipo incidencia");
-        this.comboEstatusRJustificantes.getItems().add("Activo");
-        this.comboEstatusRJustificantes.getItems().add("Inactivo");
-        this.comboEstatusRJustificantes.setPromptText("Estatus");
+    @FXML private JFXComboBox<String> comboStatusJIncidencias;
+    @FXML private JFXComboBox<String> comboTipoJIncidencias;
+
+    private void llenarComboboxJIncidencias(){
+        BD_Consultas consultas = new BD_Consultas();
+        comboStatusJIncidencias.getItems().add("Activo");
+        comboStatusJIncidencias.getItems().add("Inactivo");
+        ArrayList<String> lista = consultas.generarTipoJustificantes(connection);
+        for (String s : lista) {
+            comboTipoJIncidencias.getItems().add(s);
+        }
     }
+
+    @FXML public void hacerJIncidencias(){
+
+    }
+
+
+
     private void validarTXT(){
         RequiredFieldValidator validatorClave = new RequiredFieldValidator();
         txtClaveRJustificantes.getValidators().add(validatorClave);
@@ -929,6 +978,9 @@ public class ControladorUI {
 
     @FXML public void initialize(){
         vboxPantallas.setDisable(true);
+        mostrarInicio();
+
+        llenarComboboxJIncidencias();
 
         //validarTextFieldIncidencias();
         //llenarComboboxStatus();
