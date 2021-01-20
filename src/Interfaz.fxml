@@ -199,7 +199,7 @@
                      <Font name="Poppins Regular" size="36.0" />
                   </font>
                </Label>
-               <VBox fx:id="vboxPantallas" prefHeight="614.0" prefWidth="904.0" visible="false">
+               <VBox fx:id="vboxPantallas" prefHeight="614.0" prefWidth="904.0">
                   <children>
                      <AnchorPane maxHeight="576.0" maxWidth="864.0" minHeight="508.0" minWidth="864.0" prefHeight="576.0" prefWidth="864.0">
                         <children>
@@ -336,7 +336,7 @@
                                        </HBox>
                                     </children>
                                  </VBox>
-                                 <VBox fx:id="vboxBuscarEmpleados" prefHeight="500.0" prefWidth="864.0" visible="false">
+                                 <VBox fx:id="vboxBuscarEmpleados" prefHeight="500.0" prefWidth="864.0">
                                     <children>
                                        <HBox prefHeight="500.0" prefWidth="864.0">
                                           <children>
@@ -370,7 +370,7 @@
                                                    <DropShadow blurType="GAUSSIAN" color="#402f3b1f" height="31.89" offsetX="4.0" offsetY="6.0" radius="16.61" width="36.55" />
                                                 </effect>
                                                 <children>
-                                                   <VBox fx:id="vboxEmpleadosBuscarEcontrado" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="416.0" prefWidth="500.0" visible="false">
+                                                   <VBox fx:id="vboxEmpleadosBuscarEcontrado" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="416.0" prefWidth="500.0">
                                                       <padding>
                                                          <Insets bottom="15.0" left="20.0" right="20.0" top="10.0" />
                                                       </padding>
@@ -807,7 +807,7 @@
                                                       <padding>
                                                          <Insets left="30.0" right="30.0" top="20.0" />
                                                       </padding></VBox>
-                                                   <VBox fx:id="vboxEmpleadosBuscar" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="500.0">
+                                                   <VBox fx:id="vboxEmpleadosBuscar" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="500.0" visible="false">
                                                       <children>
                                                          <ImageView fitHeight="329.0" fitWidth="598.0" pickOnBounds="true" preserveRatio="true">
                                                             <image>

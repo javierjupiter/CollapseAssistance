@@ -568,11 +568,18 @@ public class ControladorUI {
     }
 
     @FXML private JFXTextField txtbuscarEmpleado;
+    @FXML private Label lblClaveEmpleado;
 
     @FXML public void buscarEmpleado() {
         BD_Consultas consultas = new BD_Consultas();
+        String[] empleado = new String[14];
         if (consultas.buscarEmpleadoEntero(connection, txtbuscarEmpleado.getText())){
-            System.out.println("Todo chido");
+            empleado = consultas.getTemporal();
+            lblClaveEmpleado.setText(empleado[1]);
+            vboxEmpleadosBuscarEcontrado.setVisible(true);
+            vboxEmpleadosBuscarEditar.setVisible(false);
+            vboxEmpleadosBuscar.setVisible(false);
+            imgEmpleadosNoFound.setVisible(false);
         }
 
     }
