@@ -575,7 +575,7 @@ public class ControladorUI {
         String[] empleado = new String[14];
         if (consultas.buscarEmpleadoEntero(connection, txtbuscarEmpleado.getText())){
             empleado = consultas.getTemporal();
-            lblClaveEmpleado.setText(empleado[1]);
+            lblClaveEmpleado.setText(empleado[0]);
             vboxEmpleadosBuscarEcontrado.setVisible(true);
             vboxEmpleadosBuscarEditar.setVisible(false);
             vboxEmpleadosBuscar.setVisible(false);

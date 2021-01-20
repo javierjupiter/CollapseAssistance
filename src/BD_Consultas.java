@@ -460,7 +460,7 @@ public class BD_Consultas {
             ResultSet resultado = select.executeQuery(generarQueryEmpleadoEntero(clave));
 
             while (resultado.next()){
-                for (int i = 1; i < 15; i++){
+                for (int i = 1; i < 14; i++){
                     Temporal[i] = resultado.getString(i);
                 }
             }
