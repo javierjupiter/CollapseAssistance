@@ -2,6 +2,7 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.time.temporal.Temporal;
 import java.util.ArrayList;
 
 public class BD_Consultas {
@@ -454,16 +455,15 @@ public class BD_Consultas {
 
     public boolean buscarEmpleadoEntero(Connection connection, String clave){
         try {
-
+            Temporal = new String[14];
             Statement select = connection.createStatement();
             ResultSet resultado = select.executeQuery(generarQueryEmpleadoEntero(clave));
 
             while (resultado.next()){
-                System.out.println(resultado.getString(5));
+                for (int i = 0; i < 15; i++){
+                    Temporal[i] = resultado.getString(i);
+                }
             }
-
-            //empleado = new Empleado(resultado.getString(1))
-
 
             return true;
         }catch (SQLException e){
