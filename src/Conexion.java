@@ -4,7 +4,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 public class Conexion {
-    static String bd = "collapseassistance";
+    static String bd = "DBREGASI";
     static String login = "root";
     static String url = "jdbc:mysql://localhost:3306/" + bd + "?verifyServerCertificate=false&useSSL=true";
 

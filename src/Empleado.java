@@ -15,6 +15,13 @@ public class Empleado {
     private String Estado;
     private String municipio;
 
+    public Empleado(String nombreE, String apllidoPaternoE, String apllidoMaternoE, String claveE) {
+        this.nombreE = nombreE;
+        this.apllidoPaternoE = apllidoPaternoE;
+        this.apllidoMaternoE = apllidoMaternoE;
+        this.claveE = claveE;
+    }
+
     public Empleado(){
         fechaContratacionE = new Fecha();
     }

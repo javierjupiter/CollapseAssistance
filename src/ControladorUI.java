@@ -837,33 +837,15 @@ public class ControladorUI {
         Conexion conexion = new Conexion(txtPassword.getText());
         connection = conexion.getConnection();
         if (connection != null){
-            vBoxREmpleados.setDisable(false);
-            vboxHorarios.setDisable(false);
-            vboxDiasLaborales.setDisable(false);
-            vboxRAsistencias.setDisable(false);
-            vboxRJustificantes.setDisable(false);
-            vBoxAHorarios.setVisible(false);
-            vBoxJustificantes.setDisable(false);
+            vboxPantallas.setDisable(false);
         } else {
-            vBoxREmpleados.setDisable(true);
-            vboxHorarios.setDisable(true);
-            vboxDiasLaborales.setDisable(true);
-            vboxRAsistencias.setDisable(true);
-            vboxRJustificantes.setDisable(true);
-            vBoxAHorarios.setVisible(true);
-            vBoxJustificantes.setDisable(true);
+            vboxPantallas.setDisable(true);
         }
     }
     //Finalizan propiedades de configuraciones
 
     @FXML public void initialize(){
-        vBoxREmpleados.setDisable(true);
-        vboxHorarios.setDisable(true);
-        vboxDiasLaborales.setDisable(true);
-        vboxRAsistencias.setDisable(true);
-        vboxRJustificantes.setDisable(true);
-        vBoxAHorarios.setDisable(true);
-        vBoxJustificantes.setDisable(true);
+        vboxPantallas.setDisable(true);
 
         //validarTextFieldIncidencias();
         //llenarComboboxStatus();
@@ -876,7 +858,14 @@ public class ControladorUI {
         validacionTextFieldEmpleados();
         llenarComboboxLaborales();
         llenarMotivoLaborales();
-        System.out.println("Pantalla inicializadas");
+
+        vBoxREmpleados.setDisable(false);
+        vboxHorarios.setDisable(false);
+        vboxDiasLaborales.setDisable(false);
+        vboxRAsistencias.setDisable(false);
+        vBoxJustificantes.setDisable(false);
+        //vboxRJustificantes
+
     }
 
     @FXML public void mostrarInicio(){
