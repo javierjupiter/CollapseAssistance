@@ -7,6 +7,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.Tooltip;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
@@ -46,6 +47,24 @@ public class ControladorUI {
     @FXML private VBox vboxBuscarJIncidencias;
     @FXML private VBox vBoxAHorariosBuscar;
 
+    @FXML private AnchorPane aHomeEmpleados;
+    @FXML private AnchorPane aHomeHorarios;
+    @FXML private AnchorPane aHomeLaborales;
+    @FXML private AnchorPane aHomeAsistencias;
+    @FXML private AnchorPane aHomeJustificantes;
+    @FXML private AnchorPane aHomeJIncidencias;
+    @FXML private AnchorPane aHomeAHorarios;
+
+
+    @FXML private HBox hboxHomeUno;
+    @FXML private HBox hboxHomeDos;
+    @FXML private Pane paneHomeEmpleados;
+    @FXML private Pane paneHomeHorarios;
+    @FXML private Pane paneHomeLaborales;
+    @FXML private Pane paneHomeAsistencias;
+    @FXML private Pane paneHomeJustificantes;
+    @FXML private Pane paneHomeJIncidencias;
+    @FXML private Pane paneHomeAHorarios;
     @FXML private Pane paneAgregar;
     @FXML private Pane paneBuscar;
     @FXML private Pane paneHome;
@@ -257,6 +276,37 @@ public class ControladorUI {
         JFXRippler ripplerAgregar = new JFXRippler(paneAgregar);
         ripplerAgregar.setRipplerFill(Paint.valueOf("#FF4E10"));
         hBoxPestanyas.getChildren().add(ripplerAgregar);
+
+        JFXRippler ripplerHomeEmpleados = new JFXRippler(paneHomeEmpleados);
+        ripplerHomeEmpleados.setRipplerFill(Paint.valueOf("#FF4E10"));
+        aHomeEmpleados.getChildren().add(ripplerHomeEmpleados);
+
+        JFXRippler ripplerHomeHorarios = new JFXRippler(paneHomeHorarios);
+        ripplerHomeHorarios.setRipplerFill(Paint.valueOf("#FF4E10"));
+        aHomeHorarios.getChildren().add(ripplerHomeHorarios);
+
+        JFXRippler ripplerHomeLaborales = new JFXRippler(paneHomeLaborales);
+        ripplerHomeLaborales.setRipplerFill(Paint.valueOf("#FF4E10"));
+        aHomeLaborales.getChildren().add(ripplerHomeLaborales);
+
+        JFXRippler ripplerHomeAsistencias = new JFXRippler(paneHomeAsistencias);
+        ripplerHomeAsistencias.setRipplerFill(Paint.valueOf("#FF4E10"));
+        aHomeAsistencias.getChildren().add(ripplerHomeAsistencias);
+
+        JFXRippler ripplerHomeJustificantes = new JFXRippler(paneHomeJustificantes);
+        ripplerHomeJustificantes.setRipplerFill(Paint.valueOf("#FF4E10"));
+        aHomeJustificantes.getChildren().add(ripplerHomeJustificantes);
+
+        JFXRippler ripplerHomeJIncidencias = new JFXRippler(paneHomeJIncidencias);
+        ripplerHomeJIncidencias.setRipplerFill(Paint.valueOf("#FF4E10"));
+        aHomeJIncidencias.getChildren().add(ripplerHomeJIncidencias);
+
+        JFXRippler ripplerHomeAHorarios = new JFXRippler(paneHomeAHorarios);
+        ripplerHomeAHorarios.setRipplerFill(Paint.valueOf("#FF4E10"));
+        aHomeAHorarios.getChildren().add(ripplerHomeAHorarios);
+
+
+
 
 
         Timeline clock = new Timeline(new KeyFrame(Duration.ZERO, e -> {
