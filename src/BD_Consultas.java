@@ -126,8 +126,12 @@ public class BD_Consultas {
             Statement select = conn.createStatement();
             ResultSet resultado = select.executeQuery(generarQueryJustificantes(IDJustificante));
 
+            while (resultado.next()){
             Temporal[0] = resultado.getString(1);
             Temporal[1] = resultado.getString(2);
+
+                }
+
             return true;
         }
         catch (SQLException e) {
@@ -146,14 +150,19 @@ public class BD_Consultas {
             Statement select = conn.createStatement();
             ResultSet resultado = select.executeQuery(generarQueryHorarios(IDHorario));
 
-            Temporal[0] = resultado.getString(1);
-            Temporal[4] = resultado.getString(2);
+            while (resultado.next()){
+                Temporal[0] = resultado.getString(1);
+                Temporal[4] = resultado.getString(2);
+            }
 
-            System.out.println("consulta a horarios listo ");
             resultado = select.executeQuery(generarQueryHorariosDetalle(IDHorario));
-            Temporal[1] = resultado.getString(1);
-            Temporal[2] = resultado.getString(2);
-            Temporal[3] = resultado.getString(3);
+            System.out.println("consulta a horarios listo ");
+
+            while (resultado.next()){
+                Temporal[1] = resultado.getString(1);
+                Temporal[2] = resultado.getString(2);
+                Temporal[3] = resultado.getString(3);
+            }
 
             System.out.println("consulta a horarios detalle listo ");
             return true;
@@ -180,12 +189,17 @@ public class BD_Consultas {
             Statement select = conn.createStatement();
             ResultSet resultado = select.executeQuery(generarQueryHorarioClaveE(ClaveDeEmpleado));
 
-            Temporal[0] = resultado.getString(1);
-            Temporal[1] = resultado.getString(2);
+            while (resultado.next()){
+                Temporal[0] = resultado.getString(1);
+                Temporal[1] = resultado.getString(2);
+            }
 
             System.out.println("consulta a horarios listo ");
             resultado = select.executeQuery(generarQueryHorarioClaveEDetalle(ClaveDeEmpleado));
-            Temporal[2] = resultado.getString(3);
+
+            while (resultado.next()) {
+                Temporal[2] = resultado.getString(3);
+            }
 
             System.out.println("consulta a horarios detalle listo ");
             return true;
@@ -207,29 +221,36 @@ public class BD_Consultas {
 
 
 
-
-
     public boolean consultaClaveDeEmpleadoAH (Connection conn,String ClaveDeEmpleadoAH){
         try{
             Temporal = new String[6];
             Statement select = conn.createStatement();
             ResultSet resultado = select.executeQuery(generarQueryHorarioClaveDeHorario(ClaveDeEmpleadoAH));
 
-            Temporal[0] = resultado.getString(1);
-            Temporal[1] = resultado.getString(2);
+            while (resultado.next()) {
+                Temporal[0] = resultado.getString(1);
+                Temporal[1] = resultado.getString(2);
+            }
 
             System.out.println("consulta a horarios listo ");
 
             resultado = select.executeQuery(generarQueryHorarioClaveDeHorarioDetalle1(ClaveDeEmpleadoAH));
-            Temporal[2] = resultado.getString(3);
-            Temporal[3] = resultado.getString(4);
+
+            while (resultado.next()) {
+                Temporal[2] = resultado.getString(3);
+                Temporal[3] = resultado.getString(4);
+            }
 
             resultado = select.executeQuery(generarQueryHorarioClaveDeHorarioDetalle2(ClaveDeEmpleadoAH));
-            Temporal[4] = resultado.getString(5);
-
+            while (resultado.next()) {
+                Temporal[4] = resultado.getString(5);
+            }
 
             resultado = select.executeQuery(generarQueryHorarioClaveDeHorarioDetalle3(ClaveDeEmpleadoAH));
-            Temporal[5] = resultado.getString(6);
+            while (resultado.next()) {
+                Temporal[5] = resultado.getString(6);
+            }
+
 
             System.out.println("consulta a horarios detalle listo ");
             return true;
@@ -265,21 +286,31 @@ public class BD_Consultas {
             Statement select = conn.createStatement();
             ResultSet resultado = select.executeQuery(generarQueryHorarioClaveDeHorario(ClaveDeHorario));
 
-            Temporal[0] = resultado.getString(1);
-            Temporal[1] = resultado.getString(2);
+            while(resultado.next()) {
+                Temporal[0] = resultado.getString(1);
+                Temporal[1] = resultado.getString(2);
+            }
 
             System.out.println("consulta a horarios listo ");
 
             resultado = select.executeQuery(generarQueryHorarioClaveDeHorarioDetalle1(ClaveDeHorario));
-            Temporal[2] = resultado.getString(3);
-            Temporal[3] = resultado.getString(4);
+
+            while(resultado.next()) {
+                Temporal[2] = resultado.getString(3);
+                Temporal[3] = resultado.getString(4);
+            }
 
             resultado = select.executeQuery(generarQueryHorarioClaveDeHorarioDetalle2(ClaveDeHorario));
-            Temporal[4] = resultado.getString(5);
 
+            while(resultado.next()) {
+                Temporal[4] = resultado.getString(5);
+            }
 
             resultado = select.executeQuery(generarQueryHorarioClaveDeHorarioDetalle3(ClaveDeHorario));
-            Temporal[5] = resultado.getString(6);
+
+            while (resultado.next()) {
+                Temporal[5] = resultado.getString(6);
+            }
 
             System.out.println("consulta a horarios detalle listo ");
             return true;
