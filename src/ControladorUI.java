@@ -26,55 +26,153 @@ public class ControladorUI {
     private int posicionPantalla;
     //0: Home, 1: Empleados, 2: Horarios, 3: Días no laborales, 4: Asistencias, 5: Justificantes, 6: Justificar Incidencias, 7:Asignación de horarios
 
-    @FXML
-    private Label lblAgregar;
-    @FXML
-    private SVGPath svgAgregar;
-    @FXML
-    private Label lblBuscar;
-    @FXML
-    private SVGPath svgBuscar;
-    @FXML
-    private VBox vboxBuscarEmpleados;
-    @FXML
-    public void pestanyasAgregar(){
+    //Inician las propiedades @FXML
+    @FXML private Label lblAgregar;
+    @FXML private SVGPath svgAgregar;
+    @FXML private Label lblBuscar;
+    @FXML private SVGPath svgBuscar;
+    @FXML private VBox vboxBuscarEmpleados;
+    @FXML private JFXButton btnEditarCancelar;
+    @FXML private JFXButton btnEliminarGuardar;
+    @FXML private VBox vboxEmpleadosBuscarEditar;
+    @FXML private VBox vboxEmpleadosBuscarEcontrado;
+    @FXML private VBox vboxEmpleadosBuscar;
+    @FXML private ImageView imgEmpleadosNoFound;
+    @FXML private VBox vboxMenu;
+    @FXML private HBox panePestanyasFondo;
+    @FXML private VBox vBoxJustificantes;
+    @FXML private VBox vboxBuscarHorarios;
+    @FXML private VBox vboxLaboralesBuscar;
+    @FXML private VBox vboxBuscarJIncidencias;
+    @FXML private VBox vBoxAHorariosBuscar;
+
+    @FXML private Pane paneAgregar;
+    @FXML private Pane paneBuscar;
+    @FXML private Pane paneHome;
+    @FXML private Pane paneREmpleados;
+    @FXML private Pane paneRHorarios;
+    @FXML private Pane paneDiasLaborales;
+    @FXML private Pane paneAsistencias;
+    @FXML private Pane paneRJustificantes;
+    @FXML private Pane paneJIncidencias;
+    @FXML private Pane paneAHorario;
+    @FXML private Pane paneReloj;
+    @FXML private Label lblHora;
+    @FXML private Label lblMinutos;
+    @FXML private Label lblMeridian;
+    @FXML private Label lblFecha;
+    @FXML private HBox hBoxPestanyas;
+
+    @FXML private VBox vboxPantallas;
+    @FXML private VBox vboxHome;
+    @FXML private Label lblTitulo;
+    @FXML private VBox vBoxREmpleados;
+    @FXML private VBox vboxRJustificantes;
+    @FXML private VBox vboxHorarios;
+    @FXML private VBox vboxDiasLaborales;
+    @FXML private VBox vboxRAsistencias;
+    @FXML private VBox vBoxAHorarios;
+    @FXML private VBox vboxBuscarJustificantes;
+
+    @FXML private JFXTextField txtIdHorarioHorarios;
+    @FXML private JFXTextField txtDescripcionHorarioHorarios;
+    @FXML private JFXTextField txtEstatusHorarios;
+
+    @FXML private JFXTextField txtMotivoLaborales;
+    @FXML private JFXComboBox<String> comboStatusDiasLaborables;
+    @FXML private JFXDatePicker pickerFechaLaborales;
+
+    @FXML private JFXTextField txtClaveRegistroIncidencias;
+    @FXML private JFXComboBox<String> comboTipoRegistroIncidencias;
+    @FXML private JFXComboBox<String> comboStatusRegistroIncidencias;
+
+    @FXML private JFXTextField txtIdEmpleadoREmpleados;
+    @FXML private JFXComboBox<String> comboMunicipioREmpleados;
+    @FXML private JFXDatePicker pickerFechaREmpleados;
+    @FXML private JFXTextField txtNombresREmpleados;
+    @FXML private JFXTextField txtCurpREmpleados;
+    @FXML private JFXTextField txtNumeroExtREmpleados;
+    @FXML private JFXTextField txtCodigoPostalREmpleados;
+    @FXML private JFXTextField txtApellidoMaternoREmpleados;
+    @FXML private JFXTextField txtCalleREmpleados;
+    @FXML private JFXTextField txtColoniaREmpleados;
+    @FXML private JFXTextField txtApellidoPaternoREmpleados;
+    @FXML private JFXTextField txtNumeroIntREmpleados;
+    @FXML private JFXComboBox<String> comboEstadoREmpleados;
+
+    @FXML private JFXComboBox<String> comboTipoRJustificantes;
+    @FXML private JFXComboBox<String> comboEstatusRJustificantes;
+    @FXML private JFXTextField txtClaveRJustificantes;
+    @FXML private JFXTextField txtApellidoMRJustificantes;
+    @FXML private JFXTextField txtNombreRJustificantes;
+    @FXML private JFXTextField txtApellidoPRJustificantes;
+    @FXML private JFXDatePicker pickerFechaJustificantes;
+
+    @FXML private JFXPasswordField txtPassword;
+    //Terminan propiedades de @FXML
+
+    //Inician metodos de @FXML
+    @FXML public void pestanyasAgregar(){
         lblAgregar.setTextFill(Color.web("#FF4E10"));
         svgAgregar.setFill(Color.web("#FF4E10"));
         lblBuscar.setTextFill(Color.web("#000000"));
         svgBuscar.setFill(Color.web("#000000"));
         switch (posicionPantalla){
             case 1:
-                vBoxREmpleados.setVisible(true);
-                vboxBuscarEmpleados.setVisible(false);
+                mostrarRegistrosEmpleados();
+                break;
+            case 2:
+                mostrarRegistrosHorarios();
+                break;
+            case 3:
+                mostrarRegistrosDiasLaborales();
+                break;
+            case 4:
+                mostrarRegistrosAsistencias();
+                break;
+            case 5:
+                mostrarJustificantes();
+                break;
+            case 6:
+                mostrarRegistrosJustificantes();
+                break;
+            case 7:
+                mostrarAHorarios();
                 break;
         }
     }
-    @FXML
-    public void pestanyasBuscar(){
+
+    @FXML public void pestanyasBuscar(){
         lblAgregar.setTextFill(Color.web("#000000"));
         svgAgregar.setFill(Color.web("#000000"));
         lblBuscar.setTextFill(Color.web("#FF4E10"));
         svgBuscar.setFill(Color.web("#FF4E10"));
         switch (posicionPantalla){
             case 1:
-                vBoxREmpleados.setVisible(false);
-                vboxBuscarEmpleados.setVisible(true);
+                mostrarBuscarEmpleados();
                 break;
+            case 2:
+                mostrarBuscarHorarios();
+                break;
+            case 3:
+                mostrarBuscarLaborales();
+                break;
+            case 5:
+                mostrarBuscarJustificantes();
+                break;
+            case 6:
+                mostrarBuscarJIncidencias();
+                break;
+            case 7:
+                mostrarBuscarAHorarios();
+                break;
+
         }
     }
 
-    @FXML
-    private JFXButton btnEditarCancelar;
-    @FXML
-    private JFXButton btnEliminarGuardar;
-    @FXML
-    private VBox vboxEmpleadosBuscarEditar;
-    @FXML private VBox vboxEmpleadosBuscarEcontrado;
-    @FXML private VBox vboxEmpleadosBuscar;
-    @FXML private ImageView imgEmpleadosNoFound;
 
-    @FXML
-    private void editarEmpleados(){
+
+    @FXML private void editarEmpleados(){
         btnEditarCancelar.setText("Cancelar");
         btnEliminarGuardar.setText("Guardar");
         buscarEmpleadosPantalla(true, false, false, false);
@@ -89,44 +187,7 @@ public class ControladorUI {
 
 
     //Inicia propiedades del menú
-    @FXML
-    private VBox vboxMenu;
-    @FXML
-    private HBox panePestanyasFondo;
-    @FXML
-    private VBox vBoxJustificantes;
-    @FXML
-    private Pane paneAgregar;
-    @FXML
-    private Pane paneBuscar;
-    @FXML
-    private Pane paneHome;
-    @FXML
-    private Pane paneREmpleados;
-    @FXML
-    private Pane paneRHorarios;
-    @FXML
-    private Pane paneDiasLaborales;
-    @FXML
-    private Pane paneAsistencias;
-    @FXML
-    private Pane paneRJustificantes;
-    @FXML
-    private Pane paneJIncidencias;
-    @FXML
-    private Pane paneAHorario;
-    @FXML
-    private Pane paneReloj;
-    @FXML
-    private Label lblHora;
-    @FXML
-    private Label lblMinutos;
-    @FXML
-    private Label lblMeridian;
-    @FXML
-    private Label lblFecha;
-    @FXML
-    private HBox hBoxPestanyas;
+
 
 
 
@@ -289,36 +350,9 @@ public class ControladorUI {
     }
     //Finaliza propiedades del menú
 
-    //Inician propiedades de pantallas
-    @FXML
-    private VBox vboxPantallas;
-    @FXML
-    private VBox vboxHome;
-    @FXML
-    private Label lblTitulo;
-    @FXML
-    private VBox vBoxREmpleados;
-    @FXML
-    private VBox vboxRJustificantes;
-    @FXML
-    private VBox vboxHorarios;
-    @FXML
-    private VBox vboxDiasLaborales;
-    @FXML
-    private VBox vboxRAsistencias;
-    @FXML
-    private VBox vBoxAHorarios;
-    //Finalizan propiedades de pantallas
 
     //INICIA PROPIEDADES DE HORARIOS
-    @FXML
-    private JFXTextField txtIdHorarioHorarios;
 
-    @FXML
-    private JFXTextField txtDescripcionHorarioHorarios;
-
-    @FXML
-    private JFXTextField txtEstatusHorarios;
 
     private void validacionTextFildHorarios() {
         RequiredFieldValidator validatorClave = new RequiredFieldValidator();
@@ -343,8 +377,7 @@ public class ControladorUI {
         });
     }
 
-    @FXML
-    public void btnGuardarHorariosOnClicked(){
+    @FXML public void btnGuardarHorariosOnClicked(){
         System.out.println("Guardar");
     }
     //FINALIZA PROPIEDADES DE HORARIOS
@@ -352,12 +385,7 @@ public class ControladorUI {
 
 
     //Inicia propiedades de registro de Incidencias
-    @FXML
-    private JFXTextField txtClaveRegistroIncidencias;
-    @FXML
-    private JFXComboBox<String> comboTipoRegistroIncidencias;
-    @FXML
-    private JFXComboBox<String> comboStatusRegistroIncidencias;
+
 
     private void validarTextFieldIncidencias(){
         RequiredFieldValidator validatorClave = new RequiredFieldValidator();
@@ -385,15 +413,9 @@ public class ControladorUI {
     //Finaliza propiedades de registro de Incidencias
 
     //Inicia propiedades de registro de dias laborales
-    @FXML
-    private JFXTextField txtMotivoLaborales;
-    @FXML
-    private JFXComboBox<String> comboStatusDiasLaborables;
-    @FXML
-    private JFXDatePicker pickerFechaLaborales;
 
-    @FXML
-    public void hacerInserccionesDiasNoLaborales(){
+
+    @FXML public void hacerInserccionesDiasNoLaborales(){
         BD_Inserciones Inserciones = new BD_Inserciones();
         String Estatus, fecha =  String.valueOf(pickerFechaLaborales.getValue());
         if (comboStatusDiasLaborables.getValue().equals("Activo")){
@@ -428,45 +450,18 @@ public class ControladorUI {
     //Finaliza propiedades de registro de dias laborales
 
     //Inicia propiedades del registro de empleados
-    @FXML
-    private JFXTextField txtIdEmpleadoREmpleados;
-    @FXML
-    private JFXComboBox<String> comboMunicipioREmpleados;
-    @FXML
-    private JFXDatePicker pickerFechaREmpleados;
-    @FXML
-    private JFXTextField txtNombresREmpleados;
-    @FXML
-    private JFXTextField txtCurpREmpleados;
-    @FXML
-    private JFXTextField txtNumeroExtREmpleados;
-    @FXML
-    private JFXTextField txtCodigoPostalREmpleados;
-    @FXML
-    private JFXTextField txtApellidoMaternoREmpleados;
-    @FXML
-    private JFXTextField txtCalleREmpleados;
-    @FXML
-    private JFXTextField txtColoniaREmpleados;
-    @FXML
-    private JFXTextField txtApellidoPaternoREmpleados;
-    @FXML
-    private JFXTextField txtNumeroIntREmpleados;
-    @FXML
-    private JFXComboBox<String> comboEstadoREmpleados;
+
 
     private String idMunicipio;
     private String idEstado;
 
-    @FXML
-    private void asignarIDMunicipio(){
+    @FXML private void asignarIDMunicipio(){
         BD_Consultas consultas = new BD_Consultas();
         idMunicipio = consultas.hacerConsultasMunicipiosID(connection, comboMunicipioREmpleados.getValue());
         System.out.println(idMunicipio);
     }
 
-    @FXML
-    private void hacerRegistroEmpleados(){
+    @FXML private void hacerRegistroEmpleados(){
         BD_Inserciones inserciones = new BD_Inserciones();
         String fecha=String.valueOf(pickerFechaREmpleados.getValue());
         //JFXDialog dialog = new JFXDialog(stackP);
@@ -530,8 +525,7 @@ public class ControladorUI {
     }
 
 
-    @FXML
-    public void cargarMunicipios(){
+    @FXML public void cargarMunicipios(){
         String listItem = comboEstadoREmpleados.getValue();
         switch (listItem) {
             case "Aguascalientes": //Action for this item
@@ -730,23 +724,9 @@ public class ControladorUI {
     //Finaliza propiedades de registro de empleados
 
     // Inicia registro de justificantes.
-    @FXML
-    private JFXComboBox<String> comboTipoRJustificantes;
-    @FXML
-    private JFXComboBox<String> comboEstatusRJustificantes;
-    @FXML
-    private JFXTextField txtClaveRJustificantes;
-    @FXML
-    private JFXTextField txtApellidoMRJustificantes;
-    @FXML
-    private JFXTextField txtNombreRJustificantes;
-    @FXML
-    private JFXTextField txtApellidoPRJustificantes;
-    @FXML
-    private JFXDatePicker pickerFechaJustificantes;
 
-    @FXML
-    public void guardarJustificantes(){
+
+    @FXML public void guardarJustificantes(){
         BD_Inserciones inserciones = new BD_Inserciones();
         String fecha = String.valueOf(pickerFechaJustificantes.getValue()), estatus;
         if (comboEstatusRJustificantes.getValue().equals("Activo")){
@@ -802,10 +782,8 @@ public class ControladorUI {
     // Finaliza propiedades registro de justificantes.
 
     //Inicias propiedades de configuraciones
-    @FXML
-    private JFXPasswordField txtPassword;
-    @FXML
-    public void iniciarConexion(){
+
+    @FXML public void iniciarConexion(){
         Conexion conexion = new Conexion(txtPassword.getText());
         connection = conexion.getConnection();
         if (connection != null){
@@ -828,8 +806,7 @@ public class ControladorUI {
     }
     //Finalizan propiedades de configuraciones
 
-    @FXML
-    public void initialize(){
+    @FXML public void initialize(){
         vBoxREmpleados.setDisable(true);
         vboxHorarios.setDisable(true);
         vboxDiasLaborales.setDisable(true);
@@ -838,9 +815,9 @@ public class ControladorUI {
         vBoxAHorarios.setDisable(true);
         vBoxJustificantes.setDisable(true);
 
-        validarTextFieldIncidencias();
-        llenarComboboxStatus();
-        llenarComboboxIncidencias();
+        //validarTextFieldIncidencias();
+        //llenarComboboxStatus();
+        //llenarComboboxIncidencias();
         crearMenuLateral();
         //validacionTextFildHorarios();
         //llenarComboboxJustificantes();
@@ -852,8 +829,7 @@ public class ControladorUI {
         System.out.println("Pantalla inicializadas");
     }
 
-    @FXML
-    public void mostrarInicio(){
+    @FXML public void mostrarInicio(){
         vboxHome.setVisible(true);
         vboxPantallas.setVisible(false);
         hBoxPestanyas.setVisible(false);
@@ -861,9 +837,12 @@ public class ControladorUI {
         lblTitulo.setVisible(false);
     }
 
-    @FXML
-    public void mostrarRegistrosEmpleados(){
+    @FXML public void mostrarRegistrosEmpleados(){
         posicionPantalla = 1;
+        lblAgregar.setTextFill(Color.web("#FF4E10"));
+        svgAgregar.setFill(Color.web("#FF4E10"));
+        lblBuscar.setTextFill(Color.web("#000000"));
+        svgBuscar.setFill(Color.web("#000000"));
         vboxHome.setVisible(false);
 
         vboxPantallas.setVisible(true);
@@ -875,6 +854,13 @@ public class ControladorUI {
         vBoxJustificantes.setVisible(false);
         vBoxAHorarios.setVisible(false);
 
+        vboxBuscarEmpleados.setVisible(false);
+        vboxBuscarHorarios.setVisible(false);
+        vboxLaboralesBuscar.setVisible(false);
+        vboxBuscarJustificantes.setVisible(false);
+        vboxBuscarJIncidencias.setVisible(false);
+        vBoxAHorariosBuscar.setVisible(false);
+
         hBoxPestanyas.setVisible(true);
         panePestanyasFondo.setVisible(true);
 
@@ -882,8 +868,43 @@ public class ControladorUI {
         lblTitulo.setVisible(true);
     }
 
-    @FXML
-    public void mostrarRegistrosHorarios(){
+    @FXML public void mostrarBuscarEmpleados(){
+        posicionPantalla = 1;
+        lblAgregar.setTextFill(Color.web("#000000"));
+        svgAgregar.setFill(Color.web("#000000"));
+        lblBuscar.setTextFill(Color.web("#FF4E10"));
+        svgBuscar.setFill(Color.web("#FF4E10"));
+        vboxHome.setVisible(false);
+
+        vboxPantallas.setVisible(true);
+        vBoxREmpleados.setVisible(false);
+        vboxHorarios.setVisible(false);
+        vboxDiasLaborales.setVisible(false);
+        vboxRAsistencias.setVisible(false);
+        vboxRJustificantes.setVisible(false);
+        vBoxJustificantes.setVisible(false);
+        vBoxAHorarios.setVisible(false);
+
+        vboxBuscarEmpleados.setVisible(true);
+        vboxBuscarHorarios.setVisible(false);
+        vboxLaboralesBuscar.setVisible(false);
+        vboxBuscarJustificantes.setVisible(false);
+        vboxBuscarJIncidencias.setVisible(false);
+        vBoxAHorariosBuscar.setVisible(false);
+
+        hBoxPestanyas.setVisible(true);
+        panePestanyasFondo.setVisible(true);
+
+        lblTitulo.setText("Empleados");
+        lblTitulo.setVisible(true);
+    }
+
+    @FXML public void mostrarRegistrosHorarios(){
+        posicionPantalla = 2;
+        lblAgregar.setTextFill(Color.web("#FF4E10"));
+        svgAgregar.setFill(Color.web("#FF4E10"));
+        lblBuscar.setTextFill(Color.web("#000000"));
+        svgBuscar.setFill(Color.web("#000000"));
         vboxHome.setVisible(false);
 
         vboxPantallas.setVisible(true);
@@ -895,6 +916,13 @@ public class ControladorUI {
         vBoxJustificantes.setVisible(false);
         vBoxAHorarios.setVisible(false);
 
+        vboxBuscarEmpleados.setVisible(false);
+        vboxBuscarHorarios.setVisible(false);
+        vboxLaboralesBuscar.setVisible(false);
+        vboxBuscarJustificantes.setVisible(false);
+        vboxBuscarJIncidencias.setVisible(false);
+        vBoxAHorariosBuscar.setVisible(false);
+
         hBoxPestanyas.setVisible(true);
         panePestanyasFondo.setVisible(true);
 
@@ -902,8 +930,45 @@ public class ControladorUI {
         lblTitulo.setVisible(true);
     }
 
-    @FXML
-    public void mostrarRegistrosDiasLaborales(){
+    @FXML public void mostrarBuscarHorarios(){
+        posicionPantalla = 2;
+        lblAgregar.setTextFill(Color.web("#000000"));
+        svgAgregar.setFill(Color.web("#000000"));
+        lblBuscar.setTextFill(Color.web("#FF4E10"));
+        svgBuscar.setFill(Color.web("#FF4E10"));
+        vboxHome.setVisible(false);
+
+        vboxPantallas.setVisible(true);
+        vBoxREmpleados.setVisible(false);
+        vboxHorarios.setVisible(false);
+        vboxDiasLaborales.setVisible(false);
+        vboxRAsistencias.setVisible(false);
+        vboxRJustificantes.setVisible(false);
+        vBoxJustificantes.setVisible(false);
+        vBoxAHorarios.setVisible(false);
+
+        vboxBuscarEmpleados.setVisible(false);
+        vboxBuscarHorarios.setVisible(true);
+        vboxLaboralesBuscar.setVisible(false);
+        vboxBuscarJustificantes.setVisible(false);
+        vboxBuscarJIncidencias.setVisible(false);
+        vBoxAHorariosBuscar.setVisible(false);
+
+        hBoxPestanyas.setVisible(true);
+        panePestanyasFondo.setVisible(true);
+
+        lblTitulo.setText("Horarios");
+        lblTitulo.setVisible(true);
+    }
+
+    @FXML public void mostrarRegistrosDiasLaborales(){
+        posicionPantalla = 3;
+
+        lblAgregar.setTextFill(Color.web("#FF4E10"));
+        svgAgregar.setFill(Color.web("#FF4E10"));
+        lblBuscar.setTextFill(Color.web("#000000"));
+        svgBuscar.setFill(Color.web("#000000"));
+
         vboxHome.setVisible(false);
         vboxPantallas.setVisible(true);
         vBoxREmpleados.setVisible(false);
@@ -914,13 +979,56 @@ public class ControladorUI {
         hBoxPestanyas.setVisible(true);
         vBoxJustificantes.setVisible(false);
         vBoxAHorarios.setVisible(false);
+
+        vboxBuscarEmpleados.setVisible(false);
+        vboxBuscarHorarios.setVisible(false);
+        vboxLaboralesBuscar.setVisible(false);
+        vboxBuscarJustificantes.setVisible(false);
+        vboxBuscarJIncidencias.setVisible(false);
+        vBoxAHorariosBuscar.setVisible(false);
+
         panePestanyasFondo.setVisible(true);
         lblTitulo.setText("Días no Laborales");
         lblTitulo.setVisible(true);
     }
 
-    @FXML
-    public void mostrarRegistrosAsistencias(){
+    @FXML public void mostrarBuscarLaborales(){
+        posicionPantalla = 3;
+        lblAgregar.setTextFill(Color.web("#000000"));
+        svgAgregar.setFill(Color.web("#000000"));
+        lblBuscar.setTextFill(Color.web("#FF4E10"));
+        svgBuscar.setFill(Color.web("#FF4E10"));
+        vboxHome.setVisible(false);
+
+        vboxPantallas.setVisible(true);
+        vBoxREmpleados.setVisible(false);
+        vboxHorarios.setVisible(false);
+        vboxDiasLaborales.setVisible(false);
+        vboxRAsistencias.setVisible(false);
+        vboxRJustificantes.setVisible(false);
+        vBoxJustificantes.setVisible(false);
+        vBoxAHorarios.setVisible(false);
+
+        vboxBuscarEmpleados.setVisible(false);
+        vboxBuscarHorarios.setVisible(false);
+        vboxLaboralesBuscar.setVisible(true);
+        vboxBuscarJustificantes.setVisible(false);
+        vboxBuscarJIncidencias.setVisible(false);
+        vBoxAHorariosBuscar.setVisible(false);
+
+        hBoxPestanyas.setVisible(true);
+        panePestanyasFondo.setVisible(true);
+
+        lblTitulo.setText("Días no Laborales");
+        lblTitulo.setVisible(true);
+    }
+
+    @FXML public void mostrarRegistrosAsistencias(){
+        posicionPantalla = 4;
+        lblAgregar.setTextFill(Color.web("#FF4E10"));
+        svgAgregar.setFill(Color.web("#FF4E10"));
+        lblBuscar.setTextFill(Color.web("#000000"));
+        svgBuscar.setFill(Color.web("#000000"));
         vboxHome.setVisible(false);
         vboxPantallas.setVisible(true);
         vBoxREmpleados.setVisible(false);
@@ -928,16 +1036,28 @@ public class ControladorUI {
         vboxDiasLaborales.setVisible(false);
         vboxRAsistencias.setVisible(true);
         vboxRJustificantes.setVisible(false);
-        hBoxPestanyas.setVisible(true);
+        hBoxPestanyas.setVisible(false);
         vBoxJustificantes.setVisible(false);
         vBoxAHorarios.setVisible(false);
-        panePestanyasFondo.setVisible(true);
+        panePestanyasFondo.setVisible(false);
+
+        vboxBuscarEmpleados.setVisible(false);
+        vboxBuscarHorarios.setVisible(false);
+        vboxLaboralesBuscar.setVisible(false);
+        vboxBuscarJustificantes.setVisible(false);
+        vboxBuscarJIncidencias.setVisible(false);
+        vBoxAHorariosBuscar.setVisible(false);
+
         lblTitulo.setText("Asistencias");
         lblTitulo.setVisible(true);
     }
 
-    @FXML
-    public void mostrarRegistrosJustificantes(){
+    @FXML public void mostrarRegistrosJustificantes(){
+        posicionPantalla = 6;
+        lblAgregar.setTextFill(Color.web("#FF4E10"));
+        svgAgregar.setFill(Color.web("#FF4E10"));
+        lblBuscar.setTextFill(Color.web("#000000"));
+        svgBuscar.setFill(Color.web("#000000"));
         vboxHome.setVisible(false);
         vboxPantallas.setVisible(true);
         vBoxREmpleados.setVisible(false);
@@ -949,12 +1069,53 @@ public class ControladorUI {
         vBoxAHorarios.setVisible(false);
         vBoxJustificantes.setVisible(false);
         panePestanyasFondo.setVisible(true);
-        lblTitulo.setText("Justificantes");
+        lblTitulo.setText("Justificar Incidencias");
+        lblTitulo.setVisible(true);
+        vboxBuscarEmpleados.setVisible(false);
+        vboxBuscarHorarios.setVisible(false);
+        vboxLaboralesBuscar.setVisible(false);
+        vboxBuscarJustificantes.setVisible(false);
+        vboxBuscarJIncidencias.setVisible(false);
+        vBoxAHorariosBuscar.setVisible(false);
+    }
+
+    @FXML public void mostrarBuscarJIncidencias(){
+        posicionPantalla = 6;
+        lblAgregar.setTextFill(Color.web("#000000"));
+        svgAgregar.setFill(Color.web("#000000"));
+        lblBuscar.setTextFill(Color.web("#FF4E10"));
+        svgBuscar.setFill(Color.web("#FF4E10"));
+        vboxHome.setVisible(false);
+
+        vboxPantallas.setVisible(true);
+        vBoxREmpleados.setVisible(false);
+        vboxHorarios.setVisible(false);
+        vboxDiasLaborales.setVisible(false);
+        vboxRAsistencias.setVisible(false);
+        vboxRJustificantes.setVisible(false);
+        vBoxJustificantes.setVisible(false);
+        vBoxAHorarios.setVisible(false);
+
+        vboxBuscarEmpleados.setVisible(false);
+        vboxBuscarHorarios.setVisible(false);
+        vboxLaboralesBuscar.setVisible(false);
+        vboxBuscarJustificantes.setVisible(false);
+        vboxBuscarJIncidencias.setVisible(true);
+        vBoxAHorariosBuscar.setVisible(false);
+
+        hBoxPestanyas.setVisible(true);
+        panePestanyasFondo.setVisible(true);
+
+        lblTitulo.setText("Justificar Incidencias");
         lblTitulo.setVisible(true);
     }
 
-    @FXML
-    public void mostrarAHorarios(){
+    @FXML public void mostrarAHorarios(){
+        posicionPantalla = 7;
+        lblAgregar.setTextFill(Color.web("#FF4E10"));
+        svgAgregar.setFill(Color.web("#FF4E10"));
+        lblBuscar.setTextFill(Color.web("#000000"));
+        svgBuscar.setFill(Color.web("#000000"));
         vboxHome.setVisible(false);
         vboxPantallas.setVisible(true);
         vBoxREmpleados.setVisible(false);
@@ -968,10 +1129,51 @@ public class ControladorUI {
         panePestanyasFondo.setVisible(true);
         lblTitulo.setText("Asignación de Horarios");
         lblTitulo.setVisible(true);
+        vboxBuscarEmpleados.setVisible(false);
+        vboxBuscarHorarios.setVisible(false);
+        vboxLaboralesBuscar.setVisible(false);
+        vboxBuscarJustificantes.setVisible(false);
+        vboxBuscarJIncidencias.setVisible(false);
+        vBoxAHorariosBuscar.setVisible(false);
     }
 
-    @FXML
-    public void mostrarJustificantes(){
+    @FXML public void mostrarBuscarAHorarios(){
+        posicionPantalla = 7;
+        lblAgregar.setTextFill(Color.web("#000000"));
+        svgAgregar.setFill(Color.web("#000000"));
+        lblBuscar.setTextFill(Color.web("#FF4E10"));
+        svgBuscar.setFill(Color.web("#FF4E10"));
+        vboxHome.setVisible(false);
+
+        vboxPantallas.setVisible(true);
+        vBoxREmpleados.setVisible(false);
+        vboxHorarios.setVisible(false);
+        vboxDiasLaborales.setVisible(false);
+        vboxRAsistencias.setVisible(false);
+        vboxRJustificantes.setVisible(false);
+        vBoxJustificantes.setVisible(false);
+        vBoxAHorarios.setVisible(false);
+
+        vboxBuscarEmpleados.setVisible(false);
+        vboxBuscarHorarios.setVisible(false);
+        vboxLaboralesBuscar.setVisible(false);
+        vboxBuscarJustificantes.setVisible(false);
+        vboxBuscarJIncidencias.setVisible(false);
+        vBoxAHorariosBuscar.setVisible(true);
+
+        hBoxPestanyas.setVisible(true);
+        panePestanyasFondo.setVisible(true);
+
+        lblTitulo.setText("Asignación de Horarios");
+        lblTitulo.setVisible(true);
+    }
+
+    @FXML public void mostrarJustificantes(){
+        posicionPantalla = 5;
+        lblAgregar.setTextFill(Color.web("#FF4E10"));
+        svgAgregar.setFill(Color.web("#FF4E10"));
+        lblBuscar.setTextFill(Color.web("#000000"));
+        svgBuscar.setFill(Color.web("#000000"));
         vboxHome.setVisible(false);
         vboxPantallas.setVisible(true);
         vBoxREmpleados.setVisible(false);
@@ -983,7 +1185,44 @@ public class ControladorUI {
         vBoxAHorarios.setVisible(false);
         vBoxJustificantes.setVisible(true);
         panePestanyasFondo.setVisible(true);
-        lblTitulo.setText("Asignación de Horarios");
+        lblTitulo.setText("Justificantes");
+        lblTitulo.setVisible(true);
+        vboxBuscarEmpleados.setVisible(false);
+        vboxBuscarHorarios.setVisible(false);
+        vboxLaboralesBuscar.setVisible(false);
+        vboxBuscarJustificantes.setVisible(false);
+        vboxBuscarJIncidencias.setVisible(false);
+        vBoxAHorariosBuscar.setVisible(false);
+    }
+
+    @FXML public void mostrarBuscarJustificantes(){
+        posicionPantalla = 5;
+        lblAgregar.setTextFill(Color.web("#000000"));
+        svgAgregar.setFill(Color.web("#000000"));
+        lblBuscar.setTextFill(Color.web("#FF4E10"));
+        svgBuscar.setFill(Color.web("#FF4E10"));
+        vboxHome.setVisible(false);
+
+        vboxPantallas.setVisible(true);
+        vBoxREmpleados.setVisible(false);
+        vboxHorarios.setVisible(false);
+        vboxDiasLaborales.setVisible(false);
+        vboxRAsistencias.setVisible(false);
+        vboxRJustificantes.setVisible(false);
+        vBoxJustificantes.setVisible(false);
+        vBoxAHorarios.setVisible(false);
+
+        vboxBuscarEmpleados.setVisible(false);
+        vboxBuscarHorarios.setVisible(false);
+        vboxLaboralesBuscar.setVisible(false);
+        vboxBuscarJustificantes.setVisible(true);
+        vboxBuscarJIncidencias.setVisible(false);
+        vBoxAHorariosBuscar.setVisible(false);
+
+        hBoxPestanyas.setVisible(true);
+        panePestanyasFondo.setVisible(true);
+
+        lblTitulo.setText("Justificantes");
         lblTitulo.setVisible(true);
     }
 }

@@ -4,11 +4,13 @@
 <?import com.jfoenix.controls.JFXComboBox?>
 <?import com.jfoenix.controls.JFXDatePicker?>
 <?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXRadioButton?>
 <?import com.jfoenix.controls.JFXTextField?>
 <?import com.jfoenix.controls.JFXToggleButton?>
 <?import com.jfoenix.controls.JFXTreeTableView?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TreeTableColumn?>
 <?import javafx.scene.effect.Blend?>
 <?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.image.Image?>
@@ -20,7 +22,7 @@
 <?import javafx.scene.shape.SVGPath?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="613.28" prefWidth="1000.0" style="-fx-background-color: linear-gradient(to left, #FE81BB, #FF4E10);" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ControladorUI">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="613.28" prefWidth="1000.0" style="-fx-background-color: linear-gradient(to left, #FE81BB, #FF4E10);" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ControladorUI">
    <HBox prefHeight="613.28" prefWidth="1000.0">
       <children>
          <VBox fx:id="vboxMenu" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" opacity="0.85" prefHeight="613.281" prefWidth="96.09" style="-fx-background-color: #ffffff;">
@@ -197,7 +199,7 @@
                      <Font name="Poppins Regular" size="36.0" />
                   </font>
                </Label>
-               <VBox fx:id="vboxPantallas" prefHeight="614.0" prefWidth="904.0" visible="false">
+               <VBox fx:id="vboxPantallas" prefHeight="614.0" prefWidth="904.0">
                   <children>
                      <AnchorPane maxHeight="576.0" maxWidth="864.0" minHeight="508.0" minWidth="864.0" prefHeight="576.0" prefWidth="864.0">
                         <children>
@@ -805,7 +807,7 @@
                                                       <padding>
                                                          <Insets left="30.0" right="30.0" top="20.0" />
                                                       </padding></VBox>
-                                                   <VBox fx:id="vboxEmpleadosBuscar" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="500.0" visible="false">
+                                                   <VBox fx:id="vboxEmpleadosBuscar" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="500.0">
                                                       <children>
                                                          <ImageView fitHeight="329.0" fitWidth="598.0" pickOnBounds="true" preserveRatio="true">
                                                             <image>
@@ -900,68 +902,91 @@
                                        </HBox>
                                     </children>
                                  </VBox>
-                                 <VBox fx:id="vboxRIncidencias" disable="true" opacity="0.85" prefHeight="534.0" prefWidth="204.0" visible="false">
-                                    <effect>
-                                       <Blend mode="LIGHTEN" opacity="0.85" />
-                                    </effect>
+                                 <VBox fx:id="vboxBuscarJIncidencias" prefHeight="500.0" prefWidth="864.0" visible="false">
                                     <children>
-                                       <HBox maxHeight="512.0" maxWidth="864.0" minHeight="512.0" minWidth="864.0" prefHeight="512.0" prefWidth="864.0">
+                                       <HBox prefHeight="500.0" prefWidth="864.0">
                                           <children>
-                                             <VBox maxWidth="432.0" minWidth="432.0" prefHeight="200.0" prefWidth="432.0">
+                                             <VBox prefHeight="500.0" prefWidth="300.0">
                                                 <children>
-                                                   <JFXTextField fx:id="txtClaveRegistroIncidencias" maxHeight="40.0" maxWidth="292.0" minHeight="40.0" minWidth="292.0" prefHeight="40.0" prefWidth="292.0" promptText="Clave del empleado:" style="-jfx-unfocus-color: #5776C8; -jfx-focus-color: #FF4E10; -jfx-label-float: true;">
+                                                   <JFXTextField focusColor="#ff4e10" labelFloat="true" promptText="Clave de Empleado" unFocusColor="#5776c8">
                                                       <VBox.margin>
-                                                         <Insets left="70.0" right="70.0" top="30.0" />
+                                                         <Insets bottom="20.0" left="50.0" right="50.0" top="200.0" />
                                                       </VBox.margin>
-                                                      <font>
-                                                         <Font name="Nunito Regular" size="12.0" />
-                                                      </font>
                                                    </JFXTextField>
-                                                   <JFXDatePicker fx:id="pickerIncidenciaFechaRegistroIncidencias" defaultColor="#ff4e10" maxHeight="40.0" maxWidth="292.0" minHeight="40.0" prefHeight="40.0" prefWidth="292.0" promptText="Feha de incidencia">
+                                                   <JFXButton maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="204.0" ripplerFill="#fe81bb" style="-fx-border-color: #000; -fx-border-radius: 4px;" text="Buscar" textFill="#ff4e10">
                                                       <VBox.margin>
-                                                         <Insets left="70.0" right="70.0" top="30.0" />
+                                                         <Insets bottom="70.0" left="50.0" right="20.0" />
                                                       </VBox.margin>
-                                                   </JFXDatePicker>
-                                                   <JFXDatePicker fx:id="pickerInsercionRegistroIncidencias" defaultColor="#ff4e10" maxHeight="40.0" maxWidth="292.0" minHeight="40.0" prefHeight="40.0" prefWidth="292.0" promptText="Fecha de insercion">
-                                                      <VBox.margin>
-                                                         <Insets left="70.0" right="70.0" top="30.0" />
-                                                      </VBox.margin>
-                                                   </JFXDatePicker>
-                                                   <JFXComboBox fx:id="comboTipoRegistroIncidencias" focusColor="#ff4e10" maxHeight="40.0" maxWidth="292.0" minHeight="40.0" prefHeight="40.0" prefWidth="292.0" promptText="Tipo de incidencia:" unFocusColor="#5776c8">
-                                                      <VBox.margin>
-                                                         <Insets left="70.0" right="70.0" top="30.0" />
-                                                      </VBox.margin>
-                                                   </JFXComboBox>
-                                                   <JFXComboBox fx:id="comboStatusRegistroIncidencias" focusColor="#ff4e10" maxHeight="40.0" maxWidth="292.0" minHeight="40.0" prefHeight="40.0" prefWidth="292.0" promptText="Estatus de incidencia:" unFocusColor="#5776c9">
-                                                      <VBox.margin>
-                                                         <Insets left="70.0" right="70.0" top="30.0" />
-                                                      </VBox.margin>
-                                                   </JFXComboBox>
-                                                   <JFXButton fx:id="btnGuardarRegistroIncidencias" maxWidth="200.0" minWidth="200.0" prefWidth="200.0" ripplerFill="#fe81bb" style="-fx-border-color: #000; -fx-border-radius: 4px;" text="Guardar" textFill="#ff4e10">
-                                                      <VBox.margin>
-                                                         <Insets left="116.0" right="116.0" top="100.0" />
-                                                      </VBox.margin>
-                                                      <font>
-                                                         <Font name="Nunito Regular" size="12.0" />
-                                                      </font>
                                                    </JFXButton>
                                                 </children>
                                              </VBox>
-                                             <VBox maxWidth="432.0" minWidth="432.0" prefHeight="200.0" prefWidth="432.0">
+                                             <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" opacity="0.8" prefHeight="400.0" prefWidth="500.0" style="-fx-background-color: #fff; -fx-background-radius: 10;">
                                                 <HBox.margin>
-                                                   <Insets right="130.5" />
+                                                   <Insets bottom="50.0" left="32.0" top="50.0" />
                                                 </HBox.margin>
+                                                <effect>
+                                                   <DropShadow blurType="GAUSSIAN" color="#402f3b1f" height="31.89" offsetX="4.0" offsetY="6.0" radius="16.61" width="36.55" />
+                                                </effect>
                                                 <children>
-                                                   <ImageView fitHeight="395.0" fitWidth="439.0" pickOnBounds="true" preserveRatio="true" rotate="90.0">
+                                                   <VBox fx:id="vboxEmpleadosBuscar1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="500.0">
+                                                      <children>
+                                                         <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="52.0" prefWidth="502.0" text="¿A quién deseas encontrar?" textAlignment="RIGHT">
+                                                            <VBox.margin>
+                                                               <Insets />
+                                                            </VBox.margin>
+                                                            <font>
+                                                               <Font name="Nunito Bold" size="36.0" />
+                                                            </font>
+                                                         </Label>
+                                                         <ImageView fitHeight="329.0" fitWidth="598.0" pickOnBounds="true" preserveRatio="true">
+                                                            <image>
+                                                               <Image url="@images/searchJustificarIncidencias.png" />
+                                                            </image>
+                                                            <VBox.margin>
+                                                               <Insets left="110.0" />
+                                                            </VBox.margin>
+                                                         </ImageView>
+                                                      </children>
+                                                   </VBox>
+                                                   <ImageView fx:id="imgEmpleadosNoFound1" fitHeight="286.0" fitWidth="460.0" layoutX="20.0" layoutY="61.0" pickOnBounds="true" preserveRatio="true" visible="false">
                                                       <image>
-                                                         <Image url="@images/incidencias_img.png" />
+                                                         <Image url="@images/noFoundJustificarIncidencias.png" />
                                                       </image>
-                                                      <VBox.margin>
-                                                         <Insets top="105.0" />
-                                                      </VBox.margin>
                                                    </ImageView>
+                                                   <VBox prefHeight="200.0" prefWidth="100.0" visible="false">
+                                                      <children>
+                                                         <HBox maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="230.0">
+                                                            <children>
+                                                               <Label text="ID de Empleado">
+                                                                  <HBox.margin>
+                                                                     <Insets right="65.0" top="4.0" />
+                                                                  </HBox.margin>
+                                                                  <font>
+                                                                     <Font name="Nunito Regular" size="12.0" />
+                                                                  </font>
+                                                               </Label>
+                                                               <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" prefHeight="27.0" prefWidth="330.0" text="123456" textAlignment="RIGHT">
+                                                                  <font>
+                                                                     <Font name="Nunito Bold" size="18.0" />
+                                                                  </font>
+                                                               </Label>
+                                                            </children>
+                                                            <VBox.margin>
+                                                               <Insets left="10.0" top="10.0" />
+                                                            </VBox.margin>
+                                                         </HBox>
+                                                         <JFXTreeTableView maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="350.0" prefWidth="480.0">
+                                                            <padding>
+                                                               <Insets bottom="10.0" left="10.0" top="20.0" />
+                                                            </padding>
+                                                            <VBox.margin>
+                                                               <Insets left="10.0" top="5.0" />
+                                                            </VBox.margin>
+                                                         </JFXTreeTableView>
+                                                      </children>
+                                                   </VBox>
                                                 </children>
-                                             </VBox>
+                                             </Pane>
                                           </children>
                                        </HBox>
                                     </children>
@@ -1087,6 +1112,284 @@
                                        </HBox>
                                     </children>
                                  </VBox>
+                                 <VBox fx:id="vboxBuscarHorarios" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="864.0" visible="false">
+                                    <children>
+                                       <HBox prefHeight="500.0" prefWidth="864.0">
+                                          <children>
+                                             <VBox prefHeight="500.0" prefWidth="300.0">
+                                                <children>
+                                                   <JFXTextField focusColor="#ff4e10" labelFloat="true" promptText="ID de Horarios" unFocusColor="#5776c8">
+                                                      <VBox.margin>
+                                                         <Insets bottom="20.0" left="50.0" right="50.0" top="50.0" />
+                                                      </VBox.margin>
+                                                   </JFXTextField>
+                                                   <JFXButton maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="204.0" ripplerFill="#fe81bb" style="-fx-border-color: #000; -fx-border-radius: 4px;" text="Buscar" textFill="#ff4e10">
+                                                      <VBox.margin>
+                                                         <Insets bottom="70.0" left="50.0" right="20.0" />
+                                                      </VBox.margin>
+                                                   </JFXButton>
+                                                   <JFXButton fx:id="btnEditarCancelar2" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#editarEmpleados" prefWidth="204.0" ripplerFill="#fe81bb" style="-fx-border-color: #000; -fx-border-radius: 4px;" text="Editar" textFill="#ff4e10">
+                                                      <VBox.margin>
+                                                         <Insets bottom="20.0" left="50.0" top="160.0" />
+                                                      </VBox.margin>
+                                                   </JFXButton>
+                                                   <JFXButton fx:id="btnEliminarGuardar2" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="204.0" ripplerFill="#fe81bb" style="-fx-border-color: #000; -fx-border-radius: 4px;" text="Eliminar" textFill="#ff4e10">
+                                                      <VBox.margin>
+                                                         <Insets left="50.0" />
+                                                      </VBox.margin>
+                                                   </JFXButton>
+                                                </children>
+                                             </VBox>
+                                             <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" opacity="0.8" prefHeight="400.0" prefWidth="500.0" style="-fx-background-color: #fff; -fx-background-radius: 10;">
+                                                <HBox.margin>
+                                                   <Insets bottom="50.0" left="32.0" top="50.0" />
+                                                </HBox.margin>
+                                                <effect>
+                                                   <DropShadow blurType="GAUSSIAN" color="#402f3b1f" height="31.89" offsetX="4.0" offsetY="6.0" radius="16.61" width="36.55" />
+                                                </effect>
+                                                <children>
+                                                   <VBox fx:id="vboxHorariosBuscarEcontrado1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="416.0" prefWidth="500.0" visible="false">
+                                                      <padding>
+                                                         <Insets bottom="15.0" left="20.0" right="20.0" top="10.0" />
+                                                      </padding>
+                                                      <children>
+                                                         <HBox maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="230.0">
+                                                            <children>
+                                                               <Label text="ID de Horario">
+                                                                  <HBox.margin>
+                                                                     <Insets right="65.0" top="4.0" />
+                                                                  </HBox.margin>
+                                                                  <font>
+                                                                     <Font name="Nunito Regular" size="12.0" />
+                                                                  </font>
+                                                               </Label>
+                                                               <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" prefHeight="27.0" prefWidth="324.0" text="123456" textAlignment="RIGHT">
+                                                                  <font>
+                                                                     <Font name="Nunito Bold" size="18.0" />
+                                                                  </font>
+                                                               </Label>
+                                                            </children>
+                                                            <VBox.margin>
+                                                               <Insets bottom="30.0" top="80.0" />
+                                                            </VBox.margin>
+                                                         </HBox>
+                                                         <HBox maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="230.0">
+                                                            <children>
+                                                               <Label text="Descripción">
+                                                                  <HBox.margin>
+                                                                     <Insets right="65.0" top="4.0" />
+                                                                  </HBox.margin>
+                                                                  <font>
+                                                                     <Font name="Nunito Regular" size="12.0" />
+                                                                  </font>
+                                                               </Label>
+                                                               <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" prefHeight="27.0" prefWidth="332.0" text="123456" textAlignment="RIGHT">
+                                                                  <font>
+                                                                     <Font name="Nunito Bold" size="18.0" />
+                                                                  </font>
+                                                               </Label>
+                                                            </children>
+                                                         </HBox>
+                                                         <HBox maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="230.0">
+                                                            <children>
+                                                               <Label prefWidth="125.0" text="Día de la Semana">
+                                                                  <HBox.margin>
+                                                                     <Insets right="65.0" top="4.0" />
+                                                                  </HBox.margin>
+                                                                  <font>
+                                                                     <Font name="Nunito Regular" size="12.0" />
+                                                                  </font>
+                                                               </Label>
+                                                               <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" prefHeight="27.0" prefWidth="272.0" text="123456" textAlignment="RIGHT">
+                                                                  <font>
+                                                                     <Font name="Nunito Bold" size="18.0" />
+                                                                  </font>
+                                                               </Label>
+                                                            </children>
+                                                         </HBox>
+                                                         <HBox maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="230.0">
+                                                            <children>
+                                                               <Label text="Hora de entrada">
+                                                                  <HBox.margin>
+                                                                     <Insets right="65.0" top="4.0" />
+                                                                  </HBox.margin>
+                                                                  <font>
+                                                                     <Font name="Nunito Regular" size="12.0" />
+                                                                  </font>
+                                                               </Label>
+                                                               <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" prefHeight="27.0" prefWidth="308.0" text="123456" textAlignment="RIGHT">
+                                                                  <font>
+                                                                     <Font name="Nunito Bold" size="18.0" />
+                                                                  </font>
+                                                               </Label>
+                                                            </children>
+                                                         </HBox>
+                                                         <HBox maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="230.0">
+                                                            <children>
+                                                               <Label text="Hora de salida">
+                                                                  <HBox.margin>
+                                                                     <Insets right="65.0" top="4.0" />
+                                                                  </HBox.margin>
+                                                                  <font>
+                                                                     <Font name="Nunito Regular" size="12.0" />
+                                                                  </font>
+                                                               </Label>
+                                                               <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" prefHeight="27.0" prefWidth="317.0" text="123456" textAlignment="RIGHT">
+                                                                  <font>
+                                                                     <Font name="Nunito Bold" size="18.0" />
+                                                                  </font>
+                                                               </Label>
+                                                            </children>
+                                                            <VBox.margin>
+                                                               <Insets bottom="30.0" />
+                                                            </VBox.margin>
+                                                         </HBox>
+                                                         <HBox maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="230.0">
+                                                            <children>
+                                                               <Label text="Status">
+                                                                  <HBox.margin>
+                                                                     <Insets right="65.0" top="4.0" />
+                                                                  </HBox.margin>
+                                                                  <font>
+                                                                     <Font name="Nunito Regular" size="12.0" />
+                                                                  </font>
+                                                               </Label>
+                                                               <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" prefHeight="27.0" prefWidth="361.0" text="123456" textAlignment="RIGHT">
+                                                                  <font>
+                                                                     <Font name="Nunito Bold" size="18.0" />
+                                                                  </font>
+                                                               </Label>
+                                                            </children>
+                                                         </HBox>
+                                                      </children>
+                                                   </VBox>
+                                                   <VBox fx:id="vboxEmpleadosBuscarEditar1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="500.0" visible="false">
+                                                      <children>
+                                                         <HBox maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="27.0" prefWidth="433.0">
+                                                            <children>
+                                                               <Label prefWidth="90.0" text="ID de Horario">
+                                                                  <HBox.margin>
+                                                                     <Insets top="4.0" />
+                                                                  </HBox.margin>
+                                                                  <font>
+                                                                     <Font name="Nunito Regular" size="12.0" />
+                                                                  </font>
+                                                               </Label>
+                                                               <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" prefHeight="27.0" prefWidth="350.0" text="123456" textAlignment="RIGHT">
+                                                                  <font>
+                                                                     <Font name="Nunito Bold" size="18.0" />
+                                                                  </font>
+                                                               </Label>
+                                                            </children>
+                                                            <VBox.margin>
+                                                               <Insets />
+                                                            </VBox.margin>
+                                                         </HBox>
+                                                         <JFXTextField fx:id="txtDescripcionHorarioHorarios1" focusColor="#ff4e10" labelFloat="true" maxHeight="40.0" minHeight="40.0" prefHeight="40.0" promptText="Descripcion de Horario" unFocusColor="#5776c8">
+                                                            <font>
+                                                               <Font name="Nunito Regular" size="12.0" />
+                                                            </font>
+                                                            <VBox.margin>
+                                                               <Insets top="10.0" />
+                                                            </VBox.margin>
+                                                         </JFXTextField>
+                                                         <JFXComboBox focusColor="#ff4e10" labelFloat="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="440.0" promptText="Día de la semana" unFocusColor="#5776c8">
+                                                            <VBox.margin>
+                                                               <Insets top="30.0" />
+                                                            </VBox.margin>
+                                                         </JFXComboBox>
+                                                         <Label text="Hora de entrada">
+                                                            <font>
+                                                               <Font name="Nunito Regular" size="12.0" />
+                                                            </font>
+                                                            <VBox.margin>
+                                                               <Insets top="30.0" />
+                                                            </VBox.margin>
+                                                         </Label>
+                                                         <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity">
+                                                            <children>
+                                                               <JFXComboBox focusColor="#ff4e10" labelFloat="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="88.0" promptText="Hora" unFocusColor="#5776c8">
+                                                                  <HBox.margin>
+                                                                     <Insets bottom="5.0" left="5.0" right="69.0" top="5.0" />
+                                                                  </HBox.margin>
+                                                               </JFXComboBox>
+                                                               <JFXComboBox focusColor="#ff4e10" labelFloat="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="101.0" promptText="Minuto" unFocusColor="#5776c8">
+                                                                  <HBox.margin>
+                                                                     <Insets bottom="5.0" left="5.0" right="68.0" top="5.0" />
+                                                                  </HBox.margin>
+                                                               </JFXComboBox>
+                                                               <JFXComboBox focusColor="#ff4e10" labelFloat="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" promptText="AM/PM" unFocusColor="#5776c8">
+                                                                  <HBox.margin>
+                                                                     <Insets bottom="5.0" left="5.0" right="10.0" top="5.0" />
+                                                                  </HBox.margin>
+                                                               </JFXComboBox>
+                                                            </children>
+                                                         </HBox>
+                                                         <Label text="Hora de salida">
+                                                            <VBox.margin>
+                                                               <Insets top="30.0" />
+                                                            </VBox.margin>
+                                                         </Label>
+                                                         <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity">
+                                                            <children>
+                                                               <JFXComboBox focusColor="#ff4e10" labelFloat="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="31.0" prefWidth="88.0" promptText="Hora" unFocusColor="#5776c8">
+                                                                  <HBox.margin>
+                                                                     <Insets bottom="5.0" left="5.0" right="69.0" top="5.0" />
+                                                                  </HBox.margin>
+                                                               </JFXComboBox>
+                                                               <JFXComboBox focusColor="#ff4e10" labelFloat="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="31.0" prefWidth="101.0" promptText="Minuto" unFocusColor="#5776c8">
+                                                                  <HBox.margin>
+                                                                     <Insets bottom="5.0" left="5.0" right="68.0" top="5.0" />
+                                                                  </HBox.margin>
+                                                               </JFXComboBox>
+                                                               <JFXComboBox focusColor="#ff4e10" labelFloat="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" promptText="AM/PM" unFocusColor="#5776c8">
+                                                                  <HBox.margin>
+                                                                     <Insets bottom="5.0" left="5.0" right="10.0" top="5.0" />
+                                                                  </HBox.margin>
+                                                               </JFXComboBox>
+                                                            </children>
+                                                         </HBox>
+                                                         <JFXToggleButton text="Status" textAlignment="RIGHT" toggleColor="#5776c8" toggleLineColor="#95a9dd">
+                                                            <VBox.margin>
+                                                               <Insets left="162.5" />
+                                                            </VBox.margin>
+                                                         </JFXToggleButton>
+                                                      </children>
+                                                      <padding>
+                                                         <Insets left="30.0" right="30.0" top="20.0" />
+                                                      </padding>
+                                                   </VBox>
+                                                   <VBox fx:id="vboxEmpleadosBuscar2" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="500.0">
+                                                      <children>
+                                                         <ImageView fitHeight="329.0" fitWidth="471.0" pickOnBounds="true" preserveRatio="true">
+                                                            <image>
+                                                               <Image url="@images/searchHorarios.png" />
+                                                            </image>
+                                                            <VBox.margin>
+                                                               <Insets left="20.0" top="50.0" />
+                                                            </VBox.margin>
+                                                         </ImageView>
+                                                         <Label text="¡Busquemos!">
+                                                            <VBox.margin>
+                                                               <Insets left="144.0" />
+                                                            </VBox.margin>
+                                                            <font>
+                                                               <Font name="Nunito Bold" size="36.0" />
+                                                            </font>
+                                                         </Label>
+                                                      </children>
+                                                   </VBox>
+                                                   <ImageView fx:id="imgEmpleadosNoFound2" fitHeight="329.0" fitWidth="480.0" layoutX="10.0" layoutY="47.0" pickOnBounds="true" preserveRatio="true" visible="false">
+                                                      <image>
+                                                         <Image url="@images/noFoundHorarios.png" />
+                                                      </image>
+                                                   </ImageView>
+                                                </children>
+                                             </Pane>
+                                          </children>
+                                       </HBox>
+                                    </children>
+                                 </VBox>
                                  <VBox fx:id="vboxDiasLaborales" disable="true" opacity="0.85" visible="false">
                                     <effect>
                                        <Blend mode="LIGHTEN" opacity="0.85" />
@@ -1146,18 +1449,214 @@
                                        </HBox>
                                     </children>
                                  </VBox>
+                                 <VBox fx:id="vboxLaboralesBuscar" prefHeight="500.0" prefWidth="864.0" visible="false">
+                                    <children>
+                                       <HBox prefHeight="500.0" prefWidth="864.0">
+                                          <children>
+                                             <VBox prefHeight="500.0" prefWidth="300.0">
+                                                <children>
+                                                   <JFXTextField focusColor="#ff4e10" labelFloat="true" promptText="ID de Horarios" unFocusColor="#5776c8">
+                                                      <VBox.margin>
+                                                         <Insets bottom="20.0" left="50.0" right="50.0" top="50.0" />
+                                                      </VBox.margin>
+                                                   </JFXTextField>
+                                                   <JFXComboBox focusColor="#ff4e10" labelFloat="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="200.0" promptText="Status" unFocusColor="#5776c8">
+                                                      <VBox.margin>
+                                                         <Insets bottom="20.0" left="50.0" />
+                                                      </VBox.margin>
+                                                   </JFXComboBox>
+                                                   <JFXRadioButton text="Fecha">
+                                                      <VBox.margin>
+                                                         <Insets left="50.0" />
+                                                      </VBox.margin></JFXRadioButton>
+                                                   <JFXRadioButton text="Status">
+                                                      <VBox.margin>
+                                                         <Insets bottom="20.0" left="50.0" top="10.0" />
+                                                      </VBox.margin></JFXRadioButton>
+                                                   <JFXButton maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="204.0" ripplerFill="#fe81bb" style="-fx-border-color: #000; -fx-border-radius: 4px;" text="Buscar" textFill="#ff4e10">
+                                                      <VBox.margin>
+                                                         <Insets bottom="110.0" left="50.0" right="20.0" />
+                                                      </VBox.margin>
+                                                   </JFXButton>
+                                                   <JFXButton fx:id="btnEditarCancelar21" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#editarEmpleados" prefWidth="204.0" ripplerFill="#fe81bb" style="-fx-border-color: #000; -fx-border-radius: 4px;" text="Editar" textFill="#ff4e10">
+                                                      <VBox.margin>
+                                                         <Insets bottom="20.0" left="50.0" />
+                                                      </VBox.margin>
+                                                   </JFXButton>
+                                                   <JFXButton fx:id="btnEliminarGuardar21" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="204.0" ripplerFill="#fe81bb" style="-fx-border-color: #000; -fx-border-radius: 4px;" text="Eliminar" textFill="#ff4e10">
+                                                      <VBox.margin>
+                                                         <Insets left="50.0" />
+                                                      </VBox.margin>
+                                                   </JFXButton>
+                                                </children>
+                                             </VBox>
+                                             <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" opacity="0.8" prefHeight="400.0" prefWidth="500.0" style="-fx-background-color: #fff; -fx-background-radius: 10;">
+                                                <HBox.margin>
+                                                   <Insets bottom="50.0" left="32.0" top="50.0" />
+                                                </HBox.margin>
+                                                <effect>
+                                                   <DropShadow blurType="GAUSSIAN" color="#402f3b1f" height="31.89" offsetX="4.0" offsetY="6.0" radius="16.61" width="36.55" />
+                                                </effect>
+                                                <children>
+                                                   <VBox fx:id="vboxHorariosBuscarEcontrado11" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="416.0" prefWidth="500.0" visible="false">
+                                                      <padding>
+                                                         <Insets bottom="15.0" left="50.0" right="20.0" top="60.0" />
+                                                      </padding>
+                                                      <children>
+                                                         <Label text="Fecha">
+                                                            <font>
+                                                               <Font name="Nunito Regular" size="12.0" />
+                                                            </font>
+                                                            <VBox.margin>
+                                                               <Insets />
+                                                            </VBox.margin>
+                                                         </Label>
+                                                         <Label contentDisplay="RIGHT" prefHeight="27.0" prefWidth="461.0" text="18/01/2021">
+                                                            <font>
+                                                               <Font name="Nunito Bold" size="36.0" />
+                                                            </font>
+                                                         </Label>
+                                                         <Label text="Motivo">
+                                                            <font>
+                                                               <Font name="Nunito Regular" size="12.0" />
+                                                            </font>
+                                                            <VBox.margin>
+                                                               <Insets top="30.0" />
+                                                            </VBox.margin>
+                                                         </Label>
+                                                         <Label contentDisplay="RIGHT" prefHeight="27.0" prefWidth="467.0" text="Día de hoy">
+                                                            <font>
+                                                               <Font name="Nunito Bold" size="36.0" />
+                                                            </font>
+                                                         </Label>
+                                                         <Label prefWidth="125.0" text="Status">
+                                                            <font>
+                                                               <Font name="Nunito Regular" size="12.0" />
+                                                            </font>
+                                                            <VBox.margin>
+                                                               <Insets top="30.0" />
+                                                            </VBox.margin>
+                                                         </Label>
+                                                         <Label contentDisplay="RIGHT" prefHeight="27.0" prefWidth="466.0" text="Activo">
+                                                            <font>
+                                                               <Font name="Nunito Bold" size="36.0" />
+                                                            </font>
+                                                         </Label>
+                                                      </children>
+                                                   </VBox>
+                                                   <VBox prefHeight="400.0" prefWidth="500.0" visible="false">
+                                                      <children>
+                                                         <HBox prefHeight="100.0" prefWidth="200.0">
+                                                            <children>
+                                                               <Label prefWidth="125.0" text="Status">
+                                                                  <font>
+                                                                     <Font name="Nunito Regular" size="18.0" />
+                                                                  </font>
+                                                                  <HBox.margin>
+                                                                     <Insets left="10.0" top="15.0" />
+                                                                  </HBox.margin>
+                                                               </Label>
+                                                               <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" prefHeight="52.0" prefWidth="353.0" text="Activo">
+                                                                  <font>
+                                                                     <Font name="Nunito Bold" size="36.0" />
+                                                                  </font>
+                                                               </Label>
+                                                            </children>
+                                                         </HBox>
+                                                         <JFXTreeTableView>
+                                                            <VBox.margin>
+                                                               <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                                            </VBox.margin>
+                                                         </JFXTreeTableView>
+                                                      </children>
+                                                   </VBox>
+                                                   <VBox fx:id="vboxEmpleadosBuscarEditar11" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="500.0" visible="false">
+                                                      <children>
+                                                         <HBox prefHeight="148.0" prefWidth="440.0">
+                                                            <children>
+                                                               <Label prefWidth="125.0" text="Fecha">
+                                                                  <font>
+                                                                     <Font name="Nunito Regular" size="18.0" />
+                                                                  </font>
+                                                                  <HBox.margin>
+                                                                     <Insets left="10.0" top="15.0" />
+                                                                  </HBox.margin>
+                                                               </Label>
+                                                               <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" prefHeight="52.0" prefWidth="353.0" text="21/01/2021">
+                                                                  <font>
+                                                                     <Font name="Nunito Bold" size="36.0" />
+                                                                  </font>
+                                                               </Label>
+                                                            </children>
+                                                         </HBox>
+                                                         <JFXTextField fx:id="txtDescripcionHorarioHorarios11" focusColor="#ff4e10" labelFloat="true" maxHeight="40.0" minHeight="40.0" prefHeight="40.0" promptText="Motivo" unFocusColor="#5776c8">
+                                                            <font>
+                                                               <Font name="Nunito Regular" size="12.0" />
+                                                            </font>
+                                                            <VBox.margin>
+                                                               <Insets top="10.0" />
+                                                            </VBox.margin>
+                                                         </JFXTextField>
+                                                         <JFXToggleButton text="Status" textAlignment="RIGHT" toggleColor="#5776c8" toggleLineColor="#95a9dd">
+                                                            <VBox.margin>
+                                                               <Insets left="162.5" top="30.0" />
+                                                            </VBox.margin>
+                                                         </JFXToggleButton>
+                                                      </children>
+                                                      <padding>
+                                                         <Insets left="30.0" right="30.0" top="20.0" />
+                                                      </padding>
+                                                   </VBox>
+                                                   <VBox fx:id="vboxEmpleadosBuscar21" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="500.0" visible="false">
+                                                      <children>
+                                                         <ImageView fitHeight="329.0" fitWidth="471.0" pickOnBounds="true" preserveRatio="true">
+                                                            <image>
+                                                               <Image url="@images/searchLaborales.png" />
+                                                            </image>
+                                                            <VBox.margin>
+                                                               <Insets left="20.0" top="30.0" />
+                                                            </VBox.margin>
+                                                         </ImageView>
+                                                         <Label alignment="CENTER" prefHeight="52.0" prefWidth="500.0" text="¿Qué buscaremos hoy?">
+                                                            <VBox.margin>
+                                                               <Insets />
+                                                            </VBox.margin>
+                                                            <font>
+                                                               <Font name="Nunito Bold" size="36.0" />
+                                                            </font>
+                                                         </Label>
+                                                      </children>
+                                                   </VBox>
+                                                   <ImageView fx:id="imgEmpleadosNoFound21" fitHeight="380.0" fitWidth="424.0" layoutX="43.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+                                                      <image>
+                                                         <Image url="@images/noFoundLaborales.png" />
+                                                      </image>
+                                                   </ImageView>
+                                                </children>
+                                             </Pane>
+                                          </children>
+                                       </HBox>
+                                    </children>
+                                 </VBox>
                                  <VBox fx:id="vboxRAsistencias" disable="true" opacity="0.85" prefHeight="477.0" prefWidth="820.0" visible="false" AnchorPane.bottomAnchor="15.5" AnchorPane.leftAnchor="22.0" AnchorPane.rightAnchor="22.0" AnchorPane.topAnchor="15.5">
                                     <effect>
                                        <Blend mode="LIGHTEN" opacity="0.85" />
                                     </effect>
                                     <children>
-                                       <JFXTreeTableView fx:id="tablaRegistroAsistencias" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="350.0" prefWidth="820.0">
+                                       <JFXTreeTableView fx:id="tablaRegistroAsistencias" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="350.0" prefWidth="680.0">
                                           <HBox.margin>
                                              <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
                                           </HBox.margin>
                                           <VBox.margin>
-                                             <Insets top="50.0" />
+                                             <Insets left="70.0" right="30.0" top="20.0" />
                                           </VBox.margin>
+                                          <columns>
+                                             <TreeTableColumn maxWidth="1.7976931348623157E308" minWidth="-Infinity" prefWidth="150.0" resizable="false" text="Clave de Empleado" />
+                                             <TreeTableColumn maxWidth="1.7976931348623157E308" minWidth="-Infinity" prefWidth="100.0" resizable="false" text="Fecha" />
+                                             <TreeTableColumn maxWidth="1.7976931348623157E308" minWidth="-Infinity" prefWidth="100.0" resizable="false" text="Hora" />
+                                             <TreeTableColumn maxWidth="1.7976931348623157E308" minWidth="-Infinity" prefWidth="100.0" resizable="false" text="Status" />
+                                             <TreeTableColumn maxWidth="1.7976931348623157E308" minWidth="-Infinity" prefWidth="200.0" resizable="false" text="No. de Biómetrico" />
+                                          </columns>
                                        </JFXTreeTableView>
                                        <HBox prefHeight="100.0" prefWidth="200.0">
                                           <children>
@@ -1229,7 +1728,147 @@
                                        </HBox>
                                     </children>
                                  </VBox>
-                                 <VBox fx:id="vBoxAHorarios" disable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="864.0" visible="false">
+                                 <VBox fx:id="vboxBuscarJustificantes" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="864.0">
+                                    <children>
+                                       <HBox prefHeight="500.0" prefWidth="864.0">
+                                          <children>
+                                             <VBox prefHeight="500.0" prefWidth="300.0">
+                                                <children>
+                                                   <JFXTextField focusColor="#ff4e10" labelFloat="true" promptText="ID de Justificante" unFocusColor="#5776c8">
+                                                      <VBox.margin>
+                                                         <Insets bottom="20.0" left="50.0" right="50.0" top="50.0" />
+                                                      </VBox.margin>
+                                                   </JFXTextField>
+                                                   <JFXButton maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="204.0" ripplerFill="#fe81bb" style="-fx-border-color: #000; -fx-border-radius: 4px;" text="Buscar" textFill="#ff4e10">
+                                                      <VBox.margin>
+                                                         <Insets bottom="110.0" left="50.0" right="20.0" />
+                                                      </VBox.margin>
+                                                   </JFXButton>
+                                                   <JFXButton fx:id="btnEditarCancelar211" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#editarEmpleados" prefWidth="204.0" ripplerFill="#fe81bb" style="-fx-border-color: #000; -fx-border-radius: 4px;" text="Editar" textFill="#ff4e10">
+                                                      <VBox.margin>
+                                                         <Insets bottom="20.0" left="50.0" top="120.0" />
+                                                      </VBox.margin>
+                                                   </JFXButton>
+                                                   <JFXButton fx:id="btnEliminarGuardar211" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="204.0" ripplerFill="#fe81bb" style="-fx-border-color: #000; -fx-border-radius: 4px;" text="Eliminar" textFill="#ff4e10">
+                                                      <VBox.margin>
+                                                         <Insets left="50.0" />
+                                                      </VBox.margin>
+                                                   </JFXButton>
+                                                </children>
+                                             </VBox>
+                                             <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" opacity="0.8" prefHeight="400.0" prefWidth="500.0" style="-fx-background-color: #fff; -fx-background-radius: 10;">
+                                                <HBox.margin>
+                                                   <Insets bottom="50.0" left="32.0" top="50.0" />
+                                                </HBox.margin>
+                                                <effect>
+                                                   <DropShadow blurType="GAUSSIAN" color="#402f3b1f" height="31.89" offsetX="4.0" offsetY="6.0" radius="16.61" width="36.55" />
+                                                </effect>
+                                                <children>
+                                                   <VBox fx:id="vboxHorariosBuscarEcontrado111" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="416.0" prefWidth="500.0" visible="false">
+                                                      <padding>
+                                                         <Insets bottom="15.0" left="50.0" right="20.0" top="60.0" />
+                                                      </padding>
+                                                      <children>
+                                                         <Label text="ID de Justioficante">
+                                                            <font>
+                                                               <Font name="Nunito Regular" size="12.0" />
+                                                            </font>
+                                                            <VBox.margin>
+                                                               <Insets />
+                                                            </VBox.margin>
+                                                         </Label>
+                                                         <Label contentDisplay="RIGHT" prefHeight="27.0" prefWidth="461.0" text="621">
+                                                            <font>
+                                                               <Font name="Nunito Bold" size="36.0" />
+                                                            </font>
+                                                         </Label>
+                                                         <Label text="Descripción">
+                                                            <font>
+                                                               <Font name="Nunito Regular" size="12.0" />
+                                                            </font>
+                                                            <VBox.margin>
+                                                               <Insets top="30.0" />
+                                                            </VBox.margin>
+                                                         </Label>
+                                                         <Label contentDisplay="RIGHT" prefHeight="27.0" prefWidth="467.0" text="El mañanero">
+                                                            <font>
+                                                               <Font name="Nunito Bold" size="36.0" />
+                                                            </font>
+                                                         </Label>
+                                                         <Label prefWidth="125.0" text="Status">
+                                                            <font>
+                                                               <Font name="Nunito Regular" size="12.0" />
+                                                            </font>
+                                                            <VBox.margin>
+                                                               <Insets top="30.0" />
+                                                            </VBox.margin>
+                                                         </Label>
+                                                         <Label contentDisplay="RIGHT" prefHeight="27.0" prefWidth="466.0" text="Activo">
+                                                            <font>
+                                                               <Font name="Nunito Bold" size="36.0" />
+                                                            </font>
+                                                         </Label>
+                                                      </children>
+                                                   </VBox>
+                                                   <VBox prefHeight="400.0" prefWidth="500.0" visible="false">
+                                                      <children>
+                                                         <Label text="ID de Justioficante">
+                                                            <font>
+                                                               <Font name="Nunito Regular" size="12.0" />
+                                                            </font>
+                                                         </Label>
+                                                         <Label contentDisplay="RIGHT" prefHeight="27.0" prefWidth="461.0" text="621">
+                                                            <font>
+                                                               <Font name="Nunito Bold" size="36.0" />
+                                                            </font>
+                                                         </Label>
+                                                         <JFXTextField focusColor="#fe81bb" labelFloat="true" promptText="Descripción" unFocusColor="BLACK">
+                                                            <VBox.margin>
+                                                               <Insets bottom="20.0" top="20.0" />
+                                                            </VBox.margin>
+                                                         </JFXTextField>
+                                                         <JFXToggleButton text="Status" toggleColor="#fe81bb" toggleLineColor="#ffdced">
+                                                            <VBox.margin>
+                                                               <Insets left="150.0" />
+                                                            </VBox.margin>
+                                                         </JFXToggleButton>
+                                                      </children>
+                                                      <padding>
+                                                         <Insets left="50.0" right="50.0" top="100.0" />
+                                                      </padding>
+                                                   </VBox>
+                                                   <VBox fx:id="vboxEmpleadosBuscar211" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="500.0">
+                                                      <children>
+                                                         <Label alignment="CENTER" prefHeight="52.0" prefWidth="500.0" text="¿Qué buscaremos?">
+                                                            <VBox.margin>
+                                                               <Insets />
+                                                            </VBox.margin>
+                                                            <font>
+                                                               <Font name="Nunito Bold" size="36.0" />
+                                                            </font>
+                                                         </Label>
+                                                         <ImageView fitHeight="329.0" fitWidth="471.0" pickOnBounds="true" preserveRatio="true">
+                                                            <image>
+                                                               <Image url="@images/searchJustificantes.png" />
+                                                            </image>
+                                                            <VBox.margin>
+                                                               <Insets left="20.0" top="10.0" />
+                                                            </VBox.margin>
+                                                         </ImageView>
+                                                      </children>
+                                                   </VBox>
+                                                   <ImageView fx:id="imgEmpleadosNoFound211" fitHeight="380.0" fitWidth="424.0" layoutX="73.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" visible="false">
+                                                      <image>
+                                                         <Image url="@images/noFoundJustificantes.png" />
+                                                      </image>
+                                                   </ImageView>
+                                                </children>
+                                             </Pane>
+                                          </children>
+                                       </HBox>
+                                    </children>
+                                 </VBox>
+                                 <VBox fx:id="vBoxAHorarios" prefHeight="200.0" prefWidth="100.0" visible="false">
                                     <children>
                                        <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="864.0">
                                           <children>
@@ -1271,6 +1910,214 @@
                                              </ImageView>
                                           </children>
                                        </HBox>
+                                    </children>
+                                 </VBox>
+                                 <VBox fx:id="vBoxAHorariosBuscar" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="864.0" visible="false">
+                                    <children>
+                                       <HBox prefHeight="500.0" prefWidth="864.0">
+                                          <children>
+                                             <VBox prefHeight="500.0" prefWidth="300.0">
+                                                <children>
+                                                   <JFXTextField focusColor="#ff4e10" labelFloat="true" promptText="Clave" unFocusColor="#5776c8">
+                                                      <VBox.margin>
+                                                         <Insets bottom="20.0" left="50.0" right="50.0" top="50.0" />
+                                                      </VBox.margin>
+                                                   </JFXTextField>
+                                                   <JFXRadioButton text="Clave de Empleado">
+                                                      <VBox.margin>
+                                                         <Insets bottom="10.0" left="50.0" />
+                                                      </VBox.margin>
+                                                   </JFXRadioButton>
+                                                   <JFXRadioButton text="ID de Horario">
+                                                      <VBox.margin>
+                                                         <Insets bottom="30.0" left="50.0" />
+                                                      </VBox.margin>
+                                                   </JFXRadioButton>
+                                                   <JFXButton maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="204.0" ripplerFill="#fe81bb" style="-fx-border-color: #000; -fx-border-radius: 4px;" text="Buscar" textFill="#ff4e10">
+                                                      <VBox.margin>
+                                                         <Insets left="50.0" right="20.0" />
+                                                      </VBox.margin>
+                                                   </JFXButton>
+                                                   <JFXButton fx:id="btnEditarCancelar22" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#editarEmpleados" prefWidth="204.0" ripplerFill="#fe81bb" style="-fx-border-color: #000; -fx-border-radius: 4px;" text="Editar" textFill="#ff4e10">
+                                                      <VBox.margin>
+                                                         <Insets bottom="20.0" left="50.0" top="160.0" />
+                                                      </VBox.margin>
+                                                   </JFXButton>
+                                                   <JFXButton fx:id="btnEliminarGuardar22" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="204.0" ripplerFill="#fe81bb" style="-fx-border-color: #000; -fx-border-radius: 4px;" text="Eliminar" textFill="#ff4e10">
+                                                      <VBox.margin>
+                                                         <Insets left="50.0" />
+                                                      </VBox.margin>
+                                                   </JFXButton>
+                                                </children>
+                                             </VBox>
+                                             <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" opacity="0.8" prefHeight="400.0" prefWidth="500.0" style="-fx-background-color: #fff; -fx-background-radius: 10;">
+                                                <HBox.margin>
+                                                   <Insets bottom="50.0" left="32.0" top="50.0" />
+                                                </HBox.margin>
+                                                <effect>
+                                                   <DropShadow blurType="GAUSSIAN" color="#402f3b1f" height="31.89" offsetX="4.0" offsetY="6.0" radius="16.61" width="36.55" />
+                                                </effect>
+                                                <children>
+                                                   <VBox fx:id="vboxHorariosBuscarEcontrado12" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="416.0" prefWidth="500.0" visible="false">
+                                                      <padding>
+                                                         <Insets bottom="15.0" left="100.0" right="20.0" top="10.0" />
+                                                      </padding>
+                                                      <children>
+                                                         <Label text="Clave de Empleado">
+                                                            <font>
+                                                               <Font name="Nunito Regular" size="14.0" />
+                                                            </font>
+                                                         </Label>
+                                                         <Label contentDisplay="RIGHT" prefHeight="27.0" prefWidth="324.0" text="123456" textAlignment="RIGHT">
+                                                            <font>
+                                                               <Font name="Nunito Bold" size="20.0" />
+                                                            </font>
+                                                         </Label>
+                                                         <Label text="Nombre">
+                                                            <font>
+                                                               <Font name="Nunito Regular" size="14.0" />
+                                                            </font>
+                                                         </Label>
+                                                         <Label contentDisplay="RIGHT" prefHeight="27.0" prefWidth="332.0" text="123456" textAlignment="RIGHT">
+                                                            <font>
+                                                               <Font name="Nunito Bold" size="20.0" />
+                                                            </font>
+                                                         </Label>
+                                                         <Label prefWidth="125.0" text="Apellidos">
+                                                            <font>
+                                                               <Font name="Nunito Regular" size="14.0" />
+                                                            </font>
+                                                         </Label>
+                                                         <Label contentDisplay="RIGHT" prefHeight="27.0" prefWidth="272.0" text="123456" textAlignment="RIGHT">
+                                                            <font>
+                                                               <Font name="Nunito Bold" size="20.0" />
+                                                            </font>
+                                                            <VBox.margin>
+                                                               <Insets bottom="20.0" />
+                                                            </VBox.margin>
+                                                         </Label>
+                                                         <Label text="Hora de Entrada">
+                                                            <font>
+                                                               <Font name="Nunito Regular" size="14.0" />
+                                                            </font>
+                                                         </Label>
+                                                         <Label contentDisplay="RIGHT" prefHeight="27.0" prefWidth="308.0" text="123456" textAlignment="RIGHT">
+                                                            <font>
+                                                               <Font name="Nunito Bold" size="20.0" />
+                                                            </font>
+                                                         </Label>
+                                                         <Label text="Hora de Salida">
+                                                            <font>
+                                                               <Font name="Nunito Regular" size="14.0" />
+                                                            </font>
+                                                         </Label>
+                                                         <Label contentDisplay="RIGHT" prefHeight="27.0" prefWidth="317.0" text="123456" textAlignment="RIGHT">
+                                                            <font>
+                                                               <Font name="Nunito Bold" size="20.0" />
+                                                            </font>
+                                                         </Label>
+                                                         <Label text="Status">
+                                                            <font>
+                                                               <Font name="Nunito Regular" size="14.0" />
+                                                            </font>
+                                                         </Label>
+                                                         <Label contentDisplay="RIGHT" prefHeight="27.0" prefWidth="361.0" text="123456" textAlignment="RIGHT">
+                                                            <font>
+                                                               <Font name="Nunito Bold" size="20.0" />
+                                                            </font>
+                                                         </Label>
+                                                         <Label text="Fecha de asignación de horario">
+                                                            <font>
+                                                               <Font name="Nunito Regular" size="14.0" />
+                                                            </font>
+                                                         </Label>
+                                                         <Label contentDisplay="RIGHT" prefHeight="27.0" prefWidth="361.0" text="123456" textAlignment="RIGHT">
+                                                            <font>
+                                                               <Font name="Nunito Bold" size="20.0" />
+                                                            </font>
+                                                         </Label>
+                                                      </children>
+                                                   </VBox>
+                                                   <VBox fx:id="vboxEmpleadosBuscarEditar12" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="500.0" visible="false">
+                                                      <padding>
+                                                         <Insets left="30.0" right="30.0" top="70.0" />
+                                                      </padding>
+                                                      <children>
+                                                         <Label text="Clave de Empleado">
+                                                            <font>
+                                                               <Font name="Nunito Regular" size="14.0" />
+                                                            </font>
+                                                         </Label>
+                                                         <Label contentDisplay="RIGHT" prefHeight="27.0" prefWidth="324.0" text="123456" textAlignment="RIGHT">
+                                                            <font>
+                                                               <Font name="Nunito Bold" size="20.0" />
+                                                            </font>
+                                                            <VBox.margin>
+                                                               <Insets bottom="20.0" />
+                                                            </VBox.margin>
+                                                         </Label>
+                                                         <Label text="Nombre">
+                                                            <font>
+                                                               <Font name="Nunito Regular" size="14.0" />
+                                                            </font>
+                                                         </Label>
+                                                         <Label contentDisplay="RIGHT" prefHeight="27.0" prefWidth="332.0" text="123456" textAlignment="RIGHT">
+                                                            <font>
+                                                               <Font name="Nunito Bold" size="20.0" />
+                                                            </font>
+                                                            <VBox.margin>
+                                                               <Insets bottom="20.0" />
+                                                            </VBox.margin>
+                                                         </Label>
+                                                         <Label prefWidth="125.0" text="Apellidos">
+                                                            <font>
+                                                               <Font name="Nunito Regular" size="14.0" />
+                                                            </font>
+                                                         </Label>
+                                                         <Label contentDisplay="RIGHT" prefHeight="27.0" prefWidth="272.0" text="123456" textAlignment="RIGHT">
+                                                            <font>
+                                                               <Font name="Nunito Bold" size="20.0" />
+                                                            </font>
+                                                            <VBox.margin>
+                                                               <Insets bottom="20.0" />
+                                                            </VBox.margin>
+                                                         </Label>
+                                                         <JFXComboBox focusColor="#fe81bb" labelFloat="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="200.0" promptText="Seleccione Horario" unFocusColor="BLACK">
+                                                            <VBox.margin>
+                                                               <Insets left="100.0" />
+                                                            </VBox.margin>
+                                                         </JFXComboBox>
+                                                      </children>
+                                                   </VBox>
+                                                   <VBox fx:id="vboxEmpleadosBuscar22" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="500.0">
+                                                      <children>
+                                                         <ImageView fitHeight="329.0" fitWidth="471.0" pickOnBounds="true" preserveRatio="true">
+                                                            <image>
+                                                               <Image url="@images/searchAHorarios.png" />
+                                                            </image>
+                                                            <VBox.margin>
+                                                               <Insets left="20.0" top="20.0" />
+                                                            </VBox.margin>
+                                                         </ImageView>
+                                                         <Label alignment="CENTER" prefHeight="52.0" prefWidth="501.0" text="¿Qué quieres encontrar?">
+                                                            <VBox.margin>
+                                                               <Insets />
+                                                            </VBox.margin>
+                                                            <font>
+                                                               <Font name="Nunito Bold" size="36.0" />
+                                                            </font>
+                                                         </Label>
+                                                      </children>
+                                                   </VBox>
+                                                   <ImageView fx:id="imgEmpleadosNoFound22" fitHeight="350.0" fitWidth="353.0" layoutX="81.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true" visible="false">
+                                                      <image>
+                                                         <Image url="@images/noFoundAHorarios.png" />
+                                                      </image>
+                                                   </ImageView>
+                                                </children>
+                                             </Pane>
+                                          </children>
+                                       </HBox>
                                     </children></VBox>
                               </children>
                            </AnchorPane>
@@ -1281,32 +2128,116 @@
                      </AnchorPane>
                   </children>
                </VBox>
-               <VBox fx:id="vboxHome" opacity="0.85" prefHeight="534.0" prefWidth="850.0" style="-fx-background-color: #fff; -fx-background-radius: 4;" AnchorPane.bottomAnchor="42.0" AnchorPane.leftAnchor="27.0" AnchorPane.rightAnchor="27.0" AnchorPane.topAnchor="42.0">
+               <VBox fx:id="vboxHome" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" opacity="0.85" prefHeight="120.0" prefWidth="850.0" visible="false" AnchorPane.bottomAnchor="449.0" AnchorPane.leftAnchor="27.0" AnchorPane.rightAnchor="27.0" AnchorPane.topAnchor="42.0">
                   <effect>
                      <Blend mode="LIGHTEN" opacity="0.85" />
                   </effect>
                   <children>
-                     <ImageView fitHeight="400.0" fitWidth="650.0" pickOnBounds="true" preserveRatio="true">
-                        <image>
-                           <Image url="@images/logini.png" />
-                        </image>
-                        <VBox.margin>
-                           <Insets left="160.0" right="100.0" />
-                        </VBox.margin>
-                     </ImageView>
                      <HBox prefHeight="100.0" prefWidth="200.0">
                         <children>
-                           <JFXPasswordField fx:id="txtPassword" focusColor="#ff4e10" labelFloat="true" prefHeight="508.0" prefWidth="432.0" promptText="Contraseña de Root MySQL" unFocusColor="#5776c8">
+                           <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#mostrarRegistrosEmpleados" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #fff; -fx-background-radius: 4;">
                               <HBox.margin>
-                                 <Insets bottom="25.0" left="50.0" top="25.0" />
+                                 <Insets />
+                              </HBox.margin>
+                              <children>
+                                 <ImageView fitHeight="193.0" fitWidth="121.0" layoutX="40.0" layoutY="7.0" onMouseClicked="#mostrarRegistrosEmpleados" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                       <Image url="@images/empleadoHome.png" />
+                                    </image>
+                                 </ImageView>
+                              </children>
+                           </Pane>
+                           <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#mostrarRegistrosHorarios" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #fff; -fx-background-radius: 4;">
+                              <HBox.margin>
+                                 <Insets bottom="30.0" left="15.0" />
+                              </HBox.margin>
+                              <children>
+                                 <ImageView fitHeight="193.0" fitWidth="140.0" layoutX="30.0" layoutY="6.0" onMouseClicked="#mostrarRegistrosHorarios" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                       <Image url="@images/horarioHome.png" />
+                                    </image>
+                                 </ImageView>
+                              </children>
+                           </Pane>
+                           <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#mostrarRegistrosDiasLaborales" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #fff; -fx-background-radius: 4;">
+                              <HBox.margin>
+                                 <Insets bottom="30.0" left="15.0" />
+                              </HBox.margin>
+                              <children>
+                                 <ImageView fitHeight="180.0" fitWidth="200.0" layoutX="5.0" layoutY="10.0" onMouseClicked="#mostrarRegistrosDiasLaborales" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                       <Image url="@images/laboralesHome.png" />
+                                    </image>
+                                 </ImageView>
+                              </children>
+                           </Pane>
+                           <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#mostrarRegistrosDiasLaborales" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #fff; -fx-background-radius: 4;">
+                              <HBox.margin>
+                                 <Insets bottom="30.0" left="15.0" />
+                              </HBox.margin>
+                              <children>
+                                 <ImageView fitHeight="193.0" fitWidth="200.0" layoutX="34.0" layoutY="4.0" onMouseClicked="#mostrarRegistrosDiasLaborales" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                       <Image url="@images/asistenciasHome.png" />
+                                    </image>
+                                 </ImageView>
+                              </children>
+                           </Pane>
+                        </children>
+                     </HBox>
+                     <HBox prefHeight="100.0" prefWidth="200.0">
+                        <children>
+                           <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#mostrarRegistrosAsistencias" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #fff; -fx-background-radius: 4;">
+                              <HBox.margin>
+                                 <Insets bottom="30.0" left="110.0" />
+                              </HBox.margin>
+                              <children>
+                                 <ImageView fitHeight="193.0" fitWidth="200.0" layoutX="28.0" layoutY="4.0" onMouseClicked="#mostrarRegistrosAsistencias" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                       <Image url="@images/justificantesHome.png" />
+                                    </image>
+                                 </ImageView>
+                              </children>
+                           </Pane>
+                           <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#mostrarRegistrosJustificantes" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #fff; -fx-background-radius: 4;">
+                              <HBox.margin>
+                                 <Insets bottom="30.0" left="15.0" />
+                              </HBox.margin>
+                              <children>
+                                 <ImageView fitHeight="193.0" fitWidth="200.0" layoutX="35.0" layoutY="4.0" onMouseClicked="#mostrarRegistrosJustificantes" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                       <Image url="@images/incidenciasHome.png" />
+                                    </image>
+                                 </ImageView>
+                              </children>
+                           </Pane>
+                           <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#mostrarAHorarios" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #fff; -fx-background-radius: 4;">
+                              <HBox.margin>
+                                 <Insets bottom="30.0" left="15.0" />
+                              </HBox.margin>
+                              <children>
+                                 <ImageView fitHeight="180.0" fitWidth="200.0" layoutX="8.0" layoutY="10.0" onMouseClicked="#mostrarAHorarios" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                       <Image url="@images/aHorariosHome.png" />
+                                    </image>
+                                 </ImageView>
+                              </children>
+                           </Pane>
+                        </children>
+                     </HBox>
+                     <HBox maxWidth="-Infinity" minWidth="-Infinity" prefHeight="83.0" prefWidth="850.0" style="-fx-background-color: #fff; -fx-background-radius: 4;">
+                        <children>
+                           <JFXPasswordField fx:id="txtPassword" focusColor="#ff4e10" labelFloat="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="432.0" promptText="Contraseña de Root MySQL" unFocusColor="#5776c8">
+                              <HBox.margin>
+                                 <Insets bottom="25.0" left="109.0" top="30.0" />
                               </HBox.margin>
                               <font>
                                  <Font name="Nunito Regular" size="12.0" />
                               </font>
                            </JFXPasswordField>
-                           <JFXButton fx:id="btnSetPass" maxWidth="200.0" minWidth="200.0" onMouseClicked="#iniciarConexion" prefWidth="200.0" ripplerFill="#fe81bb" style="-fx-border-color: #000; -fx-border-radius: 4px;" text="Aplicar" textFill="#ff4e10">
+                           <JFXButton fx:id="btnSetPass" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#iniciarConexion" prefHeight="30.0" prefWidth="200.0" ripplerFill="#fe81bb" style="-fx-border-color: #000; -fx-border-radius: 4px;" text="Aplicar" textFill="#ff4e10">
                               <HBox.margin>
-                                 <Insets left="30.0" top="33.5" />
+                                 <Insets left="30.0" right="50.0" top="30.0" />
                               </HBox.margin>
                               <font>
                                  <Font name="Nunito Regular" size="12.0" />
@@ -1314,7 +2245,7 @@
                            </JFXButton>
                         </children>
                         <VBox.margin>
-                           <Insets bottom="40.0" left="70.0" right="70.0" />
+                           <Insets bottom="40.0" />
                         </VBox.margin>
                      </HBox>
                   </children>
