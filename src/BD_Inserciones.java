@@ -25,7 +25,7 @@ public class BD_Inserciones {
 
     //_______________________________________YA_____________________________________________________________________________________________________
     public String insertEmpleado(String claveE, String nombreE, String apellidoP, String apellidoM, String curpE, String fecha, String calle, String nExterior, String nInterior, String colonia, String cp, String idEstados, String idMunicipios, String Status){
-        String sql = "INSERT INTO ddatemp (CCVEEMP, CNOMBRE, CAPEUNO, CAPEDOS, CCURPEM, DFECING, CNMCALL, CNUMEXT, CNUMINT, CCOLONI, CCODPOS, NIDESTA, NIDMUNI, CSTATUS) VALUES (" + claveE + ",'" + nombreE +"','" + apellidoP +"','" + apellidoM + "','" + curpE +"','" + fecha + "','" + calle +"'," + nExterior +","+ nInterior +",'" + colonia +"'," + cp + "," + idEstados +"," + idMunicipios +",'" + Status + "')";
+        String sql = "INSERT INTO ddatemp (CCVEEMP, CNOMBRE, CAPEUNO, CAPEDOS, CCURPEM, DFECING, CNMCALL, CNUMEXT, CNUMINT, CCOLONI, CCODPOS, NIDESTA, NIDMUNI, CSTATUS) VALUES (" + claveE + ",'" + nombreE +"','" + apellidoP +"','" + apellidoM + "','" + curpE +"','" + fecha + "','" + calle +"','" + nExterior +"','"+ nInterior +"','" + colonia +"'," + cp + "," + idEstados +"," + idMunicipios +",'" + Status + "')";
         return sql;
     }
     public boolean hacerInsercionEmpleado(Connection conn, String claveE, String nombreE, String apellidoP, String apellidoM, String curpE, String fecha, String calle, String nExterior, String nInterior, String colonia, String cp, String idEstados, String idMunicipios, String Status){

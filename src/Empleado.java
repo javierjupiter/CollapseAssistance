@@ -1,11 +1,10 @@
 public class Empleado {
-
+    private String claveE;
     private String nombreE;
     private String apllidoPaternoE;
     private String apllidoMaternoE;
     private String curpE;
-    private Fecha fechaContratacionE;
-    private String claveE;
+    private String fechaContratacionE;
     private String calle;
     private String numeroExterior;
     private String numeroInterior;
@@ -14,6 +13,25 @@ public class Empleado {
     private String estado;
     private String Estado;
     private String municipio;
+    private String status;
+
+
+    public Empleado(String claveE, String nombreE, String apllidoPaternoE, String apllidoMaternoE, String curpE, String fechaContratacionE, String calle, String numeroExterior, String numeroInterior, String colonia, String codigoPostal, String estado, String municipio, String status) {
+        this.claveE = claveE;
+        this.nombreE = nombreE;
+        this.apllidoPaternoE = apllidoPaternoE;
+        this.apllidoMaternoE = apllidoMaternoE;
+        this.curpE = curpE;
+        this.fechaContratacionE = fechaContratacionE;
+        this.calle = calle;
+        this.numeroExterior = numeroExterior;
+        this.numeroInterior = numeroInterior;
+        this.colonia = colonia;
+        this.codigoPostal = codigoPostal;
+        this.estado = estado;
+        this.municipio = municipio;
+        this.status = status;
+    }
 
     public Empleado(String nombreE, String apllidoPaternoE, String apllidoMaternoE, String claveE) {
         this.nombreE = nombreE;
@@ -22,9 +40,7 @@ public class Empleado {
         this.claveE = claveE;
     }
 
-    public Empleado(){
-        fechaContratacionE = new Fecha();
-    }
+
 
     public String getClaveE() {
         return claveE;
@@ -67,19 +83,11 @@ public class Empleado {
         this.curpE = curpE;
     }
 
-    public void setFechaContratacionE(int dia, int mes, int anyo) {
-        fechaContratacionE.setAnyo(anyo);
-        fechaContratacionE.setMes(mes);
-        fechaContratacionE.setDia(dia);
-    }
 
 
 
 
-    public String getFechaContratacionE() {
-        String fecha = (fechaContratacionE.getDia() + "-" + fechaContratacionE.getMes() + "-" + fechaContratacionE.getAnyo());
-        return fecha;
-    }
+
 
 
     public String getCalle() {

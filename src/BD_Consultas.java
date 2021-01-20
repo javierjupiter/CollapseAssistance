@@ -65,7 +65,7 @@ public class BD_Consultas {
             ResultSet resultadoConsulta = select.executeQuery(consultaMunicipios(idEstado));
 
             while (resultadoConsulta.next()){
-                Municipios municipios = new Municipios(resultadoConsulta.getString(1), resultadoConsulta.getString(2), resultadoConsulta.getString(3));
+                Municipios municipios = new Municipios(resultadoConsulta.getString(1), resultadoConsulta.getString(3), resultadoConsulta.getString(2));
                 listaMunicipios.add(municipios);
             }
             return convertirArrayM(listaMunicipios);
@@ -96,18 +96,18 @@ public class BD_Consultas {
 
 
     public String consultaEstados(){
-        String sql = "SELECT * FROM Estados_Pais ";
+        String sql = "SELECT * FROM cestads ";
         return sql;
     }
 
 
     public String consultaMunicipios(int idEdo){
-        String sql = "SELECT * FROM municipios_estados WHERE id_estado = " + idEdo;
+        String sql = "SELECT * FROM cmunics WHERE NIDESTA = " + idEdo;
         return sql;
     }
 
     public String consultaNombreMunicipio(String nombre){
-        String sql = "SELECT ID_Municipios FROM municipios_estados WHERE Nombre_municipio = '" + nombre + "'";
+        String sql = "SELECT NIDMUNI FROM cmunics WHERE CNOMMUN = '" + nombre + "'";
         return sql;
     }
 
@@ -446,6 +446,35 @@ public class BD_Consultas {
         return sql;
     }
 
+    private Empleado empleado;
+
+    public Empleado getEmpleado() {
+        return empleado;
+    }
+
+    public boolean buscarEmpleadoEntero(Connection connection, String clave){
+        try {
+
+            Statement select = connection.createStatement();
+            ResultSet resultado = select.executeQuery(generarQueryEmpleadoEntero(clave));
+
+            while (resultado.next()){
+                System.out.println(resultado.getString(5));
+            }
+
+            //empleado = new Empleado(resultado.getString(1))
+
+
+            return true;
+        }catch (SQLException e){
+            System.out.println(e);
+            return false;
+        }
+    }
+
+    public String generarQueryEmpleadoEntero(String clave){
+        return "SELECT * FROM DDATEMP WHERE CCVEEMP = '" + clave + "'";
+    }
 
 
 }

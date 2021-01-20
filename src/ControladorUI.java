@@ -17,8 +17,11 @@ import javafx.scene.shape.SVGPath;
 import javafx.util.Duration;
 import javax.swing.*;
 import java.sql.Connection;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
+import java.util.Date;
 
 public class ControladorUI {
 
@@ -468,6 +471,7 @@ public class ControladorUI {
     @FXML public void hacerInserccionesDiasNoLaborales(){
         BD_Inserciones Inserciones = new BD_Inserciones();
         String Estatus, fecha =  String.valueOf(pickerFechaLaborales.getValue());
+
         if (comboStatusDiasLaborables.getValue().equals("Activo")){
             Estatus = "A";
         }
@@ -513,18 +517,80 @@ public class ControladorUI {
 
     @FXML private void hacerRegistroEmpleados(){
         BD_Inserciones inserciones = new BD_Inserciones();
-        String fecha=String.valueOf(pickerFechaREmpleados.getValue());
-        //JFXDialog dialog = new JFXDialog(stackP);
-        if  (inserciones.hacerInsercionEmpleado(connection, txtIdEmpleadoREmpleados.getText(), txtNombresREmpleados.getText(),txtApellidoPaternoREmpleados.getText(),txtApellidoMaternoREmpleados.getText(),txtCurpREmpleados.getText(),fecha,txtCalleREmpleados.getText(),txtNumeroExtREmpleados.getText(),txtNumeroIntREmpleados.getText(),txtColoniaREmpleados.getText(),txtCodigoPostalREmpleados.getText(),idEstado,idMunicipio,"A")) {
+        DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+        Date date = new Date();
+        Validaciones validaciones = new Validaciones();
+        boolean hacer = true;
+        String texto = "";
+        if (!validaciones.validarClave(txtIdEmpleadoREmpleados.getText())){
+            hacer = false;
+            texto = texto + "Clave de empleado invalida\n";
+        }
+        if (!validaciones.validarNombre(txtNombresREmpleados.getText())){
+            hacer = false;
+            texto = texto + "Nombre invalido";
+        }
+        if (!validaciones.validarNombre(txtApellidoPaternoREmpleados.getText())){
+            hacer = false;
+            texto = texto + "Apellido paterno invalido";
+        }
+        if (!validaciones.validarNombre(txtApellidoMaternoREmpleados.getText())){
+            hacer = false;
+            texto = texto + "Apellido materno invalido";
+        }
+        if (!validaciones.validarNombre(txtCalleREmpleados.getText())){
+            hacer = false;
+            texto = texto + "Nombre de Calle invalido";
+        }
+        if (!validaciones.validarNumeroDireccion(txtNumeroExtREmpleados.getText())){
+            hacer = false;
+            texto = texto + "Número Exterior invalido";
+        }
+        if (!validaciones.validarNumeroDireccion(txtNumeroIntREmpleados.getText())){
+            hacer = false;
+            texto = texto + "Número Interior invalido";
+        }
+        if (!validaciones.validarNombre(txtColoniaREmpleados.getText())){
+            hacer = false;
+            texto = texto + "Nombre de Colonia invalido";
+        }
+        if (!validaciones.validarCURP(txtCurpREmpleados.getText())){
+            hacer = false;
+            texto = texto + "CURP invalido\n";
+        }
+        if  (inserciones.hacerInsercionEmpleado(connection, txtIdEmpleadoREmpleados.getText(), txtNombresREmpleados.getText(),txtApellidoPaternoREmpleados.getText(),txtApellidoMaternoREmpleados.getText(),txtCurpREmpleados.getText(),dateFormat.format(date),txtCalleREmpleados.getText(),txtNumeroExtREmpleados.getText(),txtNumeroIntREmpleados.getText(),txtColoniaREmpleados.getText(),txtCodigoPostalREmpleados.getText(),idEstado,idMunicipio,"A") && hacer) {
             System.out.println("Insercion correcta");
-            //dialog.setContent(new Label("Insercion Correcta"));
-            JOptionPane.showMessageDialog((new JFrame()),"Insercion Correcta");
+            limpiarEMpleadosRegistro();
+        } else {
+            System.out.println(texto);
         }
-        else {
-            //dialog.setContent(new Label("Insercion Incorrecta"));
-            JOptionPane.showMessageDialog((new JFrame()),"Insercion Incorrecta");
+
+    }
+
+    @FXML private JFXTextField txtbuscarEmpleado;
+
+    @FXML public void buscarEmpleado() {
+        BD_Consultas consultas = new BD_Consultas();
+        if (consultas.buscarEmpleadoEntero(connection, txtbuscarEmpleado.getText())){
+            System.out.println("Todo chido");
         }
-        //dialog.show(rootStack);
+
+    }
+
+    private void limpiarEMpleadosRegistro(){
+        txtIdEmpleadoREmpleados.setText("");
+        txtNombresREmpleados.setText("");
+        txtApellidoPaternoREmpleados.setText("");
+        txtApellidoMaternoREmpleados.setText("");
+        txtCurpREmpleados.setText("");
+        txtCalleREmpleados.setText("");
+        txtNumeroExtREmpleados.setText("");
+        txtNumeroIntREmpleados.setText("");
+        txtColoniaREmpleados.setText("");
+        txtCodigoPostalREmpleados.setText("");
+        comboEstadoREmpleados.setValue("");
+        comboMunicipioREmpleados.getItems().clear();
+        comboMunicipioREmpleados.setDisable(true);
     }
 
     private void comboboxEmpleadosEstados(){
@@ -564,14 +630,23 @@ public class ControladorUI {
 
     public void generarComboMunicipios(int choose){
         comboMunicipioREmpleados.getItems().clear();
+        System.out.println("1");
         comboMunicipioREmpleados.setDisable(true);
+        System.out.println("2");
         BD_Consultas consultas = new BD_Consultas();
+        System.out.println("3");
         consultas.hacerConsultasMunicipios(connection, choose);
+        System.out.println("4");
         Municipios[] municipios = consultas.getMunicipios();
+        System.out.println("5");
         for (Municipios municipio : municipios) {
+            System.out.println("6");
             comboMunicipioREmpleados.getItems().add(municipio.getNombre());
+            System.out.println("7");
         }
+        System.out.println("8");
         comboMunicipioREmpleados.setDisable(false);
+        System.out.println("9");
     }
 
 
@@ -581,6 +656,7 @@ public class ControladorUI {
             case "Aguascalientes": //Action for this item
                 generarComboMunicipios(1);
                 this.idEstado = "1";
+                System.out.println("rkjgbergjkbsghkjbrthkbnrth");
                 break;
             case "Baja California":
                 generarComboMunicipios(2);
@@ -878,6 +954,7 @@ public class ControladorUI {
 
     @FXML public void mostrarRegistrosEmpleados(){
         posicionPantalla = 1;
+        limpiarEMpleadosRegistro();
         lblAgregar.setTextFill(Color.web("#FF4E10"));
         svgAgregar.setFill(Color.web("#FF4E10"));
         lblBuscar.setTextFill(Color.web("#000000"));
